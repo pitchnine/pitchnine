@@ -1,107 +1,62 @@
 <script>
-    import Nav from '$lib/components/Nav.svelte';
-    import Footer from '$lib/components/Footer.svelte';
+  import Nav from '$lib/components/Nav.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import Mountain from '$lib/components/Mountain.svelte';
+
 </script>
 
 <Nav />
 
+<!--1. Hero-->
+<Mountain />
 
-<!-- Hero -->
-
-<section class="relative h-screen overflow-hidden">
-  <div
-    class="absolute inset-0 z-0 bg-[url('/images/mountain-bg.jpg')] bg-cover bg-center opacity-0 animate-heroFade"
-    aria-hidden="true"
-  ></div>
-  <div
-    class="absolute inset-0 z-10 bg-black/60 opacity-0 animate-overlayFade"
-    aria-hidden="true"
-  ></div>
-  <div class="relative z-20 flex h-full items-center justify-center">
-    <h1 class="text-white text-4xl font-semibold">Creating product clarity for your toughest move yet.</h1>
-  </div>
-</section>
-
-<!-- About statement and logos -->
-
-<section class="relative h-screen flex items-center justify-center">
-<h2>Here's the what we do type of section with some social proof callouts and logos
-</h2>
-</section>
-
-<!-- Specific services with explanation -->
-
-<section class="relative h-screen flex items-center justify-center">
-<h2>Our services and menu branded for search
-</h2>
-<p>Backlog rescue, ai innovation consultation, workflow alignment, product leadership support, risk navigation, innovation delivery etc</p>
-</section>
-
-<!-- Work case studies-->
-
+<!--2. ICP and Credability-->
 <section class="relative h-screen">
-<h2>Work case studies
-</h2>
-<div class="flex flex-row gap-6">
-  <div class="bg-slate-100 w-1/4 h-40 flex flex-col items-center justify-center">
-  <p>Origent</p>
-  </div>
-  <div class="bg-slate-100 w-1/4 h-40 flex flex-col items-center justify-center">
-  <p>Viasana?</p>
-  </div>
-  <div class="bg-slate-100 w-1/4 h-40 flex flex-col items-center justify-center">
-  <p>Hoth?</p>
-  </div>
-</div>
+  <h2 class="text-3xl">Credability statement</h2>
+  <p>We partner with industry leaders who can’t afford product failure.</p>
+  <p>Logo</p>
+  <p>Logo</p>
+  <p>Logo</p>
+  <p>Logo</p>
 </section>
 
-<!-- How we're different -->
-
-<section class="relative h-screen flex items-center justify-center">
-<h2>What's unique about us with link to "About" page
-</h2>
+<!--3. What we actually do-->
+<section class="relative h-screen">
+  <h2 class="text-3xl">Menu of services</h2>
+  <p>Backlog rescue</p>
+  <p>Risk navigation</p>
+  <p>Innovation delivery</p>
+  <p>AI implementations</p>
 </section>
 
-<!-- Testimonials -->
-
-<section class="relative h-screen flex items-center justify-center">
-<h2>Quotes from people
-</h2>
+<!--4. Case studies-->
+<section class="relative h-screen">
+  <h2 class="text-3xl">Proof in case studies</h2>
+  <p>Aetna: unified design during a $69B merger.</p>
+  <p>Origent: productized award-winning algorithms for ALS research.</p>
+  <p>Hoth? Viasana?</p>
 </section>
 
-<!-- Form -->
+<!--5. Differnetiator-->
+<section class="relative h-screen">
+  <h2 class="text-3xl">How we're different than competition</h2>
+  <p>“We thrive where the stakes are highest: regulated, risk-sensitive industries where delay or failure isn’t an option.</p>
+</section>
 
-<section class="relative h-screen flex flex-col items-center justify-center">
-<h2>contact us
-</h2>
-<form>
-<div class="bg-slate-100">Name</div>
-<div class="bg-slate-100">Email</div>
-<div class="bg-slate-100">Maybe calendly link or schedule embed i duno</div>
-</form>
+<!--5. Testimonials-->
+<section class="relative h-screen">
+  <h2 class="text-3xl">Quotes from people</h2>
+  <p>Something something</p>
+</section>
+
+<!--6. CTA-->
+<section class="relative h-screen">
+  <h2 class="text-3xl">Stagnation is worse than wrong steps.</h2>
+  <p>Start the conversation</p>
+  <form>
+    <div class="bg-teal-100">Name</div>
+    <div class="bg-teal-100">Email</div>
+  </form>
 </section>
 
 <Footer />
-
-<style>
-  /* image fade */
-  @keyframes heroFade {
-    0%   { opacity: 0; transform: scale(1.04); }
-    60%  { opacity: 1; transform: scale(1); }
-    100% { opacity: 1; }
-  }
-  .animate-heroFade {
-    animation: heroFade 1500ms ease-out forwards;
-  }
-
-  /* overlay fade (slight delay) */
-  @keyframes overlayFade {
-    0%   { opacity: 0; }
-    30%  { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  .animate-overlayFade {
-    animation: overlayFade 1800ms ease forwards;
-    animation-delay: 200ms;
-  }
-</style>
