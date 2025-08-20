@@ -1,42 +1,30 @@
+<!-- src/routes/+layout.svelte -->
 <script>
-  import '../app.css';
-  let { children } = $props();
+  import '../app.css'; // global styles
 </script>
 
 <main class="min-h-screen bg-gray-50 text-emerald-950 dark:bg-emerald-950 dark:text-gray-50">
-  {@render children()}
+  <slot />
 </main>
 
 <style>
-  /* Global, responsive page gutters */
   :root {
     --page-x: 1.25rem; /* ~24px */
-    --page-y: 1.75rem;   /* ~32px */
+    --page-y: 1.75rem; /* ~32px */
   }
-  @media (min-width: 768px) {  /* md */
+  @media (min-width: 768px) {
     :root { --page-x: 2.5rem; --page-y: 3rem; }
   }
-  @media (min-width: 1024px) { /* lg */
+  @media (min-width: 1024px) {
     :root { --page-x: 4rem; --page-y: 4rem; }
   }
-  @media (min-width: 1280px) { /* xl */
+  @media (min-width: 1280px) {
     :root { --page-x: 6rem; }
   }
-
-  /* Apply gutters to the whole app */
-  main {
-    padding: var(--page-y) var(--page-x);
-  }
-
-  /* Special section - full bleed background stuff (edge‑to‑edge) */
+  main { padding: var(--page-y) var(--page-x); }
   .full-bleed {
     margin-left: calc(var(--page-x) * -1);
     margin-right: calc(var(--page-x) * -1);
   }
-
-  /* Long-form pages like case studies */
-  .narrow {
-    max-width: 72ch;
-    margin-inline: auto;
-  }
+  .narrow { max-width: 72ch; margin-inline: auto; }
 </style>
