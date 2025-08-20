@@ -1,14 +1,23 @@
 <script>
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import Mountain from '$lib/components/Mountain.svelte';
 
 </script>
 
 <Nav />
 
 <!--1. Hero-->
-<Mountain />
+<section class="relative h-screen p-16 m-8">
+  <div class="flex flex-col md:flex-row justify-between gap-3">
+    <div class="bg-slate-300 w-full">
+      <p class="inter uppercase font-semibold text-sm mb-2">PRODUCT LEADERSHIP & STRATEGY</p>
+      <h2 class="playfair text-5xl font-normal mb-6">Rescue your backlog.</h2>
+      <p class="inter text-xl font-normal mb-12">Pitch Nine serves the critical, credible and high-stakes industries, by providing innovative something something</p>
+      <p class="inter">CTA something</p>
+    </div>
+    <div class="bg-slate-200 w-full">image animation</div>
+  </div>
+</section>
 
 <!--2. ICP and Credability-->
 <section class="relative h-screen">
