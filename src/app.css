@@ -12,20 +12,14 @@
 }
 
 /* Actions */
-
-
-/* INLINE LINK (body copy) */
-.link-inline {
-  @apply underline decoration-1 underline-offset-2 transition-all duration-200;
-}
-.link-inline:hover {
-  @apply decoration-2 underline-offset-1 text-emerald-700;
+.nav-link {
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950/10 text-emerald-950/70 rounded-full;
 }
 
-/* CTA BUTTON */
-.btn-cta {
-  @apply inline-flex items-center gap-2 rounded-xl px-4 py-2 font-semibold
-         bg-emerald-700 text-white transition-colors duration-200;
+.nav-link:hover {
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950/70 text-emerald-950 rounded-full shadow-md;
 }
-.btn-cta:hover { @apply bg-emerald-800; }
-.btn-cta:focus-visible { @apply outline-none ring-2 ring-emerald-300; }
+
+.nav-link-active {
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950 text-emerald-950 rounded-full shadow-inner;
+}
