@@ -12,8 +12,12 @@
 
 <!--2. ICP and Credability-->
 <section class="relative h-screen">
-  <h2 class="text-3xl">Credability statement</h2>
-  <p>We partner with industry leaders who can’t afford product failure.</p>
+  <h2 class="text-6xl playfair font-semibold">Pitch Nine is an innovation agency, specifically created to support high stakes, sensitive industries.</h2>
+  <p>Your competitors are experimenting. You don’t have that luxury—you need certainty.</p>
+  <p>In your industry, mistakes don’t just cost money. They cost lives, trust, and futures.</p>
+  <p>You don’t need another design agency. You need product minds who understand risk.</p>
+  <p>AI is rewriting the rules—even in industries where rules matter most.</p>
+  <p>Innovation can’t come at the cost of compliance. We know how to balance both.</p>
   <p>Logo</p>
   <p>Logo</p>
   <p>Logo</p>
@@ -37,7 +41,7 @@
   <p>Hoth? Viasana?</p>
 </section>
 
-<!--5. Differnetiator-->
+<!--5. Differentiator-->
 <section class="relative h-screen">
   <h2 class="text-3xl">How we're different than competition</h2>
   <p>“We thrive where the stakes are highest: regulated, risk-sensitive industries where delay or failure isn’t an option.</p>
