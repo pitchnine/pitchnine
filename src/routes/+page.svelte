@@ -7,26 +7,14 @@
 
 <Nav />
 
-<Coder />
-
 <!--1. Hero-->
-<section class="my-64">
-  <div class="flex flex-col justify-between gap-3">
-      <p class="inter uppercase font-semibold text-sm mb-2">AI-DRIVEN PRODUCT LEADERSHIP</p>
-      <h2 class="playfair text-5xl font-medium mb-6">Disciplined innovation at your disposal.</h2>
-      <p class="inter text-xl font-normal mb-12">Pitch Nine modernizes product direction for critical enterprise industries — giving your teams the momentum of the best product studios, and intorducing innovation safely.</p>
-      <p class="inter">CTA something</p>
-  </div>
-</section>
+
+<Coder />
 
 <!--2. ICP and Credability-->
 <section class="relative h-screen">
-  <h2 class="text-6xl playfair font-semibold">Pitch Nine is an innovation agency, specifically created to support high stakes, sensitive industries.</h2>
-  <p>Your competitors are experimenting. You don’t have that luxury—you need certainty.</p>
-  <p>In your industry, mistakes don’t just cost money. They cost lives, trust, and futures.</p>
-  <p>You don’t need another design agency. You need product minds who understand risk.</p>
-  <p>AI is rewriting the rules—even in industries where rules matter most.</p>
-  <p>Innovation can’t come at the cost of compliance. We know how to balance both.</p>
+  <h2 class="text-3xl md:text-5xl font-bold tracking-tight inter">Bringing measured momentum and AI innovation to world's toughest, most secure sectors.</h2>
+  <p class="text-lg md:text-xl tracking-tight font-base inter">Pitch Nine is a product invigoration agency that knows how to balance innovation with compliance to help create measured outcomes for products serving the highest risk, most critical industires.</p>
   <p>Logo</p>
   <p>Logo</p>
   <p>Logo</p>
