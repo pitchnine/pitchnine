@@ -181,7 +181,7 @@
   });
 </script>
 
-<section bind:this={sectionEl} class="relative h-screen overflow-hidden bg-gray-950 text-white flex items-center justify-center">
+<section bind:this={sectionEl} class="relative h-screen overflow-hidden flex items-center justify-center">
 
   <!-- Background "code field" -->
   <div class="absolute inset-0 overflow-hidden">
