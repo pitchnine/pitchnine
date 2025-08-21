@@ -1,13 +1,18 @@
 <script>
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import Coder from '$lib/components/Coder.svelte';
 
 </script>
 
 <Nav />
 
+<div class="my-24"></div>
+
+<Coder />
+
 <!--1. Hero-->
-<section class="relative h-screen">
+<section class="my-64">
   <div class="flex flex-col justify-between gap-3">
       <p class="inter uppercase font-semibold text-sm mb-2">AI-DRIVEN PRODUCT LEADERSHIP</p>
       <h2 class="playfair text-5xl font-medium mb-6">Disciplined innovation at your disposal.</h2>
