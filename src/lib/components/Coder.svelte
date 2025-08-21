@@ -140,18 +140,51 @@
     return () => { nodes.forEach(n => (n.stop = true)); };
   });
 
-   // --- Text halo ---
-  export let haloSize = 'clamp(260px, 32vw, 520px)'; // circle diameter
-  export let haloFeather = '28px';                   // soft edge
-  export let haloOpacity = 1;                        // 0..1 (use 1 to fully block)
+ // --- Rect halo controls ---
+  export let rectPadX = 24;   // px padding left/right around the text block
+  export let rectPadY = 20;   // px padding top/bottom around the text block
+  export let rectRadius = 16; // px corner radius
+  export let rectFeather = 18;// px blur softness
+  export let rectOpacity = 1; // 0..1, how strongly to block snippets
   // Tailwind gray-950 ≈ rgb(3 7 18)
-  export let haloColor = `rgba(3, 7, 18, ${haloOpacity})`;
-  // If your hero text isn’t perfectly centered, tweak the center point:
-  export let haloX = '50%';
-  export let haloY = '50%';
+  export let rectColor = `rgba(3, 7, 18, ${rectOpacity})`;
+
+  let sectionEl;      // the hero section (positioning context)
+  let contentEl;      // your foreground content wrapper
+
+  let rect = { left: 0, top: 0, width: 0, height: 0 };
+
+  function updateRect() {
+    if (!sectionEl || !contentEl) return;
+    const s = sectionEl.getBoundingClientRect();
+    const c = contentEl.getBoundingClientRect();
+    rect = {
+      left: c.left - s.left - rectPadX,
+      top:  c.top  - s.top  - rectPadY,
+      width:  c.width  + rectPadX * 2,
+      height: c.height + rectPadY * 2
+    };
+  }
+
+  onMount(() => {
+    // Keep the rectangle synced to content size/position
+    const ro = new ResizeObserver(updateRect);
+    ro.observe(contentEl);
+    // also recalc on viewport changes/scroll (hero usually full-screen but safe)
+    window.addEventListener('resize', updateRect);
+    window.addEventListener('scroll', updateRect, { passive: true });
+    // initial
+    setTimeout(updateRect, 0);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', updateRect);
+      window.removeEventListener('scroll', updateRect);
+    };
+  });
 </script>
 
-<section class="relative h-screen overflow-hidden bg-gray-950 text-white flex items-center justify-center">
+<section bind:this={sectionEl} class="relative h-screen overflow-hidden bg-gray-950 text-white flex items-center justify-center">
   <!-- Subtle grid backdrop -->
   <div
     class="pointer-events-none absolute inset-0"
@@ -193,25 +226,34 @@
   </div>
 
 <!-- Halo -->
-<div
-  class="pointer-events-none absolute inset-0 z-[5]"
-  style="
-    --halo-size: {haloSize};
-    --halo-feather: {haloFeather};
-    --halo-color: {haloColor};
-    --halo-x: {haloX};
-    --halo-y: {haloY};
-    background:
-      radial-gradient(
-        circle at var(--halo-x) var(--halo-y),
-        var(--halo-color) 0 calc((var(--halo-size) / 2) - var(--halo-feather)),
-        rgba(3,7,18,0) calc((var(--halo-size) / 2))
-      );
-  "
-></div>
+  <div
+    class="pointer-events-none absolute z-[5]"
+    style="
+      left: {rect.left}px;
+      top: {rect.top}px;
+      width: {rect.width}px;
+      height: {rect.height}px;
+      border-radius: {rectRadius}px;
+      background: {rectColor};
+    "
+  ></div>
 
-  <!-- Foreground content -->
-  <div class="relative z-10 text-center px-6">
+  <div
+    class="pointer-events-none absolute z-[5]"
+    style="
+      left: {rect.left}px;
+      top: {rect.top}px;
+      width: {rect.width}px;
+      height: {rect.height}px;
+      border-radius: {rectRadius + 2}px;
+      background: {rectColor};
+      filter: blur({rectFeather}px);
+      opacity: 0.6; /* feather strength */
+    "
+  ></div>
+
+   <!-- Foreground content -->
+  <div bind:this={contentEl} class="relative z-10 text-center px-6">
     <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight mb-4 animate-fadeUp">
       {headline}
     </h1>
