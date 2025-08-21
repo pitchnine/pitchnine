@@ -7,15 +7,12 @@
 <Nav />
 
 <!--1. Hero-->
-<section class="relative h-screen p-16 m-8">
-  <div class="flex flex-col md:flex-row justify-between gap-3">
-    <div class="bg-slate-300 w-full">
-      <p class="inter uppercase font-semibold text-sm mb-2">PRODUCT LEADERSHIP & STRATEGY</p>
-      <h2 class="playfair text-5xl font-normal mb-6">Rescue your backlog.</h2>
-      <p class="inter text-xl font-normal mb-12">Pitch Nine serves the critical, credible and high-stakes industries, by providing innovative something something</p>
+<section class="relative h-screen">
+  <div class="flex flex-col justify-between gap-3">
+      <p class="inter uppercase font-semibold text-sm mb-2">AI-DRIVEN PRODUCT LEADERSHIP</p>
+      <h2 class="playfair text-5xl font-medium mb-6">Disciplined innovation at your disposal.</h2>
+      <p class="inter text-xl font-normal mb-12">Pitch Nine modernizes product direction for critical enterprise industries — giving your teams the momentum of the best product studios, and intorducing innovation safely.</p>
       <p class="inter">CTA something</p>
-    </div>
-    <div class="bg-slate-200 w-full">image animation</div>
   </div>
 </section>
 

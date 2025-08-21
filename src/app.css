@@ -13,15 +13,15 @@
 
 /* Actions */
 .nav-link {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950/10 text-emerald-950/60 rounded-full;
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/10 text-emerald-50/60 rounded-full;
 }
 
 .nav-link:hover {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950/30 text-emerald-950 rounded-full shadow-md;
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/30 text-emerald-50 rounded-full shadow-md;
 }
 
 .nav-link-active {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-950/40 text-emerald-950 rounded-full ring-1 ring-emerald-500/15;
+    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/40 text-emerald-50 rounded-full ring-1 ring-emerald-200/15;
 }
 
 .logo-link { 

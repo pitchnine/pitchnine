@@ -3,7 +3,7 @@
   import '../app.css'; // global styles
 </script>
 
-<main class="min-h-screen bg-gray-50 text-emerald-950 dark:bg-emerald-950 dark:text-gray-50">
+<main class="min-h-screen bg-gradient-to-b from-gray-950 to-gray-800 text-gray-200">
   <slot />
 </main>
 
