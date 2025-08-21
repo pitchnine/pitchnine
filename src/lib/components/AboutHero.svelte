@@ -1,9 +1,8 @@
-<!-- HeroTypography.svelte -->
 <script>
-  export let tagline = "Innovation without Chaos";
+  export let tagline = "Seasoned and skilled";
 </script>
 
-<section class="relative flex items-center justify-center h-screen bg-gray-950 text-white overflow-hidden">
+<section class="relative flex items-center justify-center h-screen overflow-hidden">
   <h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-tight animate-fadeUp">
     {tagline}
   </h1>
