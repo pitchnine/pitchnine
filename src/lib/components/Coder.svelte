@@ -168,15 +168,8 @@
     ro.observe(contentEl);
     // also recalc on viewport changes/scroll (hero usually full-screen but safe)
     window.addEventListener('resize', updateRect);
-    window.addEventListener('scroll', updateRect, { passive: true });
     // initial
     setTimeout(updateRect, 0);
-
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', updateRect);
-      window.removeEventListener('scroll', updateRect);
-    };
   });
 
   // --- Anti-collision  ---

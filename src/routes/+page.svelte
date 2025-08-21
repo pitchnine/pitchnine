@@ -2,7 +2,6 @@
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import Coder from '$lib/components/Coder.svelte';
-
 </script>
 
 <Nav />
@@ -12,13 +11,69 @@
 <Coder />
 
 <!--2. ICP and Credability-->
-<section class="relative h-screen">
-  <h2 class="text-3xl md:text-5xl font-bold tracking-tight inter">Bringing measured momentum and AI innovation to world's toughest, most secure sectors.</h2>
-  <p class="text-lg md:text-xl tracking-tight font-base inter">Pitch Nine is a product invigoration agency that knows how to balance innovation with compliance to help create measured outcomes for products serving the highest risk, most critical industires.</p>
-  <p>Logo</p>
-  <p>Logo</p>
-  <p>Logo</p>
-  <p>Logo</p>
+<section class="relative py-16">
+  <h2 class="text-3xl md:text-5xl font-bold tracking-tight inter">
+    Bringing measured momentum and AI innovation to the world’s toughest, most secure sectors.
+  </h2>
+  <p class="text-lg md:text-xl tracking-tight inter mt-4">
+    Pitch Nine balances innovation with compliance to deliver outcomes in high‑risk, mission‑critical industries.
+  </p>
+  <section class="py-12 border-t border-gray-800">
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
+  
+    <!-- Logos - Row 1 -->
+
+      <!-- Origent -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-origent.png" alt="Logo 1"
+           class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Aetna -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-aetna.png" alt="Logo 2" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- AWS -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-aws.png" alt="Logo 3" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- WHO -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-who.png" alt="Logo 4" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Techstars -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-techstars.png" alt="Logo 5" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+     
+  <!-- Logos - Row 2 -->
+
+      <!-- Cleveland -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-cleveland.png" alt="Logo 1"
+           class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Origent -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-origent.png" alt="Logo 2" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Origent -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-origent.png" alt="Logo 3" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Origent -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-origent.png" alt="Logo 4" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+    <!-- Origent -->
+    <div class="flex items-center justify-center h-20">
+      <img src="/images/logo-origent.png" alt="Logo 5" class="max-h-full max-w-full object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" />
+    </div>
+  </div>
+</section>
+
+
+
+
 </section>
 
 <!--3. What we actually do-->
