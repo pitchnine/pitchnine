@@ -23,19 +23,19 @@
   ];
 
   /* ---- Layout & behavior knobs ---- */
-  export let density = 9;       // how many snippets to render across the field
-  export let minFont = 10;       // px (smallest snippet text)
+  export let density = 4;       // how many snippets to render across the field
+  export let minFont = 14;       // px (smallest snippet text)
   export let maxFont = 14;       // px (largest snippet text)
   export let maxSkew = 0;        // deg random rotation (+/-)
   export let codeOpacity = 0.15; // base opacity for code
   export let blur = 0.2;         // subtle blur in px
 
   // Typing timings (each node gets randomized around these)
-  export let speedFactor = 2; 
+  export let speedFactor = 6; 
   export let baseTypeMs = 75;
   export let baseEraseMs = 60;
-  export let baseHoldMs = 2000;
-  export let baseGapMs = 800; 
+  export let baseHoldMs = 2200;
+  export let baseGapMs = 900; 
 
   // Prefers reduced motion?
   let reduced = false;
@@ -179,7 +179,95 @@
       window.removeEventListener('scroll', updateRect);
     };
   });
+
+  // --- Anti-collision / layout knobs ---
+  export let edgePadVW = 4;   // viewport % padding on left/right (keeps nodes off edges)
+  export let edgePadVH = 6;   // viewport % padding on top/bottom
+  export let cellInnerPadPct = 12; // % of cell size to keep clear inside each cell
+
+  function layoutNodesGrid() {
+    if (!sectionEl) return;
+
+    // figure out aspect-aware grid size from density
+    const s = sectionEl.getBoundingClientRect();
+    const ar = s.width / s.height;
+    const cols = Math.max(1, Math.ceil(Math.sqrt(density * ar)));
+    const rows = Math.max(1, Math.ceil(density / cols));
+
+    const usableW = 100 - edgePadVW * 2;
+    const usableH = 100 - edgePadVH * 2;
+    const cellW = usableW / cols;
+    const cellH = usableH / rows;
+
+    // helper to test if a cell overlaps the text rect (in px)
+    const cellOverlapsRect = (cx, cy) => {
+      // cell in vw/vh → px
+      const leftVW = edgePadVW + cx * cellW;
+      const topVH  = edgePadVH + cy * cellH;
+      const rightVW = leftVW + cellW;
+      const bottomVH = topVH + cellH;
+
+      const leftPx   = s.left + (leftVW / 100) * s.width;
+      const rightPx  = s.left + (rightVW / 100) * s.width;
+      const topPx    = s.top  + (topVH  / 100) * s.height;
+      const bottomPx = s.top  + (bottomVH / 100) * s.height;
+
+      const cellRect = { left: leftPx, top: topPx, right: rightPx, bottom: bottomPx };
+      const haloRect = { left: rect.left + s.left, top: rect.top + s.top, right: rect.left + s.left + rect.width, bottom: rect.top + s.top + rect.height };
+
+      const intersect =
+        cellRect.left < haloRect.right &&
+        cellRect.right > haloRect.left &&
+        cellRect.top < haloRect.bottom &&
+        cellRect.bottom > haloRect.top;
+
+      return intersect;
+    };
+
+    // collect all viable cells (not overlapping the text rect)
+    let cells = [];
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        if (!rect.width || !rect.height || !cellOverlapsRect(c, r)) {
+          cells.push({ r, c });
+        }
+      }
+    }
+
+    // shuffle so distribution looks organic
+    for (let i = cells.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cells[i], cells[j]] = [cells[j], cells[i]];
+    }
+
+    // assign up to density nodes to distinct cells
+    const count = Math.min(density, cells.length);
+    for (let i = 0; i < count; i++) {
+      const { r, c } = cells[i];
+      const baseX = edgePadVW + c * cellW;
+      const baseY = edgePadVH + r * cellH;
+
+      const padX = (cellW * cellInnerPadPct) / 100;
+      const padY = (cellH * cellInnerPadPct) / 100;
+
+      const x = baseX + (padX + Math.random() * (cellW - 2 * padX));
+      const y = baseY + (padY + Math.random() * (cellH - 2 * padY));
+
+      nodes[i].x = x;  // vw
+      nodes[i].y = y;  // vh
+      nodes[i].rot = 0; // keep horizontal
+    }
+
+    // if density > viable cells, hide extra nodes
+    for (let i = count; i < nodes.length; i++) {
+      nodes[i].opacity = 0;
+    }
+
+    // nudge Svelte to paint
+    flush();
+  }
 </script>
+
 
 <section bind:this={sectionEl} class="relative h-screen overflow-hidden flex items-center justify-center">
 
