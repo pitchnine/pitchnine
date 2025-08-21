@@ -23,20 +23,19 @@
   ];
 
   /* ---- Layout & behavior knobs ---- */
-  export let density = 14;       // how many snippets to render across the field
+  export let density = 9;       // how many snippets to render across the field
   export let minFont = 10;       // px (smallest snippet text)
   export let maxFont = 14;       // px (largest snippet text)
   export let maxSkew = 0;        // deg random rotation (+/-)
-  export let gridOpacity = 0.35; // backdrop grid strength
   export let codeOpacity = 0.15; // base opacity for code
   export let blur = 0.2;         // subtle blur in px
 
   // Typing timings (each node gets randomized around these)
-  export let speedFactor = 1.9; 
-  export let baseTypeMs = 50;
-  export let baseEraseMs = 40;
-  export let baseHoldMs = 1800;
-  export let baseGapMs = 600;    // extra pause before next cycle
+  export let speedFactor = 2; 
+  export let baseTypeMs = 75;
+  export let baseEraseMs = 60;
+  export let baseHoldMs = 2000;
+  export let baseGapMs = 800; 
 
   // Prefers reduced motion?
   let reduced = false;
@@ -47,7 +46,7 @@
   // Internal "nodes" – each one is a background snippet instance with its own loop
   let nodes = [];
 
-  const flush = () => { nodes = nodes; }; // reassign to nudge Svelte’s reactivity
+  const flush = () => { nodes = nodes; };
 
 
     console.log('prefers-reduced-motion:', reduced);
@@ -57,9 +56,8 @@
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   function makeNode(i) {
-    // Spread across viewport (bigger safe margins near center so headline stays readable)
-    const x = rand(4, 96);   // vw
-    const y = rand(6, 90);   // vh
+    const x = rand(4, 96);   
+    const y = rand(6, 90);   
     const avoidCenter = Math.abs(x - 50) < 18 && Math.abs(y - 50) < 16;
     const adjustedX = avoidCenter ? (x < 50 ? x - rand(6, 10) : x + rand(6, 10)) : x;
     const adjustedY = avoidCenter ? (y < 50 ? y - rand(6, 10) : y + rand(6, 10)) : y;
@@ -82,7 +80,7 @@
       text: choice(snippets),
       shown: "",
       phase: "idle",     // "typing" | "hold" | "erasing"
-      opacity: 0,        // we’ll fade in/out
+      opacity: 0,        // fade in/out
       typeMs, eraseMs, holdMs, gapMs,
       delay: rand(0, 2500),  // initial stagger
       stop: false
@@ -141,12 +139,11 @@
   });
 
  // --- Rect halo controls ---
-  export let rectPadX = 24;   // px padding left/right around the text block
-  export let rectPadY = 20;   // px padding top/bottom around the text block
-  export let rectRadius = 16; // px corner radius
-  export let rectFeather = 18;// px blur softness
-  export let rectOpacity = 1; // 0..1, how strongly to block snippets
-  // Tailwind gray-950 ≈ rgb(3 7 18)
+  export let rectPadX = 32;   // px padding left/right around the text block
+  export let rectPadY = 32;   // px padding top/bottom around the text block
+  export let rectRadius = 24; // px corner radius
+  export let rectFeather = 32;// px blur softness
+  export let rectOpacity = .75;
   export let rectColor = `rgba(3, 7, 18, ${rectOpacity})`;
 
   let sectionEl;      // the hero section (positioning context)
@@ -185,23 +182,6 @@
 </script>
 
 <section bind:this={sectionEl} class="relative h-screen overflow-hidden bg-gray-950 text-white flex items-center justify-center">
-  <!-- Subtle grid backdrop -->
-  <div
-    class="pointer-events-none absolute inset-0"
-    style="
-      opacity: {gridOpacity};
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
-      background-size: 40px 40px;
-    "
-  ></div>
-
-  <!-- Slow gradient sweep for depth -->
-  <div
-    class="pointer-events-none absolute inset-0 mix-blend-screen opacity-30 animate-gradientMove"
-    style="background: linear-gradient(100deg, transparent 0%, rgba(16,185,129,0.12) 40%, transparent 60%, rgba(56,189,248,0.12) 85%, transparent 100%);"
-  ></div>
 
   <!-- Background "code field" -->
   <div class="absolute inset-0 overflow-hidden">
