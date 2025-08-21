@@ -139,6 +139,16 @@
     nodes.forEach(runNode);
     return () => { nodes.forEach(n => (n.stop = true)); };
   });
+
+   // --- Text halo ---
+  export let haloSize = 'clamp(260px, 32vw, 520px)'; // circle diameter
+  export let haloFeather = '28px';                   // soft edge
+  export let haloOpacity = 1;                        // 0..1 (use 1 to fully block)
+  // Tailwind gray-950 ≈ rgb(3 7 18)
+  export let haloColor = `rgba(3, 7, 18, ${haloOpacity})`;
+  // If your hero text isn’t perfectly centered, tweak the center point:
+  export let haloX = '50%';
+  export let haloY = '50%';
 </script>
 
 <section class="relative h-screen overflow-hidden bg-gray-950 text-white flex items-center justify-center">
@@ -181,6 +191,24 @@
       </div>
     {/each}
   </div>
+
+<!-- Halo -->
+<div
+  class="pointer-events-none absolute inset-0 z-[5]"
+  style="
+    --halo-size: {haloSize};
+    --halo-feather: {haloFeather};
+    --halo-color: {haloColor};
+    --halo-x: {haloX};
+    --halo-y: {haloY};
+    background:
+      radial-gradient(
+        circle at var(--halo-x) var(--halo-y),
+        var(--halo-color) 0 calc((var(--halo-size) / 2) - var(--halo-feather)),
+        rgba(3,7,18,0) calc((var(--halo-size) / 2))
+      );
+  "
+></div>
 
   <!-- Foreground content -->
   <div class="relative z-10 text-center px-6">

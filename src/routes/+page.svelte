@@ -7,8 +7,6 @@
 
 <Nav />
 
-<div class="my-24"></div>
-
 <Coder />
 
 <!--1. Hero-->
