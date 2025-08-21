@@ -15,19 +15,18 @@
     "system.route('ehr.epic').to('analytics.stream').retries(3).backoff('exp')",
     "policy.enforce({ pii:true, hipaa:true, gdpr:false, soc2:true })",
     "metrics.counter('latency_ms').p95(138).ok()",
-    "deploy.plan({ env:'staging', canary:'5%', rollback:'auto' })",
     "ledger.settle({ vendor:'clearinghouse', amount:124500.13, currency:'USD' })",
-    "model.serve('triage-v3', { explainer:true, shadow:true })",
+    "model.serve('triage-v3',{ explainer:true, shadow:true })",
     "scheduler.cron('0 */6 * * *').task('reindex-compliance')",
-    "access.grant('ops', { scope:['read:claims','write:flags'] })"
+    "access.grant('ops',{ scope:['read:claims','write:flags']})"
   ];
 
   /* ---- Layout & behavior knobs ---- */
-  export let density = 4;       // how many snippets to render across the field
-  export let minFont = 14;       // px (smallest snippet text)
+  export let density = 6;       // how many snippets to render across the field
+  export let minFont = 10;       // px (smallest snippet text)
   export let maxFont = 14;       // px (largest snippet text)
   export let maxSkew = 0;        // deg random rotation (+/-)
-  export let codeOpacity = 0.15; // base opacity for code
+  export let codeOpacity = 0.25; // base opacity for code
   export let blur = 0.2;         // subtle blur in px
 
   // Typing timings (each node gets randomized around these)
@@ -35,7 +34,7 @@
   export let baseTypeMs = 75;
   export let baseEraseMs = 60;
   export let baseHoldMs = 2200;
-  export let baseGapMs = 900; 
+  export let baseGapMs = 600; 
 
   // Prefers reduced motion?
   let reduced = false;
@@ -180,9 +179,9 @@
     };
   });
 
-  // --- Anti-collision / layout knobs ---
-  export let edgePadVW = 4;   // viewport % padding on left/right (keeps nodes off edges)
-  export let edgePadVH = 6;   // viewport % padding on top/bottom
+  // --- Anti-collision  ---
+  export let edgePadVW = 3;   // viewport % padding on left/right (keeps nodes off edges)
+  export let edgePadVH = 3;   // viewport % padding on top/bottom
   export let cellInnerPadPct = 12; // % of cell size to keep clear inside each cell
 
   function layoutNodesGrid() {
@@ -266,6 +265,33 @@
     // nudge Svelte to paint
     flush();
   }
+
+  // Responsive layout state
+  let isMobile = false;
+  let effectiveDensity = density;
+
+  function applyResponsiveSettings() {
+    if (isMobile) {
+      effectiveDensity = Math.min(density, 3);   // fewer nodes on phones
+      edgePadVW = 6;                              
+      edgePadVH = 6;
+      cellInnerPadPct = 24;                       // more space inside each cell
+      minFont = Math.min(minFont, 12);
+      maxFont = Math.min(maxFont, 13);
+    } else {
+      effectiveDensity = density;                 // desktop/tablet defaults
+      edgePadVW = 3;
+      edgePadVH = 3;
+      cellInnerPadPct = 12;
+    }
+  }
+
+  function updateBreakpoint() {
+    const w = typeof window !== 'undefined' ? window.innerWidth : 1024;
+    isMobile = w <= 640;                          
+    applyResponsiveSettings();
+    layoutNodesGrid();                           
+  }
 </script>
 
 
@@ -287,7 +313,7 @@
       >
         <pre
           class="font-mono leading-snug whitespace-pre-wrap select-none"
-          style="font-size: {n.fontPx}px; color: rgba(167, 243, 208, 0.9);" 
+          style="font-size: {n.fontPx}px; color: rgba(83, 232, 167, 0.6);" 
         >{n.shown}_</pre>
       </div>
     {/each}
