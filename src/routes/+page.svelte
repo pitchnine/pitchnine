@@ -2,6 +2,7 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Coder from '$lib/components/Coder.svelte';
+  import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 </script>
 
 <Nav />
@@ -10,11 +11,10 @@
 
 <Coder />
 
-<!--2. ICP and Credability-->
+<!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
 	<h2 class="inter mb-20 px-3 text-center text-3xl font-bold tracking-tight md:px-10 md:text-5xl">
-		Pitch Nine brings disciplined momentum to complex product teams, bringing controlled vision and
-		innovation to high-stakes, compliance-driven industries where precision is everything.
+		Pitch Nine brings disciplined momentum to complex product teams in high-stakes industries, where precision and compliance is everything.
 	</h2>
 	<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -106,8 +106,9 @@
 </section>
 
 <!--3. What we actually do-->
-<section class="relative h-screen">
-	<h2 class="text-3xl">Menu of services</h2>
+<section class="relative py-64">
+	<ServicesGrid />
+  <h2 class="text-3xl">Menu of services</h2>
 	<p>Backlog rescue</p>
 	<p>Risk navigation</p>
 	<p>Innovation delivery</p>
