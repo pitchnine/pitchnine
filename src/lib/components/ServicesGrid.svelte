@@ -5,20 +5,20 @@
   const services = [
     {
       title: "Backlog Rescue",
-      desc: "Stabilize delivery: triage, re-prioritize, and re-establish flow without breaking governance.",
-      meta: "2–4 weeks • Fixed-fee • Outputs: roadmap, rules, cadences",
-      more: "We reset decision rules, clarify scope boundaries, install lean cadences, and surface a credible delivery plan execs can sign."
+      desc: "Reduce risk and waste by aligning your work-to-be-done to customer value, regulatory constraints, and investment-grade milestones.",
+      meta: "8-10 weeks • Fixed-fee",
+      more: "Consolidate backlog noise into executive themes with quantified ROI, explicit guardrails, and a clear go/no-go path"
     },
     {
       title: "AI Readiness",
       desc: "Identify feasible AI use-cases that clear compliance and prove ROI with real constraints.",
-      meta: "3–6 weeks • Pilot plan • Data/guardrails/metrics",
+      meta: "6-8 weeks • Pilot plan • Data/guardrails/metrics",
       more: "Use-case mapping, data audit, governance design, and a pilot spec with measurable outcomes and risk controls."
     },
     {
-      title: "Innovation Sprint",
+      title: "Innovation Audit",
       desc: "Turn ambiguity into a plan you can fund—tailored workshops for regulated environments.",
-      meta: "2 weeks • Decision artifacts • Executive-ready",
+      meta: "4-6 weeks • Decision artifacts • Executive-ready",
       more: "Inputs → decisions → artifacts: aligned problem framing, opportunity sizing, and a de-risked plan with owners and timelines."
     }
   ];
