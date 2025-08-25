@@ -1,0 +1,75 @@
+<script>
+  // what the Diagnostic delivers (left-aligned grid items)
+  const diagnosticArtifacts = [
+    { title: "9-slide board brief", meta: "Evidence-backed 360 review of product positioning, process, opportunities, risks and custom recommendations to fit unique goals and constraints." },
+    { title: "Opportunity themes", meta: "3–5 executive themes with quantified impact" },
+    { title: "90-day sequenced plan", meta: "owners, milestones, measures" },
+    { title: "Governance guardrails", meta: "decision rules, traceability, change control" },
+    { title: "Data & integration view", meta: "PII/PHI handling, integration patterns" },
+    { title: "Evidence pack", meta: "customer signals, market/industry inputs" },
+    { title: "Risk & constraints", meta: "regulatory, operational, technical" },
+    { title: "Investment & TCO ranges", meta: "phased scenarios, cost drivers" },
+    { title: "Success metrics & SLOs", meta: "leading and lagging indicators" }
+  ];
+
+  const Check = `
+    <svg viewBox="0 0 24 24" class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>`;
+</script>
+
+<section class="relative mb-24 py-16" id="diagnostic">
+  <!-- Headline with the sentiment baked in -->
+  <h2 class="inter header-text mb-8 text-left text-3xl md:text-5xl font-semibold tracking-tight">
+    Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
+  </h2>
+
+  <!-- Artifact grid: left-aligned, checkmarks, thin borders like services (border-white/5) -->
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+    {#each diagnosticArtifacts as a}
+      <div class="border border-white/5 rounded-xl p-4 text-left">
+        <div class="flex items-start gap-3">
+          <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
+          <div>
+            <p class="text-lg font-semibold">{a.title}</p>
+            {#if a.meta}
+              <p class="mt-1 text-sm">{a.meta}</p>
+            {/if}
+          </div>
+        </div>
+      </div>
+    {/each}
+  </div>
+
+  <!-- Centered CTAs -->
+  <div class="mt-8 flex items-center justify-center gap-4">
+    <a
+      href="/contact?service=Executive%20Diagnostic"
+      data-cta="primary"
+      class="nav-link-active"
+    >
+      Start the Executive Diagnostic
+    </a>
+
+    <a
+      href="#services"
+      data-cta="secondary"
+      class="group inline-flex h-12 items-center gap-2 rounded-xl px-4
+             text-sm font-bold uppercase tracking-wider text-emerald-300/80
+             hover:text-emerald-200 focus:outline-none"
+    >
+      <span>Explore Services</span>
+      <svg viewBox="0 0 24 24"
+           class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
+                  group-hover:translate-x-[3px] group-hover:scale-110
+                  group-focus-visible:translate-x-[3px]
+                  motion-reduce:transition-none"
+           fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <p class="mt-3 text-center text-xs text-white/50">
+    Fixed-fee • Time-boxed • No commitment beyond the diagnostic
+  </p>
+</section>

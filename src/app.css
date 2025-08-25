@@ -27,3 +27,8 @@
 .logo-link { 
     transition: transform 300ms ease; 
 }
+
+/* h2s for sections */
+.header-text {
+    @apply text-center tracking-tight leading-tight font-semibold text-4xl lg:text-5xl;
+}
