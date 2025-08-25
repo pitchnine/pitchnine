@@ -106,12 +106,12 @@
 	</div>
 </section>
 
-<!--3. What we actually do-->
+<!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
 <Diagnostics />
   </section>
 
-  <!-- Your services list -->
+  <!-- 4. Services list -->
    <section class="relative py-24 sm:py-32" id="services">
     <h2 class="inter mb-24 header-text">
      Services
@@ -120,7 +120,7 @@
 </section>
 
 
-<!--4. Case studies-->
+<!--5. Case studies or proof in the work-->
 <section class="relative h-screen">
 	<h2 class="text-3xl">Proof in case studies</h2>
 	<p>Aetna: unified design during a $69B merger.</p>
@@ -128,19 +128,13 @@
 	<p>Hoth? Viasana?</p>
 </section>
 
-<!--5. Differentiator-->
+<!--5. Differentiator linking to about -->
 <section class="relative h-screen">
 	<h2 class="text-3xl">How we're different than competition</h2>
 	<p>
 		“We thrive where the stakes are highest: regulated, risk-sensitive industries where delay or
 		failure isn’t an option.
 	</p>
-</section>
-
-<!--5. Testimonials-->
-<section class="relative h-screen">
-	<h2 class="text-3xl">Quotes from people</h2>
-	<p>Something something</p>
 </section>
 
 <!--6. CTA-->

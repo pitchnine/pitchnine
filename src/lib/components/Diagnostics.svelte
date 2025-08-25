@@ -4,11 +4,11 @@
     { title: "9-slide board brief", meta: "Evidence-backed 360 review of product positioning, process, opportunities, risks and custom recommendations to fit unique goals and constraints." },
     { title: "Opportunity themes", meta: "3–5 executive themes with quantified impact" },
     { title: "90-day sequenced plan", meta: "owners, milestones, measures" },
-    { title: "Governance guardrails", meta: "decision rules, traceability, change control" },
+    { title: "Executive-grade prototypes", meta: "interactive concepts that demonstrate the target experience and value." },
     { title: "Data & integration view", meta: "PII/PHI handling, integration patterns" },
     { title: "Evidence pack", meta: "customer signals, market/industry inputs" },
-    { title: "Risk & constraints", meta: "regulatory, operational, technical" },
-    { title: "Investment & TCO ranges", meta: "phased scenarios, cost drivers" },
+    { title: "Risks & constraints", meta: "regulatory, operational, technical" },
+    { title: "Experience unification", meta: "something something about ux wihtout ux" },
     { title: "Success metrics & SLOs", meta: "leading and lagging indicators" }
   ];
 
