@@ -120,21 +120,45 @@
 </section>
 
 
-<!--5. Case studies or proof in the work-->
+<!--5. 
+Case studies or proof in the work
 <section class="relative h-screen">
-	<h2 class="text-3xl">Proof in case studies</h2>
-	<p>Aetna: unified design during a $69B merger.</p>
-	<p>Origent: productized award-winning algorithms for ALS research.</p>
-	<p>Hoth? Viasana?</p>
-</section>
+	<h2 class="inter mb-24 header-text">
+		Seasoned strategists, at your disposal.
+	</h2>
+	<p>Origent: assisted a pivot in a risky space</p>
+	<p>NIH: awarded SBIR grant for patient outcomes</p>
+	<p>Aetna: Unified design during a $69B merger.</p>
+	<p>WHO: united standards of vaccine delivery across continents.</p>
+</section> 
+-->
 
 <!--5. Differentiator linking to about -->
 <section class="relative h-screen">
-	<h2 class="text-3xl">How we're different than competition</h2>
-	<p>
-		“We thrive where the stakes are highest: regulated, risk-sensitive industries where delay or
-		failure isn’t an option.
-	</p>
+	<h2 class="inter mb-24 header-text">
+  Other agencies chase trends, we deliver judgement.
+</h2>
+<p>Pitch Nine was built by two seasoned product leaders to be the alternative to typical design agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive industries—where delays, compliance failures, or half-baked experiments aren’t an option.</p>
+
+<div class="flex justify-center">
+	<a
+      href="#services"
+      data-cta="secondary"
+      class="group inline-flex justify-center h-12 items-center gap-2 rounded-xl px-4
+             text-sm font-bold uppercase tracking-wider text-emerald-300/80
+             hover:text-emerald-200 focus:outline-none"
+    >
+      <span>Read about us</span>
+      <svg viewBox="0 0 24 24"
+           class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
+                  group-hover:translate-x-[3px] group-hover:scale-110
+                  group-focus-visible:translate-x-[3px]
+                  motion-reduce:transition-none"
+           fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+	</div>
 </section>
 
 <!--6. CTA-->

@@ -64,7 +64,7 @@
                   group-hover:translate-x-[3px] group-hover:scale-110
                   group-focus-visible:translate-x-[3px]
                   motion-reduce:transition-none"
-           fill="none" stroke="currentColor" stroke-width="1.5">
+           fill="none" stroke="currentColor" stroke-width="2">
         <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </a>
