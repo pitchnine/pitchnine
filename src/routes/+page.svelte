@@ -13,8 +13,8 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
-	<h2 class="inter mb-20 px-3 text-center text-3xl font-bold tracking-tight md:px-10 md:text-5xl">
-		Pitch Nine brings disciplined momentum to complex product teams in high-stakes industries, where precision and compliance is everything.
+	<h2 class="inter mb-24 px-3 text-center text-3xl font-bold tracking-tight md:px-10 md:text-5xl">
+		Pitch Nine brings disciplined momentum to complex products in high-stakes industries, where precision and compliance is everything.
 	</h2>
 	<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -107,12 +107,19 @@
 
 <!--3. What we actually do-->
 <section class="relative py-64">
+	<h2 class="inter mb-24 px-3 text-center text-3xl font-bold tracking-tight md:px-10 md:text-5xl">Every engagement begins with a diagnostic and opportunity assessment, delivered in 9 slides.</h2>
+	<p>Every engagement begins with an executive review and consultation to determine best overall approach for our collaboration. This includes a 2 week, evidence-first assessment across product experience, backlog, industry signals, delivery process, and governance. We identify opportunity themes, constraints, and risk posture; recommend modules tailored to your circumstances; and return a board-ready plan to move forward with.</p>
+	<!-- Primary CTA -->
+    <div class="mt-10">
+      <a
+        href="/contact"
+        data-cta="primary"
+        class="nav-link-active"
+      >
+        Assemble my engagement
+      </a>
+    </div>
 	<ServicesGrid />
-  <h2 class="text-3xl">Menu of services</h2>
-	<p>Backlog rescue</p>
-	<p>Risk navigation</p>
-	<p>Innovation delivery</p>
-	<p>AI implementations</p>
 </section>
 
 <!--4. Case studies-->
