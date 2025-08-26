@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Text, Fonts */
+/* Fonts */
 .playfair {
     font-family: 'Playfair Display', serif;
 }
@@ -32,7 +32,7 @@
 }
 
 .grid-link {
-  @apply inline-flex items-center justify-center px-4 py-3 
+  @apply inline-flex items-center px-4 py-3 
          border border-emerald-50/10 text-emerald-50/60 rounded-full 
          transition;
 }
@@ -45,6 +45,47 @@
   @apply border-emerald-50/40 text-emerald-50 rounded-full 
          ring-1 ring-emerald-200/15;
 }
+
+.primary-cta {
+  @apply relative overflow-hidden inline-flex items-center justify-center 
+         px-6 py-4 rounded-full border border-emerald-50/10 
+         text-emerald-50/60 transition;
+}
+
+.primary-cta::before {
+  content: "";
+  @apply absolute inset-0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+}
+
+.primary-cta:hover {
+  @apply border-emerald-50/30 border-2 text-emerald-50 shadow-md;
+}
+
+.primary-cta:hover::before {
+  animation: shimmer 1.5s forwards;
+}
+
+.primary-cta-active {
+  @apply border-emerald-50/40 text-emerald-50 rounded-full 
+         ring-2 ring-emerald-200/25;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 
 /* h2s for sections */
 .header-text {
