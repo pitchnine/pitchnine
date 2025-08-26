@@ -89,9 +89,9 @@
 
 /* h2s for sections */
 .header-text {
-    @apply text-center tracking-tight leading-tight font-semibold text-4xl lg:text-5xl;
+    @apply text-center tracking-tight leading-loose font-bold text-4xl lg:text-5xl;
 }
 
 .header-form {
-    @apply text-left tracking-tight leading-tight font-semibold text-4xl lg:text-5xl;
+    @apply text-left tracking-tight leading-normal font-bold text-4xl lg:text-5xl;
 }

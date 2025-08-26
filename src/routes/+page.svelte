@@ -110,6 +110,9 @@
 
 <!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
+	<h2 class="inter header-text mb-8">
+    Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
+  </h2>
 	<Diagnostics />
 </section>
 

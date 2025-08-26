@@ -350,7 +350,7 @@
     <a
       href={ctaHref}
       class="inline-flex items-center justify-center h-12 px-6 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition
-             text-sm md:text-base font-medium backdrop-blur-sm animate-fadeUp"
+             text-sm md:text-base font-medium backdrop-blur-md animate-fadeUp"
       style="animation-delay: 220ms;"
     >
       {ctaText}

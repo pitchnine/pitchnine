@@ -18,14 +18,8 @@
     </svg>`;
 </script>
 
-<section class="relative mb-24 py-16" id="diagnostic">
-  <!-- Headline with the sentiment baked in -->
-  <h2 class="inter header-text mb-8 text-left text-3xl md:text-5xl font-semibold tracking-tight">
-    Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
-  </h2>
-
   <!-- Artifact grid: left-aligned, checkmarks, thin borders like services (border-white/5) -->
-  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+  <div class="mt-12 md:mt-20 mb-12 md:mb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
     {#each diagnosticArtifacts as a}
       <div class="border border-white/5 rounded-xl p-4 text-left">
         <div class="flex items-start gap-3">
@@ -55,4 +49,3 @@
   <p class="mt-6 text-center text-xs text-white/50 italic">
     No commitment beyond the diagnostic
   </p>
-</section>
