@@ -2,8 +2,9 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Coder from '$lib/components/Coder.svelte';
-  import ServicesGrid from '$lib/components/ServicesGrid.svelte';
-  import Diagnostics from '$lib/components/Diagnostics.svelte';
+	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
+	import Diagnostics from '$lib/components/Diagnostics.svelte';
+	import Form from '$lib/components/Form.svelte';
 </script>
 
 <Nav />
@@ -14,8 +15,9 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
-	<h2 class="inter mb-24 header-text">
-		Pitch Nine brings disciplined momentum to complex products in high-stakes industries, where precision and compliance is everything.
+	<h2 class="inter header-text mb-24">
+		Pitch Nine brings disciplined momentum to complex products in high-stakes industries, where
+		precision and compliance is everything.
 	</h2>
 	<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -108,17 +110,14 @@
 
 <!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
-<Diagnostics />
-  </section>
-
-  <!-- 4. Services list -->
-   <section class="relative py-24 sm:py-32" id="services">
-    <h2 class="inter mb-24 header-text">
-     Services
-    </h2>
-  <ServicesGrid />
+	<Diagnostics />
 </section>
 
+<!-- 4. Services list -->
+<section class="relative py-24 sm:py-32" id="services">
+	<h2 class="inter header-text mb-24">Services</h2>
+	<ServicesGrid />
+</section>
 
 <!--5. 
 Case studies or proof in the work
@@ -135,40 +134,33 @@ Case studies or proof in the work
 
 <!--5. Differentiator linking to about -->
 <section class="relative h-screen">
-	<h2 class="inter mb-24 header-text">
-  Other agencies chase trends, we deliver judgement.
-</h2>
-<p>Pitch Nine was built by two seasoned product leaders to be the alternative to typical design agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive industries—where delays, compliance failures, or half-baked experiments aren’t an option.</p>
+	<h2 class="inter header-text mb-24">Other agencies chase trends, we deliver judgement.</h2>
+	<p>
+		Pitch Nine was built by two seasoned product leaders to be the alternative to typical design
+		agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive
+		industries—where delays, compliance failures, or half-baked experiments aren’t an option.
+	</p>
 
-<div class="flex justify-center">
-	<a
-      href="#services"
-      data-cta="secondary"
-      class="group inline-flex justify-center h-12 items-center gap-2 rounded-xl px-4
-             text-sm font-bold uppercase tracking-wider text-emerald-300/80
-             hover:text-emerald-200 focus:outline-none"
-    >
-      <span>Read about us</span>
-      <svg viewBox="0 0 24 24"
-           class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                  group-hover:translate-x-[3px] group-hover:scale-110
-                  group-focus-visible:translate-x-[3px]
-                  motion-reduce:transition-none"
-           fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
+	<div class="flex justify-center">
+		<a href="/contact?service=Executive%20Diagnostic" data-cta="primary" class="nav-link-active">
+			Read about us
+		</a>
 	</div>
 </section>
 
 <!--6. CTA-->
-<section class="relative h-screen">
-	<h2 class="text-3xl">Stagnation is worse than wrong steps.</h2>
-	<p>Start the conversation</p>
-	<form>
-		<div class="bg-teal-100">Name</div>
-		<div class="bg-teal-100">Email</div>
-	</form>
+<section class="relative flex h-screen justify-between">
+	<div>
+		<h2 class="inter header-text mb-12">Start the conversation.</h2>
+		<p class="inter font-medium underline underline-offset-4 mb-3">hello@pitchnine.com</p>
+		<p class="inter font-medium mb-3">Follow us on Linkedin</p>
+		<p class="inter font-medium">PO BOX 123 DE?</p>
+	</div>
+	<div>
+		<form>
+			<Form />
+		</form>
+	</div>
 </section>
 
 <Footer />
