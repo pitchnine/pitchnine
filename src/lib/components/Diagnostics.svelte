@@ -46,30 +46,13 @@
     <a
       href="/contact?service=Executive%20Diagnostic"
       data-cta="primary"
-      class="nav-link-active"
+      class="primary-cta"
     >
       Start the Executive Diagnostic
     </a>
 
-    <a
-      href="#services"
-      data-cta="secondary"
-      class="group inline-flex h-12 items-center gap-2 rounded-xl px-4
-             text-sm font-bold uppercase tracking-wider text-emerald-300/80
-             hover:text-emerald-200 focus:outline-none"
-    >
-      <span>Explore Services</span>
-      <svg viewBox="0 0 24 24"
-           class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                  group-hover:translate-x-[3px] group-hover:scale-110
-                  group-focus-visible:translate-x-[3px]
-                  motion-reduce:transition-none"
-           fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </a>
   </div>
-  <p class="mt-3 text-center text-xs text-white/50">
-    Fixed-fee • Time-boxed • No commitment beyond the diagnostic
+  <p class="mt-6 text-center text-xs text-white/50 italic">
+    No commitment beyond the diagnostic
   </p>
 </section>
