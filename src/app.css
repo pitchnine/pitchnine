@@ -13,22 +13,44 @@
 
 /* Actions */
 .nav-link {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/10 text-emerald-50/60 rounded-full;
+  @apply inline-flex items-center justify-center px-4 h-[40px] 
+         border border-emerald-50/10 text-emerald-50/60 rounded-full 
+         transition;
 }
 
 .nav-link:hover {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/30 text-emerald-50 rounded-full shadow-md;
+  @apply border-emerald-50/30 text-emerald-50 shadow-md;
 }
 
 .nav-link-active {
-    @apply inline-flex items-center justify-center px-4 h-[40px] border border-emerald-50/40 text-emerald-50 rounded-full ring-1 ring-emerald-200/15;
+  @apply border-emerald-50/40 text-emerald-50 rounded-full 
+         ring-1 ring-emerald-200/15;
 }
 
 .logo-link { 
     transition: transform 300ms ease; 
 }
 
+.grid-link {
+  @apply inline-flex items-center justify-center px-4 py-3 
+         border border-emerald-50/10 text-emerald-50/60 rounded-full 
+         transition;
+}
+
+.grid-link:hover {
+  @apply border-emerald-50/30 text-emerald-50 shadow-md;
+}
+
+.grid-link-active {
+  @apply border-emerald-50/40 text-emerald-50 rounded-full 
+         ring-1 ring-emerald-200/15;
+}
+
 /* h2s for sections */
 .header-text {
     @apply text-center tracking-tight leading-tight font-semibold text-4xl lg:text-5xl;
+}
+
+.header-form {
+    @apply text-left tracking-tight leading-tight font-semibold text-4xl lg:text-5xl;
 }

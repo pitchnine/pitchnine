@@ -150,17 +150,7 @@ Case studies or proof in the work
 
 <!--6. CTA-->
 <section class="relative flex h-screen justify-between">
-	<div>
-		<h2 class="inter header-text mb-12">Start the conversation.</h2>
-		<p class="inter font-medium underline underline-offset-4 mb-3">hello@pitchnine.com</p>
-		<p class="inter font-medium mb-3">Follow us on Linkedin</p>
-		<p class="inter font-medium">PO BOX 123 DE?</p>
-	</div>
-	<div>
-		<form>
-			<Form />
-		</form>
-	</div>
+	<Form />
 </section>
 
 <Footer />
