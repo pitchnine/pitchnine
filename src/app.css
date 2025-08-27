@@ -4,18 +4,20 @@
 
 /* Fonts */
 .playfair {
-    font-family: 'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .inter {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Actions */
+.nav-pill {
+  @apply inline-flex items-center justify-center px-4 h-[40px] rounded-full leading-none transition;
+}
+
 .nav-link {
-  @apply inline-flex items-center justify-center px-4 h-[40px] 
-         border border-emerald-50/10 text-emerald-50/60 rounded-full 
-         transition;
+  @apply nav-pill border border-emerald-50/10 text-emerald-50/60;
 }
 
 .nav-link:hover {
@@ -23,18 +25,15 @@
 }
 
 .nav-link-active {
-  @apply border border-emerald-50/40 text-emerald-50 rounded-full 
-         ring-1 ring-emerald-200/15 px-4 h-[40px];
+  @apply nav-pill border border-emerald-50/40 text-emerald-50 ring-1 ring-emerald-200/15;
 }
 
-.logo-link { 
-    transition: transform 300ms ease; 
+.logo-link {
+  transition: transform 300ms ease;
 }
 
 .grid-link {
-  @apply inline-flex items-center px-4 py-3 
-         border border-emerald-50/10 text-emerald-50/60 rounded-full 
-         transition;
+  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 rounded-full transition;
 }
 
 .grid-link:hover {
@@ -42,25 +41,20 @@
 }
 
 .grid-link-active {
-  @apply border-emerald-50/40 text-emerald-50 rounded-full 
-         ring-1 ring-emerald-200/15;
+  @apply border-emerald-50/40 text-emerald-50 rounded-full ring-1 ring-emerald-200/15;
 }
 
 .primary-cta {
-  @apply relative overflow-hidden inline-flex items-center justify-center 
-         px-6 py-4 rounded-full border border-emerald-50/10 
-         text-emerald-50/60 transition;
+  @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-4 rounded-full border border-emerald-50/10 text-emerald-50/60 transition;
 }
 
 .primary-cta::before {
   content: "";
   @apply absolute inset-0;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.15) 50%,
+      transparent 100%);
   transform: translateX(-100%);
 }
 
@@ -73,14 +67,14 @@
 }
 
 .primary-cta-active {
-  @apply border-emerald-50/40 text-emerald-50 rounded-full 
-         ring-2 ring-emerald-200/25;
+  @apply border-emerald-50/40 text-emerald-50 rounded-full ring-2 ring-emerald-200/25;
 }
 
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(100%);
   }
@@ -89,9 +83,9 @@
 
 /* headlines for sections */
 .header-text {
-    @apply text-3xl md:text-5xl text-center tracking-tight leading-tight font-bold;
+  @apply text-3xl md:text-5xl text-center tracking-tight leading-tight font-bold;
 }
 
 .header-form {
-    @apply text-3xl md:text-5xl text-left tracking-tight leading-tight font-bold;
+  @apply text-3xl md:text-5xl text-left tracking-tight leading-tight font-bold;
 }
