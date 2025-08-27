@@ -1,198 +1,196 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
 
-	const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher();
 
-	const CheckIcon = `
+  const CheckIcon = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="currentColor" aria-hidden="true">
   <path d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0z"/>
 </svg>`;
 
-	// ---- Public props (customize per page) ----
-	export let title = 'Start with a conversation.';
-	export let subtitle =
-		'Decision-grade clarity without the agency theater—focused on outcomes your team can execute. Expect a reply within one business day.';
-	// If `action` is provided, the form POSTs to that URL. Otherwise, it will dispatch("submit", { form })
-	export let action: string | null = null;
-	export let method: 'POST' | 'GET' = 'POST';
+  // ---- Public props ----
+  export let title = 'Start with a conversation.';
+  export let subtitle =
+    'Decision-grade clarity without the agency theater—focused on outcomes your team can execute. Expect a reply within one business day.';
+  export let action: string | null = null;
+  export let method: 'POST' | 'GET' = 'POST';
+  export let density: 'base' | 'compact' = 'base';
 
-	// Tailwind size variant: "base" | "compact"
-	export let density: 'base' | 'compact' = 'base';
+  export let interestsOptions: string[] = [
+    'Executive Diagnostic',
+    'AI Readiness',
+    'Innovation Audit',
+    'Backlog Remediation',
+    'Governance Blueprint',
+    'Pilot Enablement',
+    'Data & Integrations',
+    'Vendor Diligence',
+    'General Consultation'
+  ];
 
-	// Options for the multi-select
-	export let interestsOptions: string[] = [
-		'Executive Diagnostic',
-		'AI Readiness',
-		'Innovation Audit',
-		'Backlog Remediation',
-		'Governance Blueprint',
-		'Pilot Enablement',
-		'Data & Integrations',
-		'Vendor Diligence',
-		'General Consultation'
-	];
+  let form = {
+    name: '',
+    email: '',
+    company: '',
+    interests: [] as string[],
+    website: '' // honeypot
+  };
 
-	// ---- State ----
-	let form = {
-		name: '',
-		email: '',
-		company: '',
-		interests: [] as string[],
-		// honeypot
-		website: ''
-	};
+  const emailOk = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim());
+  const required = (s: string) => s.trim().length > 0;
 
-	const touched = { name: false, email: false, company: false, interests: false };
+  $: isValid =
+    required(form.name) &&
+    emailOk(form.email) &&
+    required(form.company) &&
+    form.interests.length > 0 &&
+    form.website === '';
 
-	const emailOk = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim());
-	const required = (s: string) => s.trim().length > 0;
-
-	$: isValid =
-		required(form.name) &&
-		emailOk(form.email) &&
-		required(form.company) &&
-		form.interests.length > 0 &&
-		form.website === ''; // honeypot must be blank
-
-	async function handleSubmit(e: Event) {
-		// If no action is provided, prevent native submit and bubble the event up.
-		if (!action) {
-			e.preventDefault();
-			if (!isValid) return;
-			dispatch('submit', { form });
-		}
-	}
+  async function handleSubmit(e: Event) {
+    if (!action) {
+      e.preventDefault();
+      if (!isValid) return;
+      dispatch('submit', { form });
+    }
+  }
 </script>
 
-<div class="flex w-full flex-col items-start justify-between gap-12 md:flex-row md:gap-40">
-	<!-- Left column: text -->
-	<div class="w-full md:w-1/3">
-		<h2 class="inter header-form mb-9">{title}</h2>
-		{#if subtitle}
-			<p class="inter mb-3 text-lg leading-relaxed text-gray-300">
-				{subtitle}
-			</p>
-		{/if}
-		<p class="inter text-gray-500">
-			Or reach us directly at <a
-				href="mailto:hello@pitchnine.com"
-				class="text-emerald-500 hover:underline hover:underline-offset-4">hello@pitchnine.com</a
-			>
-		</p>
-	</div>
+<section class="w-full mb-32">
+  <!-- Header band (single column) -->
+  <header class="mx-auto max-w-4xl px-3">
+    <h2 class="inter header-form mb-5">{title}</h2>
 
-	<!-- Right column: form -->
-	<form
-		class={`w-full md:w-2/3 ${density === 'compact' ? 'space-y-4' : 'space-y-9'}`}
-		{method}
-		action={action ?? undefined}
-		on:submit={handleSubmit}
-		novalidate
-	>
-		<!-- Fields -->
-		<div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-			<!-- Name -->
-			<div>
-				<label for="name" class="inter block text-sm text-gray-50">Name *</label>
-				<input
-					id="name"
-					name="name"
-					type="text"
-					class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					placeholder="Full name"
-					bind:value={form.name}
-					required
-				/>
-			</div>
+    {#if subtitle}
+      <p id="contact-subtitle" class="inter mb-3 text-lg leading-relaxed md:w-3/4 w-full">
+        {subtitle}
+      </p>
+    {/if}
 
-			<!-- Email -->
-			<div>
-				<label for="email" class="block text-sm font-medium text-gray-200">Email *</label>
-				<input
-					id="email"
-					name="email"
-					type="email"
-					class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					placeholder="you@company.com"
-					bind:value={form.email}
-					required
-				/>
-			</div>
+    <p class="inter text-sm text-gray-500">
+      Or reach us directly at
+      <a href="mailto:hello@pitchnine.com"
+         class="text-emerald-500 hover:underline hover:underline-offset-4">
+        hello@pitchnine.com
+      </a>
+    </p>
+  </header>
 
-			<!-- Company -->
-			<div>
-				<label for="company" class="block text-sm font-medium text-gray-200">Company *</label>
-				<input
-					id="company"
-					name="company"
-					type="text"
-					class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					placeholder="Acme Corp"
-					bind:value={form.company}
-					required
-				/>
-			</div>
+  <!-- Form card (centered, responsive grid within) -->
+  <form
+    class={`mx-auto mt-10 w-full max-w-4xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
+            ${density === 'compact' ? 'space-y-6' : 'space-y-12'}
+            sm:p-10`}
+    {method}
+    aria-describedby="contact-subtitle"
+    action={action ?? undefined}
+    on:submit={handleSubmit}
+    novalidate
+  >
+    <!-- Top inputs -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+      <!-- Name -->
+      <div>
+        <label for="name" class="inter block text-sm text-gray-50">Name *</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          placeholder="Full name"
+          bind:value={form.name}
+          required
+        />
+      </div>
 
-			<!-- Interests -->
-			<div class="md:col-span-2">
-				<label class="block text-sm font-medium text-gray-200">Interests *</label>
-				<fieldset class="mt-2">
-					<legend class="sr-only">Select one or more interests</legend>
-					<div class="mt-2 grid grid-cols-1 gap-6 sm:grid-cols-2">
-						{#each interestsOptions as opt, i}
-							<div>
-								<input
-									id={'interest-' + i}
-									type="checkbox"
-									name="interests"
-									value={opt}
-									class="peer sr-only"
-									bind:group={form.interests}
-								/>
-								<label
-									for={'interest-' + i}
-									class="grid-link flex h-12 w-full cursor-pointer items-center justify-start gap-3
-         transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
-         peer-checked:ring-1 peer-checked:ring-emerald-200/15
-         [&_.badge-check]:opacity-0
-         peer-checked:[&_.badge-check]:opacity-100"
-								>
-									<span
-										class="inline-flex h-6 w-6 items-center justify-center rounded-full
-           bg-gray-900/50 text-emerald-300/50
-           transition-colors duration-200
-           peer-checked:bg-emerald-400 peer-checked:text-emerald-900"
-										aria-hidden="true"
-									>
-										<span
-											class="badge-check transition-opacity duration-150 [&_svg]:h-4 [&_svg]:w-4"
-										>
-											{@html CheckIcon}
-										</span>
-									</span>
+      <!-- Email -->
+      <div>
+        <label for="email" class="inter block text-sm text-gray-50">Email *</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          placeholder="you@company.com"
+          bind:value={form.email}
+          required
+        />
+      </div>
 
-									<span class="inter text-sm font-medium">{opt}</span>
-								</label>
-							</div>
-						{/each}
-					</div>
-				</fieldset>
-			</div>
-		</div>
+      <!-- Company -->
+      <div class="md:col-span-2">
+        <label for="company" class="inter block text-sm text-gray-50">Company *</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          placeholder="Acme Corp"
+          bind:value={form.company}
+          required
+        />
+      </div>
+    </div>
 
-		<div class="rounded-full border border-emerald-50/10 border-b-[0.5]"></div>
-		<!-- Honeypot -->
-		<div class="hidden">
-			<label>
-				Do not fill this out
-				<input name="website" bind:value={form.website} autocomplete="off" />
-			</label>
-		</div>
-		<!-- Submit -->
-		<div class="pt-4">
-			<button type="submit" class="inter primary-cta w-full md:w-auto" disabled={!isValid}>
-				Request a consultation
-			</button>
-		</div>
-	</form>
-</div>
+    <!-- Interests -->
+    <div>
+      <label class="inter block text-sm text-gray-50">Interests *</label>
+      <fieldset class="mt-2">
+        <legend class="sr-only">Select one or more interests</legend>
+        <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {#each interestsOptions as opt, i}
+            <div>
+              <input
+                id={'interest-' + i}
+                type="checkbox"
+                name="interests"
+                value={opt}
+                class="peer sr-only"
+                bind:group={form.interests}
+              />
+              <label
+                for={'interest-' + i}
+                class="grid-link flex h-12 w-full cursor-pointer items-center justify-start gap-3
+                       transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                       peer-checked:ring-1 peer-checked:ring-emerald-200/15
+                       [&_.badge-check]:opacity-0
+                       peer-checked:[&_.badge-check]:opacity-100"
+              >
+                <span
+                  class="inline-flex h-6 w-6 items-center justify-center rounded-full
+                         bg-gray-900/50 text-emerald-300/50
+                         transition-colors duration-200
+                         peer-checked:bg-emerald-400 peer-checked:text-emerald-900"
+                  aria-hidden="true"
+                >
+                  <span class="badge-check transition-opacity duration-150 [&_svg]:h-4 [&_svg]:w-4">
+                    {@html CheckIcon}
+                  </span>
+                </span>
+
+                <span class="inter text-sm font-medium">{opt}</span>
+              </label>
+            </div>
+          {/each}
+        </div>
+      </fieldset>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-white/10"></div>
+
+    <!-- Honeypot -->
+    <div class="hidden">
+      <label>
+        Do not fill this out
+        <input name="website" bind:value={form.website} autocomplete="off" />
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <div class="pt-2">
+      <button type="submit" class="inter primary-cta w-full sm:w-auto" disabled={!isValid}>
+        Request a consultation
+      </button>
+    </div>
+  </form>
+</section>
