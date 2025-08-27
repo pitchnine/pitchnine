@@ -87,11 +87,11 @@
 }
 
 
-/* h2s for sections */
+/* headlines for sections */
 .header-text {
-    @apply text-center tracking-tight leading-loose font-bold text-4xl lg:text-5xl;
+    @apply text-3xl md:text-5xl text-center tracking-tight leading-tight font-bold;
 }
 
 .header-form {
-    @apply text-left tracking-tight leading-normal font-bold text-4xl lg:text-5xl;
+    @apply text-3xl md:text-5xl text-left tracking-tight leading-tight font-bold;
 }
