@@ -53,7 +53,7 @@
 <section class="min-h-dvh">
   <!-- Hero / Philosophy -->
   <header class="mx-auto max-w-7xl px-6 sm:px-8 pt-20 pb-16">
-    <h2 class="mt-4 header-text">
+    <h2 class="h2 mb-6">
       Pitch Nine is a product leadership agency specifically built for bringing disciplined innovation to critical market product teams, where the margin of error is zero.
     </h2>
   </header>

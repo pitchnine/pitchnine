@@ -96,7 +96,7 @@
         >
 
           <!-- Text -->
-          <h3 class="header-form mb-8">{p.title}</h3>
+          <h3 class="h3 mb-6">{p.title}</h3>
           <p class="opacity-80 w-full sm:max-w-2xl sm:text-xl md:text-2xl">{p.desc}</p>
         </li>
       {/each}

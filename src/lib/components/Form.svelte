@@ -58,7 +58,7 @@
 <section class="w-full mb-32">
   <!-- Header band (single column) -->
   <header class="mx-auto max-w-4xl px-3">
-    <h2 class="inter header-form mb-5">{title}</h2>
+    <h2 class="h2 mb-6">{title}</h2>
 
     {#if subtitle}
       <p id="contact-subtitle" class="inter mb-3 text-lg leading-relaxed md:w-3/4 w-full">

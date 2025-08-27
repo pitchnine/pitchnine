@@ -15,11 +15,11 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
-	<h2 class="inter header-text mb-24">
+	<h2 class="mb-6 h2">
 		Pitch Nine brings disciplined momentum to complex products in high-stakes industries, where
 		precision and compliance is everything.
 	</h2>
-	<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+	<div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
 
 		<!-- Origent -->
@@ -110,7 +110,7 @@
 
 <!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
-	<h2 class="inter header-text mb-8">
+	<h2 class="h2 mb-6">
     Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
   </h2>
 	<Diagnostics />
@@ -118,7 +118,7 @@
 
 <!-- 4. Services list -->
 <section class="relative py-24 sm:py-32" id="services">
-	<h2 class="inter header-text mb-24">Services</h2>
+	<h2 class="h2 mb-6 text-center">Services</h2>
 	<ServicesGrid />
 </section>
 
@@ -137,7 +137,7 @@ Case studies or proof in the work
 
 <!--5. Differentiator linking to about -->
 <section class="relative h-screen">
-	<h2 class="inter header-text mb-24">Other agencies chase trends, we deliver judgement.</h2>
+	<h2 class="h2 mb-6">Other agencies chase trends, we deliver judgement.</h2>
 	<p>
 		Pitch Nine was built by two seasoned product leaders to be the alternative to typical design
 		agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive

@@ -89,3 +89,88 @@
 .header-form {
   @apply text-4xl md:text-5xl text-left tracking-tight leading-tight font-bold;
 }
+
+@layer components {
+  /* ----- Headings ----- */
+  .h1 {
+    @apply inter font-bold tracking-tight leading-tight
+           text-4xl md:text-5xl lg:text-6xl;
+  }
+  .h2 {
+    @apply inter font-semibold tracking-tight leading-snug
+           text-2xl md:text-3xl lg:text-4xl;
+  }
+  .h3 {
+    @apply inter font-semibold tracking-tight leading-snug
+           text-xl md:text-2xl;
+  }
+
+  /* ----- Paragraph tiers ----- */
+  .lede { /* big intro sentence under H1 */
+    @apply inter text-lg md:text-xl leading-relaxed text-gray-50/80;
+  }
+  .body { /* default paragraph */
+    @apply inter text-base leading-relaxed text-gray-50/80;
+  }
+  .small { /* fine print */
+    @apply inter text-sm leading-relaxed text-gray-50/70;
+  }
+
+  /* ----- Meta / Eyebrow / Kicker ----- */
+  .kicker { /* tiny uppercase line above H1 for category/SEO */
+    @apply inter uppercase tracking-[0.12em] text-xs md:text-sm text-gray-50/60;
+  }
+  .meta { /* subdued detail lines and “meta” descriptors */
+    @apply inter text-sm md:text-base leading-snug text-gray-50/60;
+  }
+  .eyebrow { /* section labels, quieter than kicker */
+    @apply inter tracking-wide text-xs text-gray-50/60;
+  }
+
+  /* ----- Utilities for tone ----- */
+  .muted   { @apply text-gray-50/60; }
+  .quiet   { @apply text-gray-50/70; }
+  .loud    { @apply text-gray-50;    }
+  .measure { @apply max-w-prose; }            /* comfortable reading width */
+  .stack-lg > * + * { @apply mt-6; }          /* vertical rhythm helpers */
+  .stack-md > * + * { @apply mt-4; }
+  .stack-sm > * + * { @apply mt-2; }
+
+  /* Links in body copy */
+  .link   { @apply underline decoration-emerald-200/30 underline-offset-4 hover:decoration-emerald-200/70 transition; }
+
+  /* ----- CTA tiers (optional: unify with your current primary-cta) ----- */
+  .cta-primary {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3
+           border border-emerald-50/20 text-emerald-50/90
+           hover:border-emerald-50/40 hover:text-emerald-50 hover:shadow-md transition;
+  }
+  .cta-secondary {
+    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5
+           text-emerald-50/80 hover:text-emerald-50 border border-transparent
+           hover:border-emerald-50/20 transition;
+  }
+
+  /* ===== Services / Grid ===== */
+  .service-card {
+    @apply relative rounded-2xl border border-emerald-50/10
+           hover:border-emerald-50/25 hover:shadow-md transition
+           p-6 md:p-7 lg:p-8 bg-white/0;
+  }
+  .service-title {
+    @apply inter font-semibold tracking-tight text-xl md:text-2xl text-gray-50;
+  }
+  .service-meta {
+    @apply inter text-sm md:text-base text-gray-50/60;
+  }
+  .service-desc {
+    @apply inter text-base leading-relaxed text-gray-50/80;
+  }
+  .service-stack > * + * { @apply mt-3; }
+
+  /* Grid wrapper defaults */
+  .grid-auto {
+    @apply grid gap-4 md:gap-6
+           grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
+  }
+}

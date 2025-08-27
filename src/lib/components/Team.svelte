@@ -72,7 +72,7 @@
             <!-- Right: profile + stats + CTAs -->
             <div class="mt-1 flex max-w-4xl flex-col gap-4 self-start">
 				<div>
-                  <h4 class="header-form">
+                  <h4 class="h2">
                     {s.title}
                   </h4>
                   <p class="mt-6 text-xs font-semibold uppercase tracking-wider opacity-50 md:text-sm">

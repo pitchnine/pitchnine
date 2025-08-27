@@ -12,10 +12,10 @@
 
    <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="text-4xl w-full md:max-w-4xl md:text-6xl font-bold tracking-tight leading-tight mb-9 animate-fadeUp">
+    <h1 class="h1 mb-9 animate-fadeUp">
       {headline}
     </h1>
-    <p class="text-base md:text-lg text-white/70 w-full md:max-w-3xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
+    <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
       {subhead}
     </p>
   </div>
