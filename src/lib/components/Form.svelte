@@ -66,7 +66,7 @@
       </p>
     {/if}
 
-    <p class="inter text-sm text-gray-500">
+    <p class="body">
       Or reach us directly at
       <a href="mailto:hello@pitchnine.com"
          class="text-emerald-500 hover:underline hover:underline-offset-4">

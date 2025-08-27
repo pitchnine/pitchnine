@@ -27,7 +27,7 @@
 	</div>
 
 	<!-- Bottom line -->
-	<div class="max-w-7xl p-3 text-xs text-center opacity-50">
+	<div class="max-w-7xl p-3 text-xs text-center sm:text-left opacity-50">
 		<p>© {year} Pitch Nine. <br> Pitch Nine is based in the United States. <br>All rights reserved.</p>
 	</div>
 </footer>

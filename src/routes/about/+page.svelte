@@ -13,8 +13,8 @@
 
   // ---- keep ALL JS inside this single <script> ----
   const stats = [
-    { label: 'Years in product', value: '40+ collective' },
-    { label: 'Regulated domains', value: 'Healthcare • Insurance • Pharma • Public' },
+    { label: 'Years supporting regulated industries', value: '40+ collective' },
+    { label: 'Regulated domain experience', value: 'Healthcare, Pharmaceuticals, Insurance, Gl' },
     { label: 'NIH-funded work', value: 'Principal contributors' },
     { label: 'Delivery model', value: 'Senior-only, hands-on' }
   ];
@@ -66,8 +66,8 @@
           <div class="flex items-start gap-3">
             <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
             <div>
-              <div class="text-lg font-semibold">{s.label}</div>
-              <div class="mt-1 text-sm">{s.value}</div>
+              <div class="body">{s.value}</div>
+              <div class="body opacity-50">{s.label}</div>
             </div>
           </div>
         </div>

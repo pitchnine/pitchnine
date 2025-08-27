@@ -110,7 +110,7 @@
     @apply inter text-lg md:text-xl leading-relaxed text-gray-50/80;
   }
   .body { /* default paragraph */
-    @apply inter text-base leading-relaxed text-gray-50/80;
+    @apply inter text-base md:text-lg leading-relaxed text-gray-50/80;
   }
   .small { /* fine print */
     @apply inter text-sm leading-relaxed text-gray-50/70;

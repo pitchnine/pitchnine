@@ -79,15 +79,15 @@
                     {s.role}
                   </p>
                 </div>
-              <p class="text-xl text-white/90 sm:text-lg">
+              <p class="body">
                 {s.profile}
               </p>
 
-              <ul class="mt-1 space-y-2 text-white/90">
+              <ul class="mt-1 space-y-2">
                 {#each s.stats as item}
                   <li class="flex items-start gap-2">
                     <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400/90"></span>
-                    <span class="text-xl sm:text-lg">{item}</span>
+                    <span class="body">{item}</span>
                   </li>
                 {/each}
               </ul>

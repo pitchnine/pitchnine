@@ -91,7 +91,7 @@
 								{s.meta}
 							</p>
 
-							<p class="text-xl text-white/90 sm:text-lg">
+							<p class="body">
 								{s.desc}
 							</p>
 

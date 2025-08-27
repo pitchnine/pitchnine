@@ -97,7 +97,7 @@
 
           <!-- Text -->
           <h3 class="h3 mb-6">{p.title}</h3>
-          <p class="opacity-80 w-full sm:max-w-2xl sm:text-xl md:text-2xl">{p.desc}</p>
+          <p class="body">{p.desc}</p>
         </li>
       {/each}
     </ol>
