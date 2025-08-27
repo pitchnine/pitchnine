@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "No room for error.";
-  export let subhead = "Pitch Nine is a product consultancy led by veterans of healthcare, insurance, pharma, and government — places where delay, risk, or failure are simply not an option.";
+  export let headline = "Disciplined product leadership.";
+  export let subhead = "With expeirence leading complex initiatives in healthcare, insurance, pharmaceuticals, and government, Pitch Nine proves that innovation can be delivered responsibly in the most demanding arenas.";
 
 </script>
 
@@ -12,10 +12,10 @@
 
    <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="text-4xl max-w-2xl md:text-6xl font-bold tracking-tight leading-tight mb-6 animate-fadeUp">
+    <h1 class="text-4xl w-full md:max-w-4xl md:text-6xl font-bold tracking-tight leading-tight mb-9 animate-fadeUp">
       {headline}
     </h1>
-    <p class="text-base md:text-lg text-white/70 max-w-2xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
+    <p class="text-base md:text-lg text-white/70 w-full md:max-w-3xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
       {subhead}
     </p>
   </div>

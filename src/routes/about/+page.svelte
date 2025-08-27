@@ -1,9 +1,15 @@
 <script>
-    import Nav from '$lib/components/Nav.svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import AboutHero from '$lib/components/AboutHero.svelte';
-  
-  // Optional: you can pass props into sections later or fetch CMS content here
+  import Nav from '$lib/components/Nav.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  import AboutHero from '$lib/components/AboutHero.svelte';
+  import Principles from '$lib/components/Principles.svelte';
+
+  const Check = `
+    <svg viewBox="0 0 24 24" class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
+      <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>`;
+
+  // ---- keep ALL JS inside this single <script> ----
   const stats = [
     { label: 'Years in product', value: '40+ collective' },
     { label: 'Regulated domains', value: 'Healthcare • Insurance • Pharma • Public' },
@@ -11,32 +17,33 @@
     { label: 'Delivery model', value: 'Senior-only, hands-on' }
   ];
 
-  const principles = [
-    {
-      title: 'Disciplined Discovery',
-      desc: 'We identify what is material, frame risk, and define the few moves worth making.'
-    },
-    {
-      title: 'Governed Innovation',
-      desc: 'Controlled pilots, explicit guardrails, audit trails, and clear graduation criteria.'
-    },
-    {
-      title: 'Backlog → Blueprint',
-      desc: 'From noisy requests to an ordered, sequenced plan with real dependencies and ROI.'
-    },
-    {
-      title: 'Evidence Over Theater',
-      desc: 'Demos are fine; decisions require data. We build evaluation harnesses first.'
-    },
-    {
-      title: 'Human-Centered, Compliance-Safe',
-      desc: 'Great experience and governance are not opposites. We design for both.'
-    },
-    {
-      title: 'Transfer, Not Dependency',
-      desc: 'Enablement, artifacts, and operating rituals that outlive the engagement.'
-    }
-  ];
+ const principles = [
+  { 
+    title: 'Discipline', 
+    desc: 'Attention remains fixed on what is material. Risk is framed in context, priorities are defined with precision, and only the moves that truly matter are advanced.' 
+  },
+  { 
+    title: 'Governance', 
+    desc: 'Innovation advances only under control. Pilots and experiments run off the main line, bounded by explicit guardrails, documented audit trails, and unambiguous criteria for graduation and success.' 
+  },
+  { 
+    title: 'Clarity', 
+    desc: 'Noise is stripped from decision-making to reveal signal. Disparate requests are resolved into a sequenced blueprint that surfaces dependencies, constraints, and expected return, grounded in research and customer value.' 
+  },
+  { 
+    title: 'Evidence', 
+    desc: 'Demonstrations may entertain, but decisions require proof. Flash is avoided; evaluation harnesses and measurable outcomes determine what advances.' 
+  },
+  { 
+    title: 'Integrity', 
+    desc: 'Compliance and user experience are treated as inseparable imperatives. Solutions are constructed to uphold both without compromise.' 
+  },
+  { 
+    title: 'Transferability', 
+    desc: 'Capability is designed to outlast the engagement. Artifacts, enablement, and operating rituals remain in place to strengthen teams long after external support concludes.' 
+  }
+];
+
 
   const process = [
     {
@@ -83,59 +90,42 @@
 </script>
 
 <Nav />
-
 <AboutHero />
 
-<!-- Page wrapper -->
-<section class="min-h-dvh bg-gray-950 text-gray-50">
+<section class="min-h-dvh">
   <!-- Hero / Philosophy -->
   <header class="mx-auto max-w-7xl px-6 sm:px-8 pt-20 pb-16">
-    <p class="text-sm uppercase tracking-wider text-gray-400">About • Methods</p>
-    <h1 class="mt-4 text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight">
-      Built for industries where the margin of error is zero.
-    </h1>
-    <p class="mt-6 max-w-3xl text-lg text-gray-300">
-      Pitch Nine is a product consultancy led by veterans of healthcare, insurance, pharma, and public service—places where delay, risk, or failure aren’t options. We pair seasoned judgment with governed execution to turn ambition into outcomes.
-    </p>
-
-    <div class="mt-8 flex flex-wrap items-center gap-3">
-      <a href="/contact" class="inline-flex items-center justify-center h-12 px-6 rounded-full border border-emerald-400/30 bg-emerald-400/10 text-emerald-200 hover:bg-emerald-400/20 transition">
-        Start a conversation
-      </a>
-      <a href="#process" class="inline-flex items-center justify-center h-12 px-6 rounded-full border border-gray-700 text-gray-200 hover:border-gray-500 transition">
-        See our process
-      </a>
-    </div>
+    <h2 class="mt-4 header-text">
+      Pitch Nine is a product leadership agency specifically built for bringing disciplined innovation to critical market product teams, where the margin of error is zero.
+    </h2>
   </header>
 
-  <!-- Trust / Stats strip -->
-  <section aria-label="proof" class="mx-auto max-w-7xl px-6 sm:px-8 pb-14">
+  <!-- Proof / Stats -->
+  <div aria-label="proof" class="mx-auto max-w-7xl px-6 sm:px-8 pb-14">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {#each stats as s}
-        <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-5">
-          <div class="text-sm text-gray-400">{s.label}</div>
-          <div class="mt-1 text-xl font-semibold">{s.value}</div>
+        <div class="border border-white/5 rounded-xl p-4 text-left">
+          <div class="flex items-start gap-3">
+            <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
+            <div>
+              <div class="text-lg font-semibold">{s.label}</div>
+              <div class="mt-1 text-sm">{s.value}</div>
+            </div>
+          </div>
         </div>
       {/each}
     </div>
-  </section>
+  </div>
 
   <!-- Principles grid -->
-  <section aria-label="principles" class="mx-auto max-w-7xl px-6 sm:px-8 py-10">
-    <h2 class="text-2xl sm:text-3xl font-semibold">Operating principles</h2>
-    <p class="mt-3 max-w-3xl text-gray-300">Timeless methods applied in modern, regulated contexts. No theater. No fads.</p>
+<section aria-label="principles" class="mx-auto max-w-7xl px-6 sm:px-8 py-10">
+  <h2 class="text-sm font-semibold tracking-wider opacity-30 uppercase">
+  Principles
+</h2>
+  <Principles {principles} />
+</section>
 
-    <div class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-      {#each principles as p}
-        <article class="rounded-2xl border border-gray-800 bg-gray-900/40 p-6">
-          <h3 class="text-lg font-semibold">{p.title}</h3>
-          <p class="mt-2 text-gray-300">{p.desc}</p>
-        </article>
-      {/each}
-    </div>
-  </section>
-
-  <!-- Gravitas / Senior-only model -->
+  <!-- Gravitas / Senior-only model / Founders -->
   <section aria-label="model" class="mx-auto max-w-7xl px-6 sm:px-8 py-12">
     <div class="grid lg:grid-cols-12 gap-8 items-start">
       <div class="lg:col-span-7">
@@ -143,6 +133,7 @@
         <p class="mt-3 text-gray-300 max-w-2xl">
           The people in the pitch are the people doing the work. No layers, no junior hand-offs, no overhead theater—just experienced product minds shipping outcomes.
         </p>
+        <div class="bg-emerald-800">IMAGES OF JOELL AND ANDREW</div>
         <div class="mt-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6">
           <p class="text-emerald-100">
             When a program requires added capacity, we scale with a trusted network on- and offshore. Governance and quality stay with us.
@@ -160,47 +151,6 @@
           </ul>
         </div>
       </aside>
-    </div>
-  </section>
-
-  <!-- Process timeline -->
-  <section id="process" aria-label="process" class="mx-auto max-w-7xl px-6 sm:px-8 py-14">
-    <h2 class="text-2xl sm:text-3xl font-semibold">How we work</h2>
-    <p class="mt-3 max-w-3xl text-gray-300">A four-move cadence tuned to high-stakes teams. Adaptable to your rhythms; firm on evidence.</p>
-
-    <ol class="mt-8 relative">
-      <!-- vertical line -->
-      <div class="absolute left-4 top-0 bottom-0 w-px bg-gray-800 hidden sm:block"></div>
-      {#each process as s}
-        <li class="relative sm:pl-16 py-6">
-          <div class="hidden sm:block absolute left-0 top-6 w-8 h-8 rounded-full border border-emerald-400/40 bg-emerald-400/10 grid place-items-center text-sm font-semibold">{s.step}</div>
-          <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-6">
-            <div class="flex items-center justify-between gap-4">
-              <h3 class="text-lg font-semibold">{s.title}</h3>
-              <span class="text-sm text-gray-400">{s.meta}</span>
-            </div>
-            <ul class="mt-3 list-disc pl-5 text-gray-300 space-y-1">
-              {#each s.points as pt}
-                <li>{pt}</li>
-              {/each}
-            </ul>
-          </div>
-        </li>
-      {/each}
-    </ol>
-  </section>
-
-  <!-- Industry focus -->
-  <section aria-label="industries" class="mx-auto max-w-7xl px-6 sm:px-8 py-12">
-    <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-6">
-      <h2 class="text-2xl font-semibold">Where we do our best work</h2>
-      <p class="mt-3 text-gray-300 max-w-3xl">Complex organizations with sensitive data, compliance pressure, and real stakes.</p>
-      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div class="rounded-xl border border-gray-800 p-4 text-gray-200">Healthcare & Life Sciences</div>
-        <div class="rounded-xl border border-gray-800 p-4 text-gray-200">Insurance & Risk</div>
-        <div class="rounded-xl border border-gray-800 p-4 text-gray-200">Pharma & Clinical</div>
-        <div class="rounded-xl border border-gray-800 p-4 text-gray-200">Public Sector</div>
-      </div>
     </div>
   </section>
 
