@@ -136,9 +136,9 @@ Case studies or proof in the work
 -->
 
 <!--5. Differentiator linking to about -->
-<section class="relative h-screen">
-	<h2 class="h2 mb-6">Other agencies chase trends, we deliver judgement.</h2>
-	<p>
+<section class="relative h-screen flex justify-center items-center flex-col">
+	<h2 class="h2 text-center mb-6">Other agencies chase trends, we deliver judgement.</h2>
+	<p class="body text-center max-w-4xl mb-12">
 		Pitch Nine was built by two seasoned product leaders to be the alternative to typical design
 		agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive
 		industries—where delays, compliance failures, or half-baked experiments aren’t an option.

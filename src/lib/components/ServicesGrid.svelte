@@ -127,7 +127,7 @@
 			{/each}
 		</ul>
 
-		<p class="mt-8 text-center text-xs font-medium text-white/40">
+		<p class="mt-8 eyebrow text-center italic">
 			Pitch Nine is not a certification body; we install practical controls that align with your
 			existing compliance program and industry standards.
 		</p>
