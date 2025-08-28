@@ -55,7 +55,7 @@
   }
 </script>
 
-<section class="w-full mb-32">
+<section class="w-full mb-48">
   <!-- Header band (single column) -->
   <header class="mx-auto max-w-4xl px-3">
     <h2 class="h2 mb-6">{title}</h2>
@@ -167,7 +167,7 @@
                   </span>
                 </span>
 
-                <span class="inter text-sm font-medium">{opt}</span>
+                <span class="fine">{opt}</span>
               </label>
             </div>
           {/each}

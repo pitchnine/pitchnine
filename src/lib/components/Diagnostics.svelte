@@ -25,9 +25,9 @@
         <div class="flex items-start gap-3">
           <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
           <div>
-            <p class="text-lg font-semibold">{a.title}</p>
+            <p class="body text-gray-50">{a.title}</p>
             {#if a.meta}
-              <p class="mt-1 text-sm">{a.meta}</p>
+              <p class="mt-2 fine text-gray-50/70">{a.meta}</p>
             {/if}
           </div>
         </div>

@@ -80,14 +80,14 @@
 					>
 						<!-- Left: title -->
 						<div class="self-start">
-							<h4 class="text-3xl lg:text-4xl font-semibold tracking-tight text-white">
+							<h4 class="h2">
 								{s.title}
 							</h4>
 						</div>
 
 						<!-- Right: meta + description + fuller copy + CTA -->
 						<div class="mt-1 flex max-w-2xl flex-col gap-3 self-start">
-							<p class="text-xs font-semibold uppercase tracking-wider text-white/50 md:text-sm">
+							<p class="kicker">
 								{s.meta}
 							</p>
 

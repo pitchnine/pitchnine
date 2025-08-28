@@ -112,13 +112,13 @@
   .body { /* default paragraph */
     @apply inter text-base md:text-lg leading-relaxed text-gray-50/80;
   }
-  .small { /* fine print */
-    @apply inter text-sm leading-relaxed text-gray-50/70;
+  .fine { /* fine print */
+    @apply inter text-sm md:text-base leading-relaxed text-gray-50/80;
   }
 
   /* ----- Meta / Eyebrow / Kicker ----- */
   .kicker { /* tiny uppercase line above H1 for category/SEO */
-    @apply inter uppercase tracking-[0.12em] text-xs md:text-sm text-gray-50/60;
+    @apply inter uppercase tracking-wide text-xs md:text-sm text-gray-50/60 font-semibold;
   }
   .meta { /* subdued detail lines and “meta” descriptors */
     @apply inter text-sm md:text-base leading-snug text-gray-50/60;
@@ -127,29 +127,8 @@
     @apply inter tracking-wide text-xs text-gray-50/60;
   }
 
-  /* ----- Utilities for tone ----- */
-  .muted   { @apply text-gray-50/60; }
-  .quiet   { @apply text-gray-50/70; }
-  .loud    { @apply text-gray-50;    }
-  .measure { @apply max-w-prose; }            /* comfortable reading width */
-  .stack-lg > * + * { @apply mt-6; }          /* vertical rhythm helpers */
-  .stack-md > * + * { @apply mt-4; }
-  .stack-sm > * + * { @apply mt-2; }
-
   /* Links in body copy */
-  .link   { @apply underline decoration-emerald-200/30 underline-offset-4 hover:decoration-emerald-200/70 transition; }
-
-  /* ----- CTA tiers (optional: unify with your current primary-cta) ----- */
-  .cta-primary {
-    @apply inline-flex items-center justify-center rounded-full px-6 py-3
-           border border-emerald-50/20 text-emerald-50/90
-           hover:border-emerald-50/40 hover:text-emerald-50 hover:shadow-md transition;
-  }
-  .cta-secondary {
-    @apply inline-flex items-center justify-center rounded-full px-5 py-2.5
-           text-emerald-50/80 hover:text-emerald-50 border border-transparent
-           hover:border-emerald-50/20 transition;
-  }
+  .link   { @apply underline decoration-emerald-200/30 underline-offset-4 hover:decoration-emerald-200/70 transition; }}
 
   /* ===== Services / Grid ===== */
   .service-card {
@@ -166,11 +145,10 @@
   .service-desc {
     @apply inter text-base leading-relaxed text-gray-50/80;
   }
-  .service-stack > * + * { @apply mt-3; }
 
   /* Grid wrapper defaults */
   .grid-auto {
     @apply grid gap-4 md:gap-6
            grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
   }
-}
+
