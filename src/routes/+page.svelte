@@ -14,11 +14,11 @@
 <Coder />
 
 <!--2. ICP Statement + Logo Cred -->
-<section class="relative mb-32 py-16">
-	<h2 class="mb-6 px-6 h2 md:max-w-5xl w-full text-center mx-auto">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
+	<h2 class="h2 max-w-5xl mx-auto text-center px-3">
 		Pitch Nine advances critical product initiatives with precision, compliance and control.
 	</h2>
-	<div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+	<div class="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
 
 		<!-- Origent -->
@@ -108,15 +108,15 @@
 </section>
 
 <!--3. Process -->
-<section class="relative py-24 sm:py-32" id="diagnostic">
-	<h2 class="h2 mb-6 md:max-w-5xl w-full">
+<section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
+	<h2 class="h2 md:max-w-5xl w-full px-3">
   Every engagement begins with an <i>Executive Review</i> that converts ambiguity into a rationalized backlog aligned to leadership priorities, with clear opportunities for innovation and measurable outcomes.
 </h2>
 	<Diagnostics />
 </section>
 
 <!-- 4. Services list -->
-<section class="relative py-24 sm:py-32" id="services">
+<section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
 	<h2 class="h2 mb-6 text-center">The path to progress.</h2>
 	<ServicesGrid />
 </section>
@@ -135,7 +135,7 @@ Case studies or proof in the work
 -->
 
 <!--5. Differentiator linking to about -->
-<section class="relative h-screen flex justify-center items-center flex-col">
+<section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
 	<h2 class="h2 text-center mb-8">Discipline and judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
 		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay. Every engagement is designed to convert complexity into clarity and deliver outcomes that withstand the toughest scrutiny.
@@ -149,7 +149,7 @@ Case studies or proof in the work
 </section>
 
 <!--6. CTA-->
-<section class="relative flex h-screen justify-between mt-32">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
 	<Form />
 </section>
 

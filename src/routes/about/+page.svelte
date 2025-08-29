@@ -53,7 +53,7 @@
 <Nav />
 <AboutHero />
 
-<section class="min-h-dvh">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
   <!-- Hero / Philosophy -->
   <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-8 pt-20 pb-16">
     <h2 class="h2 mb-6">
@@ -77,9 +77,11 @@
       </div>
     {/each}
   </div>
+  </section>
+
 
   <!-- Principles grid -->
-<section aria-label="principles" class="mx-auto max-w-7xl px-6 sm:px-8 py-10">
+<section aria-label="principles" class="mx-auto max-w-7xl my-56 md:my-80">
   <h2 class="text-sm font-semibold tracking-wider opacity-30 uppercase">
   Principles
 </h2>
@@ -87,14 +89,15 @@
 </section>
 
   <!-- Founders -->
-<Team />
+<section class="mx-auto max-w-7xl my-56 md:my-80">
+  <Team />
+</section>
 
 
 
   <!-- CTA / Contact -->
-  <section aria-label="cta" class="mx-auto max-w-7xl px-6 sm:px-8 py-16">
+  <section aria-label="cta" class="mx-auto max-w-7xl my-56 md:my-80">
     <Form />
   </section>
-</section>
 
 <Footer />

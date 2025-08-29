@@ -130,25 +130,9 @@
   /* Links in body copy */
   .link   { @apply underline decoration-emerald-200/30 underline-offset-4 hover:decoration-emerald-200/70 transition; }}
 
-  /* ===== Services / Grid ===== */
-  .service-card {
-    @apply relative rounded-2xl border border-emerald-50/10
-           hover:border-emerald-50/25 hover:shadow-md transition
-           p-6 md:p-7 lg:p-8 bg-white/0;
-  }
-  .service-title {
-    @apply inter font-semibold tracking-tight text-xl md:text-2xl text-gray-50;
-  }
-  .service-meta {
-    @apply inter text-sm md:text-base text-gray-50/60;
-  }
-  .service-desc {
-    @apply inter text-base leading-relaxed text-gray-50/80;
-  }
-
-  /* Grid wrapper defaults */
-  .grid-auto {
-    @apply grid gap-4 md:gap-6
-           grid-cols-1 sm:grid-cols-2 lg:grid-cols-3;
-  }
+@layer utilities {
+  .stack > * + * { margin-top: var(--stack-gap, 1.5rem); }
+  .stack-sm { --stack-gap: 1rem; }
+  .stack-lg { --stack-gap: 3rem; }
+}
 

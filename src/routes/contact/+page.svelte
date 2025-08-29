@@ -9,7 +9,7 @@
 
 <ContactHero />
 
-<div>
+<div class="stack-lg">
     <Form />
 </div>
 
