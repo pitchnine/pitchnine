@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Innovation without Chaos";
+  export let headline = "Safe innovation and AI readiness.";
   export let subhead = "Seasoned product minds for high‑stakes, legacy industries.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";

@@ -98,11 +98,11 @@
   }
   .h2 {
     @apply inter font-semibold tracking-tight leading-snug
-           text-2xl md:text-3xl lg:text-4xl;
+           text-3xl md:text-4xl lg:text-5xl;
   }
   .h3 {
     @apply inter font-semibold tracking-tight leading-snug
-           text-xl md:text-2xl;
+           text-xl md:text-2xl lg:text-3xl;
   }
 
   /* ----- Paragraph tiers ----- */

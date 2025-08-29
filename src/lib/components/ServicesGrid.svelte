@@ -1,44 +1,24 @@
 <script>
 	const services = [
    {
-    title: "AI Readiness",
-    meta: "6–10 weeks • Pilots • Data/guardrails/metrics",
-    desc: "Run governed pilots off-mainline; graduate only what clears risk and proves ROI. Includes executive-grade prototypes to validate interaction, content, and accuracy with human review.",
+    title: "Executive Diagnostic",
+    meta: "2-4 weeks • Strategy & Signal Audit • Backlog Remediation",
+    desc: "360 review of product history, competition, current state, backlog, market and vision, Pitch Nine ingests the current state of and turns ambiguity and friction into 3–5 executive themes and a sequenced plan you can fund, including experience artifacts, backlog remediation, and customer value markers to drive decisions. Convert ticket sprawl into an investment-grade roadmap with owners, dates, and controls. Includes: theme rationalization • decision rules & SLAs • cadence reset • 90-day plan",
   }, 
   {
-    title: "Innovation Audit",
-    meta: "4–8 weeks • Executive themes & direction",
-    desc: "From ambiguity to 3–5 executive themes and a sequenced plan you can fund. Includes experience architecture and evidence-backed concepts for decision-making.",
+    title: "Innovation Enablement",
+    meta: "8-16 weeks • Delivering Innovation Safely",
+    desc: "Turn winners into hardened features with SLOs, telemetry, and change control. Includes design QA, accessibility conformance, and content standards in code",
   },
   {
-    title: "Backlog Remediation",
-    meta: "8–12 weeks • Process audit & thematic portfolio",
-    desc: "Convert ticket sprawl into an investment-grade roadmap with owners, dates, and controls. Includes: theme rationalization • decision rules & SLAs • cadence reset • 90-day plan",
-  },
-  {
-    title: "Governance Blueprint",
-    meta: "2–4 weeks • Policies • Decision rules • Traceability",
-    desc: "Install the control framework to ship faster without exposure (not a certification). Includes: approval workflow • model/use-case guardrails • change control • evidence templates",
-  },
-  {
-    title: "Data & Integration Readiness",
-    meta: "3–6 weeks • Data handling • Integration patterns",
-    desc: "Inventory data, define PII/PHI handling, and map a governed path into live systems. Includes: data catalog & quality • red/amber/green matrix • integration patterns • risk flags",
-  },
-  {
-  title: "Experience Architecture & Validation",
+  title: "AI Innovation & Validation",
   meta: "3–6 weeks • Prototypes • Standards • Accessibility",
   desc: "Define the target experience, validate it with evidence, and codify standards so delivery stays consistent and compliant. Includes: executive-grade prototypes • interaction & content patterns • accessibility conformance • measurement plan"
 },
   {
-    title: "Pilot-to-Production Enablement",
-    meta: "4–8 weeks • Hardening • Monitoring • Rollback",
+    title: "Iteration Adjustments",
+    meta: "Monthly • Hardening • Monitoring • Rollbacks • Pivots",
     desc: "Turn winners into hardened features with SLOs, telemetry, and change control. Includes design QA, accessibility conformance, and content standards in code",
-  },
-   {
-    title: "Vendor Diligence",
-    meta: "2–3 weeks • LLM/tools scoring & TCO",
-    desc: "Score platforms against security, compliance, cost, and fit; select a defendable stack. Includes: scoring rubric • side-by-side • TCO • preferred stack recommendation",
   }
 ];
 
@@ -80,7 +60,7 @@
 					>
 						<!-- Left: title -->
 						<div class="self-start">
-							<h4 class="h2">
+							<h4 class="h3">
 								{s.title}
 							</h4>
 						</div>

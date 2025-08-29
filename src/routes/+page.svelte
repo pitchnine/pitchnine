@@ -15,11 +15,11 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
-	<h2 class="mb-6 h2">
-		Pitch Nine brings disciplined momentum to complex products in high-stakes industries, where
+	<h2 class="mb-6 px-6 h2 md:max-w-6xl w-full text-center mx-auto">
+		Pitch Nine brings disciplined momentum to complex product teams in high-stakes industries, where
 		precision and compliance is everything.
 	</h2>
-	<div class="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+	<div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
 
 		<!-- Origent -->
@@ -110,7 +110,7 @@
 
 <!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
-	<h2 class="h2 mb-6">
+	<h2 class="h2 mb-6 md:max-w-4xl w-full">
     Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
   </h2>
 	<Diagnostics />
@@ -118,7 +118,7 @@
 
 <!-- 4. Services list -->
 <section class="relative py-24 sm:py-32" id="services">
-	<h2 class="h2 mb-6 text-center">Services</h2>
+	<h2 class="h2 mb-6 text-center">Process sharpened by experience</h2>
 	<ServicesGrid />
 </section>
 
