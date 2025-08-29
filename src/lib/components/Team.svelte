@@ -61,8 +61,8 @@
                 <img
                   src={s.headshot}
                   alt={`${s.title} headshot`}
-                  width="400"
-                  height="400"
+                  width="375"
+                  height="375"
                   class="h-18 w-18 rounded-full object-cover ring-1 ring-gray-700/60"
                   loading="lazy"
                 />
@@ -70,12 +70,12 @@
             </div>
 
             <!-- Right: profile + stats + CTAs -->
-            <div class="mt-1 flex max-w-4xl flex-col gap-4 self-start">
+            <div class="mt-1 flex max-w-5xl flex-col gap-4 self-start">
 				<div>
-                  <h4 class="h2">
+                  <h4 class="h3">
                     {s.title}
                   </h4>
-                  <p class="mt-6 text-xs font-semibold uppercase tracking-wider opacity-50 md:text-sm">
+                  <p class="kicker mt-6">
                     {s.role}
                   </p>
                 </div>
@@ -142,7 +142,7 @@
       {/each}
     </ul>
 
-    <p class="mt-8 text-center text-xs font-medium opacity-30 px-3 sm:px-12">
+    <p class="mt-8 eyebrow text-center italic">
       Founders lead every engagement. When additional capacity is required, trusted partners are added under the same governance and quality bar.
     </p>
   </div>

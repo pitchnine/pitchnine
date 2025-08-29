@@ -1,26 +1,28 @@
 <script>
 	const services = [
-   {
-    title: "Executive Diagnostic",
-    meta: "2-4 weeks • Strategy & Signal Audit • Backlog Remediation",
-    desc: "360 review of product history, competition, current state, backlog, market and vision, Pitch Nine ingests the current state of and turns ambiguity and friction into 3–5 executive themes and a sequenced plan you can fund, including experience artifacts, backlog remediation, and customer value markers to drive decisions. Convert ticket sprawl into an investment-grade roadmap with owners, dates, and controls. Includes: theme rationalization • decision rules & SLAs • cadence reset • 90-day plan",
-  }, 
   {
-    title: "Innovation Enablement",
-    meta: "8-16 weeks • Delivering Innovation Safely",
-    desc: "Turn winners into hardened features with SLOs, telemetry, and change control. Includes design QA, accessibility conformance, and content standards in code",
+    title: "Executive Review",
+    meta: "2–4 weeks • Backlog Audit & Value Alignment",
+    desc: "A disciplined, end-to-end review of the portfolio, process, backlog, market signals, and competition. Pitch Nine works to separate noise from signal and deliver a 9-slide brief with supporting artifacts that translates the friction into a Strategic Initiative Plan, complete with proposed (cleaned up) Backlog.",
+	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
+	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
   },
   {
-  title: "AI Innovation & Validation",
-  meta: "3–6 weeks • Prototypes • Standards • Accessibility",
-  desc: "Define the target experience, validate it with evidence, and codify standards so delivery stays consistent and compliant. Includes: executive-grade prototypes • interaction & content patterns • accessibility conformance • measurement plan"
-},
+    title: "AI & Innovation Enablement",
+    meta: "8–16 weeks • Delivering AI & Innovation, Safely",
+    desc: "We take the high-value bets from the diagnostic and convert them into hardened features that meet regulatory, operational, and customer standards. Includes SLOs, telemetry, change control, and compliance guardrails. Every deliverable passes design QA, accessibility conformance, and content standards in code — ensuring innovation without risk exposure.",
+	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
+	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
+  },
   {
-    title: "Iteration Adjustments",
-    meta: "Monthly • Hardening • Monitoring • Rollbacks • Pivots",
-    desc: "Turn winners into hardened features with SLOs, telemetry, and change control. Includes design QA, accessibility conformance, and content standards in code",
+    title: "Signal-Driven Iteration",
+    meta: "Monthly as requested • Ongoing Monitoring & Adjustment",
+    desc: "A standing engagement to keep product execution aligned with market and compliance signals. We monitor, measure, and recalibrate based on outcomes, ensuring the roadmap stays investment-grade over time. Includes backlog refinement, KPI tracking, and iteration controls — giving leadership confidence that product evolution stays in sync with strategy.",
+	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
+	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
   }
 ];
+
 
 
 	function go(service) {
@@ -59,20 +61,25 @@
                    text-left focus:outline-none focus:ring-2 focus:ring-emerald-500/30 lg:grid-cols-2"
 					>
 						<!-- Left: title -->
-						<div class="self-start">
+						<div class="flex flex-col gap-3">
 							<h4 class="h3">
 								{s.title}
 							</h4>
+							<span class="meta">{s.meta}</span>
 						</div>
 
 						<!-- Right: meta + description + fuller copy + CTA -->
 						<div class="mt-1 flex max-w-2xl flex-col gap-3 self-start">
-							<p class="kicker">
-								{s.meta}
-							</p>
-
 							<p class="body">
 								{s.desc}
+							</p>
+							<p class="body">
+								<span class="kicker text-orange-400/60">Includes:<br></span>
+								{s.inc}
+							</p>
+							<p class="body">
+								<span class="kicker text-emerald-400/60">Results<br></span>
+								{s.result}
 							</p>
 
 							<!-- Inline CTA (stops row click) -->
@@ -83,8 +90,7 @@
 									on:keydown|stopPropagation
 									data-cta="module"
 									aria-label={`Request scope & pricing for ${s.title}`}
-									class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider
-                         text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
+									class="primary-cta mt-6"
 								>
 									<span>Request scope & pricing</span>
 									<svg

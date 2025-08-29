@@ -118,7 +118,7 @@
 
 <!-- 4. Services list -->
 <section class="relative py-24 sm:py-32" id="services">
-	<h2 class="h2 mb-6 text-center">Process sharpened by experience</h2>
+	<h2 class="h2 mb-6 text-center">The path to progress.</h2>
 	<ServicesGrid />
 </section>
 

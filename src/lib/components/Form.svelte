@@ -57,7 +57,7 @@
 
 <section class="w-full mb-48">
   <!-- Header band (single column) -->
-  <header class="mx-auto max-w-4xl px-3">
+  <header class="mx-auto max-w-7xl px-3">
     <h2 class="h2 mb-6">{title}</h2>
 
     {#if subtitle}
@@ -77,7 +77,7 @@
 
   <!-- Form card (centered, responsive grid within) -->
   <form
-    class={`mx-auto mt-16 w-full max-w-4xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
+    class={`mx-auto mt-16 w-full max-w-7xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
             ${density === 'compact' ? 'space-y-6' : 'space-y-12'}
             sm:p-10`}
     {method}
