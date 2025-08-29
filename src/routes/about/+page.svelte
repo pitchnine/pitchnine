@@ -7,16 +7,19 @@
   import Form from '$lib/components/Form.svelte';
 
   const Check = `
-    <svg viewBox="0 0 24 24" class="w-4 h-4 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
+    <svg viewBox="0 0 24 24" class="w-8 h-8 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
       <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>`;
 
-  // ---- keep ALL JS inside this single <script> ----
   const stats = [
-    { label: 'Years supporting regulated industries', value: '40+ collective' },
-    { label: 'Regulated domain experience', value: 'Healthcare, Pharmaceuticals, Insurance, Gl' },
-    { label: 'NIH-funded work', value: 'Principal contributors' },
-    { label: 'Delivery model', value: 'Senior-only, hands-on' }
+    {value: '40+ years', 
+    label: 'With over 40 collective years working on critical product teams, Pitch Nine brings decades of hands-on experience doing the work to the table.'},
+     {value: 'Highly regulated', 
+    label: 'The majority of Pitch Nine experience and accolades comes from working in highly sensitive, critical industries with direct consequences to every iteration such as healthcare, pharmaceuticals, clinical trials, government and logistics.'},
+       {value: 'Quality and recognition', 
+    label: 'With both founders serving as principal contributors to an SBIR NIH grant, other accolades include Best in Klas awards for exceptional innovation and experience design as well as Unsung Hero and Innovator of the Year.'},
+     {value: 'Senior first, model', 
+    label: 'Pitch Nine is proudly based in the United States and employs the expertise of executives, managers, designers and developers that are Staff or Principal level contributors in their career. We work 100% remotely but can travel upon request and are headquartered in Washington DC with offices in Colorado.'}
   ];
 
  const principles = [
@@ -59,20 +62,20 @@
   </header>
 
   <!-- Proof / Stats -->
-  <div aria-label="proof" class="mx-auto md:max-w-7xl px-6 sm:px-8 pb-14">
-    <div class="grid sm:grid-cols-2 gap-4">
-      {#each stats as s}
-        <div class="border border-white/5 rounded-xl p-4 text-left">
-          <div class="flex items-start gap-3">
-            <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
-            <div>
-              <div class="body">{s.value}</div>
-              <div class="body opacity-50">{s.label}</div>
-            </div>
+    <div class="mt-9 md:mt-12 mb-12 md:mb-32 grid grid-cols-1 sm:grid-cols-2 justify-between max-w-7xl mx-auto gap-12 md:gap-20">
+    {#each stats as s}
+      <div class="text-left">
+        <div class="flex items-start gap-3">
+          <span class="text-emerald-300" aria-hidden="true">{@html Check}</span>
+          <div>
+            <p class="h3">{s.value}</p>
+            {#if s.label}
+              <p class="mt-4 meta max-w-lg">{s.label}</p>
+            {/if}
           </div>
         </div>
-      {/each}
-    </div>
+      </div>
+    {/each}
   </div>
 
   <!-- Principles grid -->
