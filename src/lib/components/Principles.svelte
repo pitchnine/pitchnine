@@ -90,14 +90,14 @@
     <ol class="space-y-20 sm:space-y-32">
       {#each principles as p, i (i)}
         <li
-          class="relative pl-12 sm:pl-20"
+          class="relative pl-12 sm:pl-20 flex md:flex-row md:justify-between flex-col gap-4"
           bind:this={rowEls[i]}
           data-idx={i}
         >
 
           <!-- Text -->
-          <h3 class="h3 mb-6">{p.title}</h3>
-          <p class="body">{p.desc}</p>
+          <h3 class="h3 md:pr-6">{p.title}</h3>
+          <p class="body w-full md:max-w-2xl">{p.desc}</p>
         </li>
       {/each}
     </ol>

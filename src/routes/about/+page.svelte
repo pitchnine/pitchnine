@@ -52,14 +52,14 @@
 
 <section class="min-h-dvh">
   <!-- Hero / Philosophy -->
-  <header class="mx-auto w-full md:max-w-4xl px-6 sm:px-8 pt-20 pb-16">
+  <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-8 pt-20 pb-16">
     <h2 class="h2 mb-6">
       Pitch Nine is a product leadership agency specifically built for bringing disciplined innovation to critical market product teams, where the margin of error is zero.
     </h2>
   </header>
 
   <!-- Proof / Stats -->
-  <div aria-label="proof" class="mx-auto md:max-w-4xl px-6 sm:px-8 pb-14">
+  <div aria-label="proof" class="mx-auto md:max-w-7xl px-6 sm:px-8 pb-14">
     <div class="grid sm:grid-cols-2 gap-4">
       {#each stats as s}
         <div class="border border-white/5 rounded-xl p-4 text-left">

@@ -67,7 +67,7 @@
     {/if}
 
     <p class="body">
-      Or reach us directly at
+      Reach us directly at
       <a href="mailto:hello@pitchnine.com"
          class="text-emerald-500 hover:underline hover:underline-offset-4">
         hello@pitchnine.com
@@ -77,7 +77,7 @@
 
   <!-- Form card (centered, responsive grid within) -->
   <form
-    class={`mx-auto mt-10 w-full max-w-4xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
+    class={`mx-auto mt-16 w-full max-w-4xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
             ${density === 'compact' ? 'space-y-6' : 'space-y-12'}
             sm:p-10`}
     {method}
