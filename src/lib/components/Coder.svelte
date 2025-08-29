@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Safe innovation and AI readiness.";
-  export let subhead = "Seasoned product minds for high‑stakes, legacy industries.";
+  export let headline = "Ambition meets execution.";
+  export let subhead = "Seasoned product judgment to unify AI innovation, customer value, and execution.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

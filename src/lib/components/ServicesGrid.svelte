@@ -1,27 +1,27 @@
 <script>
 	const services = [
   {
-    title: "Executive Review",
-    meta: "2–4 weeks • Backlog Audit & Value Alignment",
-    desc: "A disciplined, end-to-end review of the portfolio, process, backlog, market signals, and competition. Pitch Nine works to separate noise from signal and deliver a 9-slide brief with supporting artifacts that translates the friction into a Strategic Initiative Plan, complete with proposed (cleaned up) Backlog.",
-	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
-	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
-  },
-  {
-    title: "AI & Innovation Enablement",
-    meta: "8–16 weeks • Delivering AI & Innovation, Safely",
-    desc: "We take the high-value bets from the diagnostic and convert them into hardened features that meet regulatory, operational, and customer standards. Includes SLOs, telemetry, change control, and compliance guardrails. Every deliverable passes design QA, accessibility conformance, and content standards in code — ensuring innovation without risk exposure.",
-	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
-	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
-  },
-  {
-    title: "Signal-Driven Iteration",
-    meta: "Monthly as requested • Ongoing Monitoring & Adjustment",
-    desc: "A standing engagement to keep product execution aligned with market and compliance signals. We monitor, measure, and recalibrate based on outcomes, ensuring the roadmap stays investment-grade over time. Includes backlog refinement, KPI tracking, and iteration controls — giving leadership confidence that product evolution stays in sync with strategy.",
-	inc: "backlog remediation, decision criteria, governance rules, cadence reset, and a 90-day operating plan.",
-	result: "friction converted into action and outcome markers, investment roadmap with implementation plan and executive theme alignment."
-  }
-];
+  title: "Executive Review",
+  meta: "2–4 weeks • Backlog audit, AI readiness & strategic alignment",
+    desc: "A structured evaluation of the product portfolio, delivery processes, backlog condition, and competitive landscape, with explicit consideration of AI readiness and adoption pathways. Friction between leadership objectives and engineering execution is surfaced and translated into 3–5 strategic initiatives supported by a sequenced implementation plan and rationalized backlog. The engagement culminates in an executive brief with supporting artifacts that align strategic intent, customer value and innovation recommendations.",
+  inc: "Backlog remediation • AI readiness evaluation • Cadence reset • Strategic roadmap with success metrics",
+  result: "Friction converted into an investment-grade roadmap with executive theme alignment, measurable outcome markers, and a backlog positioned for effective execution and AI-enabled growth."
+},
+{
+  title: "AI & Innovation Enablement",
+  meta: "12–16 weeks • Execution of direction",
+  desc: "Strategic opportunities identified in prior review phases are advanced into production-ready capabilities, with disciplined execution ensuring regulatory, operational, and customer compliance. Progress against leadership objectives is paired with structured engineering engagement, incorporating feedback loops, quality reviews, and change controls. Deliverables are supported by approved design artifacts, documented requirements, and hardened components, ensuring innovation is realized without introducing unmanaged risk.",
+  inc: "Experience and design artifacts • UI components and controls • Requirements documentation • QA and accessibility conformance",
+  result: "Disciplined momentum established across leadership and engineering, producing measurable innovation while maintaining compliance and operational integrity."
+},
+{
+  title: "Signal-Driven Iteration",
+  meta: "Monthly as requested • Ongoing monitoring and adjustment",
+  desc: "A continuous framework for maintaining alignment between product execution, market signals, and compliance requirements. Features are validated in market, performance measures are tracked, and priorities recalibrated to preserve value realization over time. The result is a living roadmap that adapts to evolving conditions while preserving governance, delivery discipline, and confidence in strategic direction.",
+  inc: "Feature validation • Experience design refinements • KPI and outcome tracking • Iteration and control reviews",
+  result: "Improved forecasting of value and impact, sustained alignment between product execution and strategy, and strengthened evidence for executive decision-making and customer engagement."
+}
+	];
 
 
 
@@ -78,7 +78,7 @@
 								{s.inc}
 							</p>
 							<p class="body">
-								<span class="kicker text-emerald-400/60">Results<br></span>
+								<span class="kicker text-emerald-400/60">Results:<br></span>
 								{s.result}
 							</p>
 

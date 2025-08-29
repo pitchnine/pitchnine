@@ -93,15 +93,15 @@
 @layer components {
   /* ----- Headings ----- */
   .h1 {
-    @apply inter font-bold tracking-tight leading-tight
+    @apply inter font-bold tracking-tight
            text-4xl md:text-5xl lg:text-6xl;
   }
   .h2 {
-    @apply inter font-semibold tracking-tight leading-snug
+    @apply inter font-semibold tracking-tight
            text-3xl md:text-4xl lg:text-5xl;
   }
   .h3 {
-    @apply inter font-semibold tracking-tight leading-snug
+    @apply inter font-semibold tracking-tight
            text-xl md:text-2xl lg:text-3xl;
   }
 

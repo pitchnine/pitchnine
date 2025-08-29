@@ -15,9 +15,8 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="relative mb-32 py-16">
-	<h2 class="mb-6 px-6 h2 md:max-w-6xl w-full text-center mx-auto">
-		Pitch Nine brings disciplined momentum to complex product teams in high-stakes industries, where
-		precision and compliance is everything.
+	<h2 class="mb-6 px-6 h2 md:max-w-5xl w-full text-center mx-auto">
+		Pitch Nine advances critical product initiatives with precision, compliance and control.
 	</h2>
 	<div class="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -110,9 +109,9 @@
 
 <!--3. Process -->
 <section class="relative py-24 sm:py-32" id="diagnostic">
-	<h2 class="h2 mb-6 md:max-w-4xl w-full">
-    Every engagement begins with a two-week fixed fee review, an evidence-first audit that is delivered as a 9-slide board brief with additional supporting research.
-  </h2>
+	<h2 class="h2 mb-6 md:max-w-5xl w-full">
+  Every engagement begins with an <i>Executive Review</i> that converts ambiguity into a rationalized backlog aligned to leadership priorities, with clear opportunities for innovation and measurable outcomes.
+</h2>
 	<Diagnostics />
 </section>
 
@@ -137,11 +136,9 @@ Case studies or proof in the work
 
 <!--5. Differentiator linking to about -->
 <section class="relative h-screen flex justify-center items-center flex-col">
-	<h2 class="h2 text-center mb-6">Other agencies chase trends, we deliver judgement.</h2>
+	<h2 class="h2 text-center mb-8">Discipline and judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
-		Pitch Nine was built by two seasoned product leaders to be the alternative to typical design
-		agencies. We bring disciplined product judgment from decades in regulated, risk-sensitive
-		industries—where delays, compliance failures, or half-baked experiments aren’t an option.
+		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay. Every engagement is designed to convert complexity into clarity and deliver outcomes that withstand the toughest scrutiny.
 	</p>
 
 	<div class="flex justify-center">
@@ -152,7 +149,7 @@ Case studies or proof in the work
 </section>
 
 <!--6. CTA-->
-<section class="relative flex h-screen justify-between">
+<section class="relative flex h-screen justify-between mt-32">
 	<Form />
 </section>
 
