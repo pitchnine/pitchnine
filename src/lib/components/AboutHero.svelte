@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "Disciplined product leadership.";
-  export let subhead = "With expeirence leading complex initiatives in healthcare, insurance, pharmaceuticals, and government, Pitch Nine proves that innovation can be delivered responsibly in the most demanding arenas.";
+  export let subhead = "Decades of product leadership in regulated industries bringing innovation to high stakes experiences, responsibly.";
 
 </script>
 

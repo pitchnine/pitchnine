@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Strategic clarity awaits";
-  export let subhead = "Every engagement begins with a conversation.";
+  export let headline = "Talk to the team.";
+  export let subhead = "A straightforward discussion about where you are, what matters, and what’s possible.";
 
 </script>
 

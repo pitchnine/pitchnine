@@ -109,8 +109,8 @@
 
 <!--3. Process -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
-	<h2 class="h2 md:max-w-5xl w-full px-3">
-  Every engagement begins with an <i>Executive Review</i> that converts ambiguity into a rationalized backlog aligned to leadership priorities, with clear opportunities for innovation and measurable outcomes.
+	<h2 class="h2 md:max-w-6xl w-full px-3">
+   The <i>Executive Review</i> transforms ambiguity into a leadership-aligned backlog, with execution tied to results that matter.
 </h2>
 	<Diagnostics />
 </section>
@@ -138,7 +138,7 @@ Case studies or proof in the work
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
 	<h2 class="h2 text-center mb-8">Discipline and judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
-		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay. Every engagement is designed to convert complexity into clarity and deliver outcomes that withstand the toughest scrutiny.
+		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay.
 	</p>
 
 	<div class="flex justify-center">

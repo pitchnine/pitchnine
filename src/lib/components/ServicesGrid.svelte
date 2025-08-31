@@ -2,21 +2,21 @@
 	const services = [
   {
   title: "Executive Review",
-  meta: "2–4 weeks • Backlog audit, AI readiness & strategic alignment",
+  time: "2-4 weeks",
     desc: "A structured evaluation of the product portfolio, delivery processes, backlog condition, and competitive landscape, with explicit consideration of AI readiness and adoption pathways. Friction between leadership objectives and engineering execution is surfaced and translated into 3–5 strategic initiatives supported by a sequenced implementation plan and rationalized backlog. The engagement culminates in an executive brief with supporting artifacts that align strategic intent, customer value and innovation recommendations.",
   inc: "Backlog remediation • AI readiness evaluation • Cadence reset • Strategic roadmap with success metrics",
   result: "Friction converted into an investment-grade roadmap with executive theme alignment, measurable outcome markers, and a backlog positioned for effective execution and AI-enabled growth."
 },
 {
   title: "AI & Innovation Enablement",
-  meta: "12–16 weeks • Execution of direction",
+  time: "12-16 weeks",
   desc: "Strategic opportunities identified in prior review phases are advanced into production-ready capabilities, with disciplined execution ensuring regulatory, operational, and customer compliance. Progress against leadership objectives is paired with structured engineering engagement, incorporating feedback loops, quality reviews, and change controls. Deliverables are supported by approved design artifacts, documented requirements, and hardened components, ensuring innovation is realized without introducing unmanaged risk.",
   inc: "Experience and design artifacts • UI components and controls • Requirements documentation • QA and accessibility conformance",
   result: "Disciplined momentum established across leadership and engineering, producing measurable innovation while maintaining compliance and operational integrity."
 },
 {
   title: "Signal-Driven Iteration",
-  meta: "Monthly as requested • Ongoing monitoring and adjustment",
+  time: "Monthly",
   desc: "A continuous framework for maintaining alignment between product execution, market signals, and compliance requirements. Features are validated in market, performance measures are tracked, and priorities recalibrated to preserve value realization over time. The result is a living roadmap that adapts to evolving conditions while preserving governance, delivery discipline, and confidence in strategic direction.",
   inc: "Feature validation • Experience design refinements • KPI and outcome tracking • Iteration and control reviews",
   result: "Improved forecasting of value and impact, sustained alignment between product execution and strategy, and strengthened evidence for executive decision-making and customer engagement."
@@ -65,7 +65,7 @@
 							<h4 class="h3">
 								{s.title}
 							</h4>
-							<span class="meta">{s.meta}</span>
+							<span class="kicker">{s.time}</span>
 						</div>
 
 						<!-- Right: meta + description + fuller copy + CTA -->

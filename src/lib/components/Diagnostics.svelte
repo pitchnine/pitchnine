@@ -2,16 +2,16 @@
   // what the Diagnostic delivers (left-aligned grid items)
 const diagnosticArtifacts = [
   { 
-    title: "Executive Brief", 
+    title: "Board Brief", 
     meta: "A 9-slide synthesis translating findings into board-level themes, investment priorities, and sequenced actions." 
   },
   { 
     title: "Friction Map", 
-    meta: "3–5 critical points where leadership ambition and engineering capacity diverge, quantified by impact and paired with suggestions for improvement." 
+    meta: "Critical divergent points between leadership ambition and engineering capacity are surfaced, quantified by impact and paired with improvement plans." 
   },
   { 
     title: "Backlog Rationalization", 
-    meta: "A cleaned and prioritized backlog aligned to strategic objectives, with owners, milestones, and measurable outcomes." 
+    meta: "A cleaned and prioritized backlog aligned to strategic objectives and measurable outcomes." 
   },
   { 
     title: "Experience Concepts", 
@@ -23,7 +23,7 @@ const diagnosticArtifacts = [
   },
   { 
     title: "Evidence Pack", 
-    meta: "Supporting research including customer interviews, adjacent-persona insights, and market/industry signal analysis." 
+    meta: "Supporting research for the brief presentation including customer and market analysis." 
   }
 ];
 
