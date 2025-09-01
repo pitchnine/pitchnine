@@ -8,13 +8,13 @@
       email: "andrew@pitchnine.com",
       linkedin: "https://www.linkedin.com/in/adconk/",
       stats: [
-        "20+ years building regulated platforms",
-        "Fortune 100 modernizations at scale",
-        "Security, data, and integration leadership",
-        "Systems built to pass audits, not demos"
+        "20+ years in enterprise data and engineering for regulated markets",
+        "Led Fortune 100 modernization programs in healthcare and insurance",
+        "CTO in health-tech startups and NIH-funded research initiatives",
+        "CISSP-certified with deep expertise in security and data governance"
       ],
       profile:
-        "Architecture-first leader focused on durability, integration, and governed delivery in healthcare, insurance, and public sector."
+        "Architecture-first leader delivering durable, compliant platforms in healthcare, insurance, life sciences, and the public sector. Known for integrating complex systems, governing data flows, and building technology that withstands audits, scale, and scrutiny."
     },
     {
       title: "Joell Stocchero",
@@ -23,13 +23,13 @@
       email: "joell@pitchnine.com",
       linkedin: "https://www.linkedin.com/in/joellstocchero/",
       stats: [
-        "NIH SBIR Phase II product leadership",
-        "Backlog to blueprint in high-stakes orgs",
-        "Design systems for regulated environments",
-        "Evaluation harnesses over theater"
+        "15+ years driving product strategy in healthcare, pharma, insurance, and government",
+        "Led NIH SBIR Phase II product line and Fortune 100 enterprise initiatives",
+        "Co-founded and scaled AI and health-tech startups to national recognition",
+        "Expert in backlog remediation, AI pilots, and design systems for regulated industries"
       ],
       profile:
-        "Product strategist specializing in portfolio clarity, governed pilots, and measurable outcomes across healthcare, insurance, and logistics."
+        "Product leader specializing in portfolio clarity, governed pilots, and measurable outcomes across healthcare, insurance, logistics and life sciences. Experienced in guiding organizations through backlog chaos, AI readiness, and customer-facing design systems built for regulated environments."
     }
   ];
 
@@ -70,7 +70,7 @@
             </div>
 
             <!-- Right: profile + stats + CTAs -->
-            <div class="mt-1 flex max-w-5xl flex-col gap-4 self-start">
+            <div class="mt-1 flex max-w-6xl flex-col gap-4 self-start">
 				<div>
                   <h4 class="h3">
                     {s.title}
