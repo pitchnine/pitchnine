@@ -136,7 +136,7 @@ Case studies or proof in the work
 
 <!--5. Differentiator linking to about -->
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
-	<h2 class="h2 text-center mb-8">Discipline and judgement.</h2>
+	<h2 class="h2 text-center mb-8">Sharpened judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
 		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay.
 	</p>

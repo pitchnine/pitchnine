@@ -17,14 +17,14 @@
   export let density: 'base' | 'compact' = 'base';
 
   export let interestsOptions: string[] = [
-    'Executive Diagnostic',
+    'Executive Review',
     'AI Readiness',
     'Innovation Audit',
     'Backlog Remediation',
-    'Governance Blueprint',
+    'Customer Insights',
     'Pilot Enablement',
     'Data & Integrations',
-    'Vendor Diligence',
+    'Process Support',
     'General Consultation'
   ];
 

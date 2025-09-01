@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "Ambition meets execution.";
-  export let subhead = "Seasoned product judgment to unify AI innovation, customer value, and execution.";
+  export let subhead = "Product judgment that unifies AI, customer value, and measurable outcomes.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

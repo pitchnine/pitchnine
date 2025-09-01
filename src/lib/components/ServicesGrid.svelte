@@ -3,14 +3,14 @@
   {
   title: "Executive Review",
   time: "2-4 weeks",
-    desc: "A structured evaluation of the product portfolio, delivery processes, backlog condition, and competitive landscape, with explicit consideration of AI readiness and adoption pathways. Friction between leadership objectives and engineering execution is surfaced and translated into 3–5 strategic initiatives supported by a sequenced implementation plan and rationalized backlog. The engagement culminates in an executive brief with supporting artifacts that align strategic intent, customer value and innovation recommendations.",
+    desc: "A structured evaluation of the product portfolio, delivery processes, backlog condition, and competitive landscape, with explicit consideration of AI readiness and adoption pathways. This phase culminates in an executive brief with supporting artifacts that align strategic intent, customer value and innovation recommendations.",
   inc: "Backlog remediation • AI readiness evaluation • Cadence reset • Strategic roadmap with success metrics",
   result: "Friction converted into an investment-grade roadmap with executive theme alignment, measurable outcome markers, and a backlog positioned for effective execution and AI-enabled growth."
 },
 {
   title: "AI & Innovation Enablement",
   time: "12-16 weeks",
-  desc: "Strategic opportunities identified in prior review phases are advanced into production-ready capabilities, with disciplined execution ensuring regulatory, operational, and customer compliance. Progress against leadership objectives is paired with structured engineering engagement, incorporating feedback loops, quality reviews, and change controls. Deliverables are supported by approved design artifacts, documented requirements, and hardened components, ensuring innovation is realized without introducing unmanaged risk.",
+  desc: "Strategic opportunities identified in prior review phases are advanced into production-ready capabilities, with disciplined execution ensuring regulatory, operational, and customer compliance. Progress against leadership objectives is paired with structured design and engineering engagement, incorporating feedback loops, quality reviews, and change controls. Deliverables are supported by approved design artifacts, documented requirements, and hardened components, ensuring innovation is realized without introducing unmanaged risk.",
   inc: "Experience and design artifacts • UI components and controls • Requirements documentation • QA and accessibility conformance",
   result: "Disciplined momentum established across leadership and engineering, producing measurable innovation while maintaining compliance and operational integrity."
 },

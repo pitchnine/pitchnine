@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "Disciplined product leadership.";
-  export let subhead = "Decades of product leadership in regulated industries bringing innovation to high stakes experiences, responsibly.";
+  export let subhead = "Innovation delivered responsibly in the most demanding environments.";
 
 </script>
 

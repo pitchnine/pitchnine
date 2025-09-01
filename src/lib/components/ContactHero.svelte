@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "Talk to the team.";
-  export let subhead = "A straightforward discussion about where you are, what matters, and what’s possible.";
+  export let subhead = "A direct conversation about context, priorities, and possibilities.";
 
 </script>
 
