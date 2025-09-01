@@ -7,25 +7,36 @@
   let sectionEl;
   let rowEls = [];
   let progress = 0;   // 0..100
-  let activeIdx = -1;
+  let activeIdx = -1; // if you light rows elsewhere, this is ready
 
   function computeProgress() {
     if (!browser || !sectionEl) return;
 
+    // Fallback: if rowEls hasn't bound yet, populate it from the DOM
+    if (!rowEls.length) {
+      const nodes = sectionEl.querySelectorAll('ol > li');
+      if (nodes.length) rowEls = Array.from(nodes);
+    }
+
+    const last = rowEls[rowEls.length - 1];
+    if (!last) return; // nothing to measure yet
+
     const rect = sectionEl.getBoundingClientRect();
     const vh = window.innerHeight;
 
-    // Use top/bottom with scrollY to avoid transient zero heights
+    // Last row center in page coords (anchor for 100%)
+    const lastRect = last.getBoundingClientRect();
+    const lastCenterY = window.scrollY + lastRect.top + lastRect.height / 2;
+
+    // Start just before section enters; finish when last row is ~mid-viewport
     const start = window.scrollY + rect.top - vh * 0.8;
-    const end   = window.scrollY + rect.bottom + vh * 0.2; // a touch past the bottom
+    const end   = lastCenterY + vh * 0.01; // adjust 0.5 earlier/later completion
     const now   = window.scrollY;
 
-    const denom = end - start;
-    const rawPct = ((now - start) / (denom || 1)) * 100;
-
+    const denom = Math.max(1, end - start);
+    const rawPct = ((now - start) / denom) * 100;
     const clamped = Math.max(0, Math.min(100, rawPct));
 
-    // Guard against NaN/Infinity on early paints
     if (Number.isFinite(clamped)) {
       progress = clamped;
     }
@@ -45,7 +56,6 @@
       },
       {
         root: null,
-        // Trigger a bit earlier so you don’t miss due to fast scrolls
         rootMargin: '0px 0px -20% 0px',
         threshold: [0.5]
       }
@@ -67,8 +77,9 @@
 
   onMount(async () => {
     if (!browser) return;
-    // Ensure DOM (rowEls + sectionEl) are fully bound before measuring/observing
+    // Ensure DOM (rowEls + sectionEl) are fully bound before measuring
     await tick();
+    await tick(); // extra insurance on fast navigations/hydration
     computeProgress();
     setupIO();
     window.addEventListener('scroll', onScroll, { passive: true });
@@ -95,10 +106,10 @@
         class="absolute top-0 bottom-0 w-[2px] bg-gray-50/25 z-0 rounded-full left-[12px] sm:left-3"
       ></div>
 
-      <!-- Filled portion: use scaleY instead of height % -->
+      <!-- Filled portion (scaleY avoids % height quirks) -->
       <div
         class="absolute top-0 bottom-0 w-[2px] bg-emerald-600 z-0 rounded-full left-[12px] sm:left-3 origin-top will-change-transform transition-transform duration-200"
-        style="transform: scaleY({progress / 100})"
+        style="transform: scaleY({Math.max(0.005, progress / 100)})"
       ></div>
     </div>
 
@@ -117,4 +128,3 @@
     </ol>
   </div>
 </section>
-
