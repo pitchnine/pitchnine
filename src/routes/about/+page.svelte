@@ -12,42 +12,52 @@
     </svg>`;
 
   const stats = [
-    {value: '40+ years', 
-    label: 'With over 40 collective years working on critical product teams, Pitch Nine brings decades of hands-on experience doing the work to the table.'},
-     {value: 'Highly regulated', 
-    label: 'The majority of Pitch Nine experience and accolades comes from working in highly sensitive, critical industries with direct consequences to every iteration such as healthcare, pharmaceuticals, clinical trials, government and logistics.'},
-       {value: 'Quality and recognition', 
-    label: 'With both founders serving as principal contributors to an SBIR NIH grant, other accolades include Best in Klas awards for exceptional innovation and experience design as well as Unsung Hero and Innovator of the Year.'},
-     {value: 'Senior first, model', 
-    label: 'Pitch Nine is proudly based in the United States and employs the expertise of executives, managers, designers and developers that are Staff or Principal level contributors in their career. We work 100% remotely but can travel upon request and are headquartered in Washington DC with offices in Colorado.'}
-  ];
+  {
+    value: '40+ years',
+    label: 'Collective leadership experience on mission-critical product teams, bringing judgment shaped by decades of real delivery.'
+  },
+  {
+    value: 'Regulated markets',
+    label: 'Deep track record across healthcare, pharma, clinical trials, government, and logistics—where every iteration carries consequences.'
+  },
+  {
+    value: 'Recognized impact',
+    label: 'Contributors to NIH-funded research and recipients of Best in KLAS, Innovator of the Year, and other industry awards for outcomes that matter.'
+  },
+  {
+    value: 'Senior-only model',
+    label: 'Every engagement is led by staff and principal-level talent. U.S. based, remote-first, with hubs in Washington, D.C. and Colorado.'
+  }
+];
 
- const principles = [
+
+const principles = [
   { 
     title: 'Discipline', 
-    desc: 'Attention remains fixed on what is material. Risk is framed in context, priorities are defined with precision, and only the moves that truly matter are advanced.' 
+    desc: 'Focus stays on what is material. Risk is framed in context, priorities are defined with precision, and only moves that matter are advanced.' 
   },
   { 
     title: 'Governance', 
-    desc: 'Innovation advances only under control. Pilots and experiments run off the main line, bounded by explicit guardrails, documented audit trails, and unambiguous criteria for graduation and success.' 
+    desc: 'Innovation runs under control. Pilots stay off the main line, bounded by guardrails, audit trails, and explicit graduation criteria.' 
   },
   { 
-    title: 'Clarity', 
-    desc: 'Noise is stripped from decision-making to reveal signal. Disparate requests are resolved into a sequenced blueprint that surfaces dependencies, constraints, and expected return, grounded in research and customer value.' 
+    title: 'Prioritization', 
+    desc: 'Noise is stripped away to reveal signal. Requests resolve into a sequenced plan that surfaces dependencies, constraints, and expected return.' 
   },
   { 
     title: 'Evidence', 
-    desc: 'Demonstrations may entertain, but decisions require proof. Flash is avoided; evaluation harnesses and measurable outcomes determine what advances.' 
+    desc: 'Decisions demand proof. Demonstrations are not enough; evaluation harnesses and measurable outcomes determine what advances.' 
   },
   { 
-    title: 'Integrity', 
-    desc: 'Compliance and user experience are treated as inseparable imperatives. Solutions are constructed to uphold both without compromise.' 
+    title: 'Rigor', 
+    desc: 'Compliance and customer experience advance together. Solutions are built to withstand audit and deliver value without compromise.' 
   },
   { 
     title: 'Transferability', 
-    desc: 'Capability is designed to outlast the engagement. Artifacts, enablement, and operating rituals remain in place to strengthen teams long after external support concludes.' 
+    desc: 'Capability outlasts the engagement. Artifacts, enablement, and operating rituals remain in place to strengthen teams long after support concludes.' 
   }
 ];
+
 </script>
 
 <Nav />
@@ -57,7 +67,7 @@
   <!-- Hero / Philosophy -->
   <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-8 pt-20 pb-16">
     <h2 class="h2 mb-6">
-      Pitch Nine is a product leadership agency specifically built for bringing disciplined innovation to critical market product teams, where the margin of error is zero.
+      Pitch Nine is a product leadership agency built for regulated industries, with a focus on turning complex backlogs into clear priorities, preparing organizations for AI adoption, and delivering innovation without compliance risk.
     </h2>
   </header>
 
