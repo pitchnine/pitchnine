@@ -58,7 +58,18 @@ const principles = [
   }
 ];
 
+export const load = async () => {
+  return {
+    seo: {
+      title: 'About',
+      description: 'Senior-only product leadership for high-stakes teams.',
+      image: 'https://pitchnine.com/images/social-share.jpg' // optional override
+    }
+  };
+};
+
 </script>
+
 
 <Nav />
 <AboutHero />

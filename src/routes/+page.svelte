@@ -5,7 +5,18 @@
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import Form from '$lib/components/Form.svelte';
+
+	export const load = async () => {
+  return {
+    seo: {
+      title: 'Pitch Nine',
+      description: 'Turn product backlogs into roadmaps and deliver AI innovation with discipline in the toughest industries.',
+      image: 'https://pitchnine.com/images/social-share.jpg'
+    }
+  };
+};
 </script>
+
 
 <Nav />
 
