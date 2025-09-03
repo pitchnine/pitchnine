@@ -12,7 +12,7 @@
   export let title = 'Start with a conversation.';
   export let subtitle =
     'Decision-grade clarity without the agency theater. Replies received within 1 business day.';
-  export let action: string | null = null;
+  export let action: string = "https://formspree.io/f/xblapjvv";
   export let method: 'POST' | 'GET' = 'POST';
   export let density: 'base' | 'compact' = 'base';
 
