@@ -10,8 +10,6 @@
 
   // ---- Public props ----
   export let title = 'Start with a conversation.';
-  export let subtitle =
-    'Decision-grade clarity without the agency theater. Replies received within 1 business day.';
   export let action: string = "https://formspree.io/f/xblapjvv";
   export let method: 'POST' | 'GET' = 'POST';
   export let density: 'base' | 'compact' = 'base';
@@ -60,19 +58,10 @@
   <header class="mx-auto max-w-7xl px-3">
     <h2 class="h2 mb-6">{title}</h2>
 
-    {#if subtitle}
-      <p id="contact-subtitle" class="inter mb-3 text-lg leading-relaxed md:w-3/4 w-full">
-        {subtitle}
-      </p>
-    {/if}
-
-    <p class="body">
-      Reach us directly at
-      <a href="mailto:hello@pitchnine.com"
-         class="text-emerald-500 hover:underline hover:underline-offset-4">
-        hello@pitchnine.com
-      </a>
+    <p class="body mb-3">
+      Complete the form below or <a href="https://cal.com/joellstocchero/30min" class="text-emerald-500 hover:underline hover:underline-offset-4">schedule an introduction</a> at your convenience. 
     </p>
+    <p class="body">Replies received within one business day.</p>
   </header>
 
   <!-- Form card (centered, responsive grid within) -->

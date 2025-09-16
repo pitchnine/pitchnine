@@ -26,7 +26,7 @@
   export let minFont = 10;       // px (smallest snippet text)
   export let maxFont = 14;       // px (largest snippet text)
   export let maxSkew = 0;        // deg random rotation (+/-)
-  export let codeOpacity = 0.25; // base opacity for code
+  export let codeOpacity = 0.40; // base opacity for code
   export let blur = 0.2;         // subtle blur in px
 
   // Typing timings (each node gets randomized around these)

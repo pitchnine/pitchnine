@@ -23,7 +23,12 @@
         <a {href} class="text-sm text-gray-400 hover:text-gray-100 transition">
           {label}
         </a>
+        
       {/each}
+      <a href="mailto:hello@pitchnine.com"
+         class="text-sm transition text-emerald-500 hover:underline hover:underline-offset-4">
+        hello@pitchnine.com
+      </a>
     </nav>
   </div>
 

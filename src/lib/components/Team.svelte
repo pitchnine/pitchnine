@@ -6,6 +6,7 @@
       role: "Founder • Data Architecture & Engineering",
       headshot: "/images/andrew9.png",
       email: "andrew@pitchnine.com",
+      cal: "https://cal.com/adconk/pitchnine-intros",
       linkedin: "https://www.linkedin.com/in/adconk/",
       stats: [
         "20+ years in enterprise data and engineering for regulated markets",
@@ -21,6 +22,7 @@
       role: "Founder • Product Strategy & Full-Stack Design",
       headshot: "/images/joell9.png",
       email: "joell@pitchnine.com",
+      cal: "https://www.cal.com/joellstocchero/30min",
       linkedin: "https://www.linkedin.com/in/joellstocchero/",
       stats: [
         "15+ years driving product strategy in healthcare, pharma, insurance, and government",
@@ -102,6 +104,26 @@
                          text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
                 >
                   <span>Email</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
+                           hover:translate-x-[4px] focus-visible:translate-x-[4px]"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+
+                 <!-- Cal -->
+                <a
+                  href={s.cal}
+                  data-cta="module"
+                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider
+                         text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
+                >
+                  <span>Calendar</span>
                   <svg
                     viewBox="0 0 24 24"
                     class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
