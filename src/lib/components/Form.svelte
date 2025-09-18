@@ -31,7 +31,7 @@
     email: '',
     company: '',
     interests: [] as string[],
-    website: '' // honeypot
+    website: '' 
   };
 
   const emailOk = (e: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.trim());
@@ -41,7 +41,6 @@
     required(form.name) &&
     emailOk(form.email) &&
     required(form.company) &&
-    form.interests.length > 0 &&
     form.website === '';
 
   async function handleSubmit(e: Event) {
@@ -122,7 +121,7 @@
 
     <!-- Interests -->
     <div>
-      <label class="inter block text-sm text-gray-50">Interests *</label>
+      <label class="inter block text-sm text-gray-50">Interests</label>
       <fieldset class="mt-2">
         <legend class="sr-only">Select one or more interests</legend>
         <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
