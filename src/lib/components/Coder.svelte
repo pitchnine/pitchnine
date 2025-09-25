@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Ambition meets execution.";
-  export let subhead = "Product judgment that unifies AI, customer value, and measurable outcomes.";
+  export let headline = "All products age, but few endure.";
+  export let subhead = "Pitch Nine helps leaders modernize aging products, restore product discipline, and innovate with confidence.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 
@@ -344,7 +344,7 @@
     <h1 class="h1 mb-6 animate-fadeUp">
       {headline}
     </h1>
-    <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
+    <p class="lede max-w-3xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
       {subhead}
     </p>
     <a
