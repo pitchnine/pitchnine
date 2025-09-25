@@ -4,6 +4,8 @@
 	import Coder from '$lib/components/Coder.svelte';
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
+	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
+	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import Form from '$lib/components/Form.svelte';
 
 	export const load = async () => {
@@ -118,6 +120,7 @@
 	</div>
 </section>
 
+
 <!--3. Process -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
@@ -158,6 +161,11 @@ Case studies or proof in the work
 		</a>
 	</div>
 </section>
+
+<!--5a. Product lifecycle -->
+<div>
+	<ProductLifecycleForm />
+</div>
 
 <!--6. CTA-->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
