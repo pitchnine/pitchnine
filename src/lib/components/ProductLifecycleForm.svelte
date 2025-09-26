@@ -11,12 +11,9 @@
 </script>
 
 <section class="max-w-3xl mx-auto px-4 py-10">
-  <h2 class="text-2xl md:text-3xl font-semibold tracking-tight">
-    Where is your product on the lifecycle curve?
-  </h2>
-  <p class="mt-2 text-sm md:text-base text-neutral-600">
-    Answer three quick questions to get a directional read based on Investopedia’s lifecycle stages.
-    Choose the single best option for each prompt.
+  <h2 class="h2 text-center mb-8">Find where your product falls.</h2>
+ <p class="body text-center max-w-4xl mb-12">
+    Markets move, priorities shift, and intuition blurs. This framework gives you a structured way to sanity-check where your product is today — without the noise.
   </p>
 
   <div class="mt-8 space-y-8">
@@ -27,30 +24,30 @@
     <form class="space-y-8" on:submit={handleSubmit}>
       <!-- Q1 -->
       <fieldset class="space-y-3">
-        <legend class="font-medium">1) Market traction</legend>
+        <legend class="font-medium">1. Current sales trajectory:</legend>
         <div class="grid gap-2 sm:grid-cols-2">
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q1" value="A" required />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Just launched, sales are low, costs are high
+              Early, low sales.
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q1" value="B" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Sales are rising quickly and competitors are taking notice
+              Accelerating, rivals appearing.
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q1" value="C" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Sales have leveled off; market feels saturated
+              Stalling, feelings of saturation
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q1" value="D" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Sales are shrinking; customers are moving elsewhere
+              Shrinking, customers leaving
             </span>
           </label>
         </div>
@@ -58,30 +55,30 @@
 
       <!-- Q2 -->
       <fieldset class="space-y-3">
-        <legend class="font-medium">2) Backlog & priorities</legend>
+        <legend class="font-medium">2. Team's current focus:</legend>
         <div class="grid gap-2 sm:grid-cols-2">
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q2" value="A" required />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Getting initial adoption and awareness
+              High expirementation, rapid innovation
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q2" value="B" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Adding features and scaling operations
+              Adding features with care and scaling
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q2" value="C" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Defending market share and improving efficiency
+              Defending market share and optimizing
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q2" value="D" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Maintaining legacy customers while sunsetting features
+              Heavy legacy customer support
             </span>
           </label>
         </div>
@@ -89,24 +86,24 @@
 
       <!-- Q3 -->
       <fieldset class="space-y-3">
-        <legend class="font-medium">3) Competitive environment</legend>
+        <legend class="font-medium">3. Competitive environment:</legend>
         <div class="grid gap-2 sm:grid-cols-2">
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q3" value="A" required />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Few direct competitors; product is new to market
+              Few to no direct competitors
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q3" value="B" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Competitors are increasing; differentiation matters
+              Rivals appearing, differentiation matters
             </span>
           </label>
           <label class="inline-flex items-center">
             <input class="peer sr-only" type="radio" name="q3" value="C" />
             <span class="w-full peer-checked:ring-2 ring-emerald-500 peer-checked:bg-emerald-50 border border-neutral-200 rounded-lg px-4 py-3 cursor-pointer hover:bg-neutral-50">
-              Market is crowded; price pressure dominates
+              Crowded, price pressure dominates
             </span>
           </label>
           <label class="inline-flex items-center">
@@ -116,6 +113,7 @@
             </span>
           </label>
         </div>
+        
       </fieldset>
 
       <div class="pt-2">
