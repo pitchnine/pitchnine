@@ -28,8 +28,8 @@
 
 <!--2. ICP Statement + Logo Cred -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
-	<h2 class="h2 max-w-5xl mx-auto text-center px-3">
-		Pitch Nine advances critical product initiatives with precision, compliance and control.
+	<h2 class="h2 max-w-6xl mx-auto text-left px-4 text-center md:px-0 md:text-left">
+		At lifecycle inflection points, products must modernize without slowing delivery. Pitch Nine audits opportunities, runs pilots safely outside the mainline, and integrates proven winners with discipline, giving leaders the proof and confidence to invest where it matters most.
 	</h2>
 	<div class="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -124,14 +124,14 @@
 <!--3. Process -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
-   The <i>Executive Review</i> transforms ambiguity into a leadership-aligned backlog, with execution tied to results that matter.
+   The <i>Opportunity Audit</i> reveals which initiatives are worth pursuing and which are not, turning an overloaded backlog into a disciplined plan leaders can trust and fund with confidence 
 </h2>
 	<Diagnostics />
 </section>
 
 <!-- 4. Services list -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
-	<h2 class="h2 mb-6 text-center">The path to progress.</h2>
+	<h2 class="h2 mb-6 text-center">De-risk your next chapter.</h2>
 	<ServicesGrid />
 </section>
 
@@ -150,9 +150,9 @@ Case studies or proof in the work
 
 <!--5. Differentiator linking to about -->
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
-	<h2 class="h2 text-center mb-8">Sharpened judgement.</h2>
+	<h2 class="h2 text-center mb-8">Veteran judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
-		Formed by veteran product leaders, Pitch Nine operates as an alternative to the trend-driven design studio. The approach is grounded in decades of experience across regulated and risk-sensitive industries, where accountability, compliance, and durable value outweigh experiments and delay.
+		At Pitch Nine, our cofounders spent their careers inside critical organizations, not on the sidelines. We’ve built and piloted innovation, proven them in the field, and integrated the winners into mainline products — all within HIPAA-regulated, SOC 1, and ISO 27001 environments. We know how to advance what matters without the theater of experimentation.
 	</p>
 
 	<div class="flex justify-center">
