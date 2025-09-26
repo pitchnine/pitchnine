@@ -1,27 +1,24 @@
 <script>
 	const services = [
   {
-  title: "Executive Review",
-  time: "2-4 weeks",
-    desc: "A structured evaluation of the product portfolio, delivery processes, backlog condition, and competitive landscape, with explicit consideration of AI readiness and adoption pathways. This phase culminates in an executive brief with supporting artifacts that align strategic intent, customer value and innovation recommendations.",
-  inc: "Backlog remediation • AI readiness evaluation • Cadence reset • Strategic roadmap with success metrics",
-  result: "Friction converted into an investment-grade roadmap with executive theme alignment, measurable outcome markers, and a backlog positioned for effective execution and AI-enabled growth."
-},
-{
-  title: "AI & Innovation Enablement",
-  time: "12-16 weeks",
-  desc: "Strategic opportunities identified in prior review phases are advanced into production-ready capabilities, with disciplined execution ensuring regulatory, operational, and customer compliance. Progress against leadership objectives is paired with structured design and engineering engagement, incorporating feedback loops, quality reviews, and change controls. Deliverables are supported by approved design artifacts, documented requirements, and hardened components, ensuring innovation is realized without introducing unmanaged risk.",
-  inc: "Experience and design artifacts • UI components and controls • Requirements documentation • QA and accessibility conformance",
-  result: "Disciplined momentum established across leadership and engineering, producing measurable innovation while maintaining compliance and operational integrity."
-},
-{
-  title: "Signal-Driven Iteration",
-  time: "Monthly",
-  desc: "A continuous framework for maintaining alignment between product execution, market signals, and compliance requirements. Features are validated in market, performance measures are tracked, and priorities recalibrated to preserve value realization over time. The result is a living roadmap that adapts to evolving conditions while preserving governance, delivery discipline, and confidence in strategic direction.",
-  inc: "Feature validation • Experience design refinements • KPI and outcome tracking • Iteration and control reviews",
-  result: "Improved forecasting of value and impact, sustained alignment between product execution and strategy, and strengthened evidence for executive decision-making and customer engagement."
-}
-	];
+    title: "Opportunity Audit",
+    time: "3–4 weeks",
+    desc: "A rapid evaluation of your product lines, backlog, and goals to expose risks, align leadership, and surface AI-ready opportunities. The result is a clear, investable plan tied to measurable outcomes.",
+    inc: "Backlog rescue • Design artifacts • Executive roadmap with success metrics"
+  },
+  {
+    title: "Innovation Pilot(s)",
+    time: "12–16 weeks",
+    desc: "The most promising opportunities are advanced into production-ready pilots, run safely outside the mainline so core team delivery is never slowed. Each pilot is created in tight collaboration with existing processess, governed, validated with customers, and built to prove value or risk before major investment.",
+    inc: "KPI tracking • Design and UI components • Requirements documentation • QA and compliance reviews"
+  },
+  {
+    title: "Signal-Driven Iteration",
+    time: "Monthly",
+    desc: "Winning pilots are folded back into the product with collaborative iteration, and priorities are recalibrated to keep execution aligned with strategy and market signals.",
+    inc: "Feature validation • Experience refinements • Outcome tracking • Iteration reviews"
+  }
+];
 
 
 
@@ -76,10 +73,6 @@
 							<p class="body">
 								<span class="kicker text-orange-400/60">Includes:<br></span>
 								{s.inc}
-							</p>
-							<p class="body">
-								<span class="kicker text-emerald-400/60">Results:<br></span>
-								{s.result}
 							</p>
 
 							<!-- Inline CTA (stops row click) -->
