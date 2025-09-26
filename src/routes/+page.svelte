@@ -162,11 +162,10 @@ Case studies or proof in the work
 	</div>
 </section>
 
-<!--5a. Product lifecycle 
+<!--5a. Product lifecycle -->
 <div>
 	<ProductLifecycleForm />
 </div>
--->
 
 <!--6. CTA-->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
