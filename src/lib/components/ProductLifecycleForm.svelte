@@ -17,13 +17,12 @@
 </script>
 
 <section class="mx-auto max-w-7xl px-2 py-10">
-	<h2 class="h2 mb-8 text-center">Check your product age.</h2>
-	<p class="body mb-12 md:mb-16 max-w-4xl text-center mx-auto">
-		Markets move, priorities shift, and intuition blurs. Pitch Nine relies on studied frameworks like the <i>Product Lifecycle</i> in partnership with contextualized judgement to help understand current product age without the noise.
-	</p>
+<h2 class="h2 mx-auto text-left px-4 text-center md:px-0 md:text-left">
+  At lifecycle inflection points, products must modernize without slowing delivery.
+</h2>
 
-	<div class="mt-8 flex flex-col gap-8 lg:items-center lg:flex-row lg:gap-24">
-		<div class="w-full md:max-w-md">
+	<div class="mt-16 flex flex-col gap-8 lg:items-center lg:flex-row sm:gap-12 lg:gap-24">
+		<div class="w-full sm:w-2/5 sm:max-w-md">
 			<form class="space-y-8 lg:space-y-10" on:submit={handleSubmit}>
 				<!-- Q1 -->
 				<div>
@@ -89,7 +88,7 @@
 		</div>
 
 		<!-- SVG -->
-		<div class="md:basis-2/3">
+		<div class="w-full md:basis-2/3">
 			<ProductCurveSVG bind:this={svgRef} />
 		</div>
 	</div>
