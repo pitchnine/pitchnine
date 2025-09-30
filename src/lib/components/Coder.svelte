@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "All products age, few endure.";
-  export let subhead = "Pitch Nine helps leaders modernize aging products, restore strategic priority, and innovate with confidence.";
+  export let subhead = "Modernizing aging products, restoring strategic priority, and innovating with confidence.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

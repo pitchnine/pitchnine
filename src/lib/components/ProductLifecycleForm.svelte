@@ -13,7 +13,7 @@
 <section class="mx-auto max-w-7xl px-2 py-10">
 	<h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
 
-<div class="mt-16 flex flex-col items-center gap-12
+<div class="mt-24 flex flex-col items-center gap-12
             xl:flex-row xl:items-start xl:gap-8">
 		<!-- Form column -->
 		  <div class="w-full xl:flex-none xl:max-w-[560px]">
