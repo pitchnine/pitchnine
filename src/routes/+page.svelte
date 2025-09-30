@@ -153,7 +153,7 @@ Case studies or proof in the work
 	</p>
 
 	<div class="flex justify-center">
-		<a href="/contact?service=Executive%20Diagnostic" data-cta="primary" class="primary-cta">
+		<a href="/about" data-cta="primary" class="primary-cta">
 			Read about us
 		</a>
 	</div>
