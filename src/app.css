@@ -33,7 +33,7 @@
 }
 
 .grid-link {
-  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 rounded-full transition;
+  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 transition;
 }
 
 .grid-link:hover {
