@@ -2,12 +2,6 @@
 	import ProductCurveSVG from './ProductCurveSVG.svelte';
 	let svgRef: any;
 
-	// Reuse the same check icon for consistency
-	const CheckIcon = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="currentColor" aria-hidden="true">
-  <path d="M16.707 5.293a1 1 0 0 1 0 1.414l-7.25 7.25a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414l2.293 2.293 6.543-6.543a1 1 0 0 1 1.414 0z"/>
-</svg>`;
-
 	function handleSubmit(e: SubmitEvent) {
 		e.preventDefault();
 		const fd = new FormData(e.currentTarget as HTMLFormElement);
@@ -17,78 +11,201 @@
 </script>
 
 <section class="mx-auto max-w-7xl px-2 py-10">
-<h2 class="h2 mx-auto text-left px-4 text-center md:px-0 md:text-left">
-  At lifecycle inflection points, products must modernize without slowing delivery.
-</h2>
+	<h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
 
-	<div class="mt-16 flex flex-col gap-8 lg:items-center lg:flex-row sm:gap-12 lg:gap-24">
-		<div class="w-full sm:w-2/5 sm:max-w-md">
-			<form class="space-y-8 lg:space-y-10" on:submit={handleSubmit}>
-				<!-- Q1 -->
-				<div>
-					<label for="q1" class="inter mb-2 block text-sm text-gray-50">Current sales trajectory:</label>
-					<select
-						id="q1"
-						name="q1"
-						required
-						class="inter block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					>
-						<option value="" disabled selected>Select one…</option>
-						<option value="A">Early discovery with low sales</option>
-						<option value="B">Sales rising, rivals entering</option>
-						<option value="C">Sales stalling with market filling</option>
-						<option value="D">Sales shrinking, heavy reliance on legacy accounts</option>
-					</select>
-				</div>
+	<div class="mt-16 flex flex-col md:flex-row lg:justify-between">
+		<!-- Form column -->
+		<div class="w-full sm:mr-40 sm:w-1/2">
+  <form class="space-y-6" on:submit={handleSubmit}>
+    <!-- Q1 -->
+    <fieldset class="space-y-3">
+      <legend class="inter block text-sm text-gray-50">Current sales trajectory</legend>
+      <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div>
+          <input id="q1-a" type="radio" name="q1" value="A" class="peer sr-only" required />
+          <label
+            for="q1-a"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/25"
+          >
+            <span class="text-sm">Low; early days</span>
+          </label>
+        </div>
 
-				<!-- Q2 -->
-				<div>
-					<label for="q2" class="inter mb-2 block text-sm text-gray-50">Team’s current focus:</label>
-					<select
-						id="q2"
-						name="q2"
-						required
-						class="inter block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					>
-						<option value="" disabled selected>Select one…</option>
-						<option value="A">High experimentation and iteration</option>
-						<option value="B">Adding validated features, carefully</option>
-						<option value="C">Defending market share, optimizing performance</option>
-						<option value="D">Reactive with a priority on maintenance</option>
-					</select>
-				</div>
+        <div>
+          <input id="q1-b" type="radio" name="q1" value="B" class="peer sr-only" />
+          <label
+            for="q1-b"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Rising; rivals entering</span>
+          </label>
+        </div>
 
-				<!-- Q3 -->
-				<div>
-					<label for="q3" class="inter mb-2 block text-sm text-gray-50">Competitive landscape:</label>
-					<select
-						id="q3"
-						name="q3"
-						required
-						class="inter block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
-					>
-						<option value="" disabled selected>Select one…</option>
-						<option value="A">Few or no direct rivals</option>
-						<option value="B">Rivals increasing, differentiation becoming critical</option>
-						<option value="C">Market is crowded heavy pressure on pricing</option>
-						<option value="D">Competitors are exiting and beginning to consolidate</option>
-					</select>
-				</div>
+        <div>
+          <input id="q1-c" type="radio" name="q1" value="C" class="peer sr-only" />
+          <label
+            for="q1-c"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Stalling; market saturated</span>
+          </label>
+        </div>
 
-				<div class="pt-6">
-					<button
-						type="submit"
-						class="inter primary-cta w-full sm:w-auto"
-						aria-label="See your position on the lifecycle curve"
-					>
-						Plot product stage
-					</button>
-				</div>
-			</form>
-		</div>
+        <div>
+          <input id="q1-d" type="radio" name="q1" value="D" class="peer sr-only" />
+          <label
+            for="q1-d"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Shrinking; churn rising</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
 
-		<!-- SVG -->
-		<div class="w-full md:basis-2/3">
+    <!-- Q2 -->
+    <fieldset class="space-y-3">
+      <legend class="inter block text-sm text-gray-50">Team’s current focus</legend>
+      <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div>
+          <input id="q2-a" type="radio" name="q2" value="A" class="peer sr-only" required />
+          <label
+            for="q2-a"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">High experimentation</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q2-b" type="radio" name="q2" value="B" class="peer sr-only" />
+          <label
+            for="q2-b"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Steady feature delivery</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q2-c" type="radio" name="q2" value="C" class="peer sr-only" />
+          <label
+            for="q2-c"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Defending share, optimizing</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q2-d" type="radio" name="q2" value="D" class="peer sr-only" />
+          <label
+            for="q2-d"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Maintenance-heavy, reactive</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- Q3 -->
+    <fieldset class="space-y-3">
+      <legend class="inter block text-sm text-gray-50">Competitive landscape</legend>
+      <div class="mt-2 grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div>
+          <input id="q3-a" type="radio" name="q3" value="A" class="peer sr-only" required />
+          <label
+            for="q3-a"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Few direct rivals</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q3-b" type="radio" name="q3" value="B" class="peer sr-only" />
+          <label
+            for="q3-b"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Differentiation critical</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q3-c" type="radio" name="q3" value="C" class="peer sr-only" />
+          <label
+            for="q3-c"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Crowded with price pressure</span>
+          </label>
+        </div>
+
+        <div>
+          <input id="q3-d" type="radio" name="q3" value="D" class="peer sr-only" />
+          <label
+            for="q3-d"
+            class="grid-link flex w-full cursor-pointer text-left
+                   whitespace-nowrap rounded-xl border border-gray-700 bg-gray-900/60 px-5 py-3
+                   transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/15"
+          >
+            <span class="text-sm">Exits, consolidation</span>
+          </label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="pt-2">
+      <button
+        type="submit"
+        class="inter primary-cta w-full sm:w-auto"
+        aria-label="See your position on the lifecycle curve"
+      >
+        Analyze product stage
+      </button>
+    </div>
+  </form>
+</div>
+
+
+		<!-- Graph column -->
+		<div class="w-full sm:w-2/3">
 			<ProductCurveSVG bind:this={svgRef} />
 		</div>
 	</div>
