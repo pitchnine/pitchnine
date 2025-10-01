@@ -68,6 +68,12 @@
     { id: 'q3-d', value: 'D', label: 'Exits, consolidation' }
   ] as const;
 
+  function goBack() {
+  if (currentStep > 1) currentStep -= 1;
+}
+function goForward() {
+  if (currentStep < 3) currentStep += 1;
+}
 
 </script>
 
@@ -86,7 +92,7 @@
     <legend class="inter mb-2 block text-sm text-gray-50">Current sales trajectory:</legend>
 
     <!-- mirror contact form grid -->
-    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
       {#each q1Options as opt}
         <div>
           <input
@@ -113,6 +119,43 @@
       {/each}
     </div>
   </fieldset>
+   <!-- Navigation controls -->
+<div class="flex items-center justify-between pt-4">
+  <!-- Backward arrow -->
+  {#if currentStep > 1}
+    <button type="button" on:click={goBack}
+      class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+      aria-label="Go back">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  {/if}
+
+  <!-- Forward arrow (Q1 + Q2 only, if answered) -->
+  {#if currentStep < 3}
+    {#if (currentStep === 1 && q1) || (currentStep === 2 && q2)}
+      <button type="button" on:click={goForward}
+        class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+        aria-label="Go forward">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    {/if}
+  {/if}
+
+  <!-- Analyze CTA (only step 3) -->
+  {#if currentStep === 3}
+    <button type="submit"
+      class="inter primary-cta ml-auto"
+      aria-label="See your position on the lifecycle curve">
+      Analyze with AI
+    </button>
+  {/if}
+</div>
 {/if}
 
 <!-- Q2 -->
@@ -120,7 +163,7 @@
   <fieldset in:fade={{ duration: 150 }} out:fade={{ duration: 150 }} class="space-y-3">
     <legend class="inter mb-2 block text-sm text-gray-50">Team’s current focus:</legend>
 
-    <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
       {#each q2Options as opt}
         <div>
           <input
@@ -147,6 +190,43 @@
       {/each}
     </div>
   </fieldset>
+   <!-- Navigation controls -->
+<div class="flex items-center justify-between pt-4">
+  <!-- Backward arrow -->
+  {#if currentStep > 1}
+    <button type="button" on:click={goBack}
+      class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+      aria-label="Go back">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  {/if}
+
+  <!-- Forward arrow (Q1 + Q2 only, if answered) -->
+  {#if currentStep < 3}
+    {#if (currentStep === 1 && q1) || (currentStep === 2 && q2)}
+      <button type="button" on:click={goForward}
+        class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+        aria-label="Go forward">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    {/if}
+  {/if}
+
+  <!-- Analyze CTA (only step 3) -->
+  {#if currentStep === 3}
+    <button type="submit"
+      class="inter primary-cta ml-auto"
+      aria-label="See your position on the lifecycle curve">
+      Analyze with AI
+    </button>
+  {/if}
+</div>
 {/if}
 
 <!-- Q3 -->
@@ -154,7 +234,7 @@
   <fieldset in:fade={{ duration: 150 }} out:fade={{ duration: 150 }} class="space-y-3">
     <legend class="inter mb-2 block text-sm text-gray-50">Competitive landscape:</legend>
 
-    <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+    <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
       {#each q3Options as opt}
         <div>
           <input
@@ -180,15 +260,44 @@
         </div>
       {/each}
     </div>
-
-    <!-- Divider + Submit appear on last step -->
-    <hr class="w-full bg-gray-700 opacity-15" />
-    <div class="pt-6">
-      <button type="submit" class="inter primary-cta w-full" aria-label="See your position on the lifecycle curve">
-        Analyze product stage
-      </button>
-    </div>
   </fieldset>
+  <!-- Navigation controls -->
+<div class="flex items-center justify-between pt-4">
+  <!-- Backward arrow -->
+  {#if currentStep > 1}
+    <button type="button" on:click={goBack}
+      class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+      aria-label="Go back">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </button>
+  {/if}
+
+  <!-- Forward arrow (Q1 + Q2 only, if answered) -->
+  {#if currentStep < 3}
+    {#if (currentStep === 1 && q1) || (currentStep === 2 && q2)}
+      <button type="button" on:click={goForward}
+        class="rounded-md p-2 text-gray-400 hover:text-gray-200"
+        aria-label="Go forward">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    {/if}
+  {/if}
+
+  <!-- Analyze CTA (only step 3) -->
+  {#if currentStep === 3}
+    <button type="submit"
+      class="inter primary-cta ml-auto"
+      aria-label="See your position on the lifecycle curve">
+      Analyze with AI
+    </button>
+  {/if}
+</div>
 {/if}
       </form>
     </div>
