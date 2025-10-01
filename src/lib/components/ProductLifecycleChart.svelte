@@ -27,7 +27,7 @@
 	);
 
 	let canvasEl: HTMLCanvasElement;
-	let chart: Chart | null = null;
+	let chart: ChartJS | null = null;
 
 	// === Reference curve (same as your SVG path d) ===
 	const lifecyclePathD =
@@ -202,7 +202,7 @@
 			},
 			options: {
 				responsive: true,
-				maintainAspectRatio: true,
+				maintainAspectRatio: false,
 				layout: { padding: 0 },
 				scales: {
 					x: {
@@ -234,16 +234,16 @@
 								yMax: 375,
 								backgroundColor: 'rgba(229,231,235,0.10)',
 								borderWidth: 0,
-                            label: {
-                                display: true,
-                                content: 'INTRODUCTION',
-                                position: { x: 'center', y: 'start' },
-                                yAdjust: 16,
-                                color: 'rgba(255,255,255,0.25)',
-                                font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: '600' },
-                                backgroundColor: 'transparent',
-                                padding: 0
-                            }
+								label: {
+									display: true,
+									content: 'DISCOVERY',
+									position: { x: 'center', y: 'start' },
+									yAdjust: 16,
+									color: 'rgba(255,255,255,0.25)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									backgroundColor: 'transparent',
+									padding: 0
+								}
 							},
 							growth: {
 								type: 'box',
@@ -254,15 +254,15 @@
 								backgroundColor: 'rgba(229,231,235,0.10)',
 								borderWidth: 0,
                                 label: {
-                                display: true,
-                                content: 'GROWTH',
-                                position: { x: 'center', y: 'start' },
-                                yAdjust: 16,
-                                color: 'rgba(255,255,255,0.25)',
-                                font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: '600' },
-                                backgroundColor: 'transparent',
-                                padding: 0
-                            }
+									display: true,
+									content: 'GROWTH',
+									position: { x: 'center', y: 'start' },
+									yAdjust: 16,
+									color: 'rgba(255,255,255,0.25)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									backgroundColor: 'transparent',
+									padding: 0
+								}
 							},
 							maturity: {
 								type: 'box',
@@ -272,16 +272,16 @@
 								yMax: 375,
 								backgroundColor: 'rgba(229,231,235,0.10)',
 								borderWidth: 0,
-                                label: {
-                                display: true,
-                                content: 'MATURITY',
-                                position: { x: 'center', y: 'start' },
-                                yAdjust: 16,
-                                color: 'rgba(255,255,255,0.25)',
-                                font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: '600' },
-                                backgroundColor: 'transparent',
-                                padding: 0
-                            }
+								label: {
+									display: true,
+									content: 'MATURITY',
+									position: { x: 'center', y: 'start' },
+									yAdjust: 16,
+									color: 'rgba(255,255,255,0.25)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									backgroundColor: 'transparent',
+									padding: 0
+								}
 							},
 							decline: {
 								type: 'box',
@@ -291,16 +291,16 @@
 								yMax: 375,
 								backgroundColor: 'rgba(229,231,235,0.10)',
 								borderWidth: 0,
-                                label: {
-                                display: true,
-                                content: 'DECLINE',
-                                position: { x: 'center', y: 'start' },
-                                yAdjust: 16,
-                                color: 'rgba(255,255,255,0.25)',
-                                font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: '600' },
-                                backgroundColor: 'transparent',
-                                padding: 0
-                            }
+								label: {
+									display: true,
+									content: 'DECLINE',
+									position: { x: 'center', y: 'start' },
+									yAdjust: 16,
+									color: 'rgba(255,255,255,0.25)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									backgroundColor: 'transparent',
+									padding: 0
+								}
 							}
 						}
 					}
@@ -316,4 +316,4 @@
 	});
 </script>
 
-<canvas bind:this={canvasEl} class="h-auto w-full"></canvas>
+<canvas bind:this={canvasEl} class="w-full"></canvas>

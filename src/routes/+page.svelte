@@ -29,7 +29,7 @@
 <!--Overview + Logo Credentials -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
 	<h2 class="h2 max-w-6xl mx-auto text-left px-4 text-center md:px-0 md:text-left">
-		Pitch Nine is the alternative to trend-driven product consultancies, helping established products innovate with discipline in compliance-driven industries.
+		Pitch Nine is the alternative to trend-driven product consultancies, helping established product teams innovate with discipline in compliance-driven industries.
 	</h2>
 	<div class="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -123,16 +123,23 @@
 <!-- Opportunity Audit -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
-   The <i>Opportunity Audit</i> turns an overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
+   Every engagement begins with an <i>Opportunity Audit</i> that turns overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
 </h2>
 	<Diagnostics />
 </section>
+
+<!--Product Lifecycle Lead Gen--> 
+
+<div>
+	<ProductLifecycleForm />
+</div>
 
 <!-- Phases -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
 	<h2 class="h2 mb-6 text-center">De-risk your next chapter.</h2>
 	<ServicesGrid />
 </section>
+
 
 <!-- 
 Case studies or proof in the work
@@ -146,12 +153,6 @@ Case studies or proof in the work
 	<p>WHO: united standards of vaccine delivery across continents.</p>
 </section> 
 -->
-
-<!--Product Lifecycle Lead Gen--> 
-
-<div>
-	<ProductLifecycleForm />
-</div>
 
 <!--About us -->
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
