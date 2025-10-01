@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import ProductCurveSVG from './ProductCurveSVG.svelte';
+  import ProductLifecycleChart from './ProductLifecycleChart.svelte';
 
   let svgRef: any;
 
@@ -255,7 +255,7 @@
 
     <!-- Graph column -->
     <div class="w-full xl:flex-1">
-      <ProductCurveSVG bind:this={svgRef} />
+      <ProductLifecycleChart bind:this={svgRef} />
     </div>
   </div>
 </section>
