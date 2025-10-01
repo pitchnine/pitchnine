@@ -57,9 +57,9 @@
 <section class="mx-auto max-w-7xl px-2 py-10">
   <h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
 
-  <div class="mt-24 flex flex-col items-center gap-12 xl:flex-row xl:items-start xl:gap-8">
+  <div class="mt-24 flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-8">
     <!-- Form column -->
-    <div class="w-full xl:flex-none xl:max-w-[560px]">
+    <div class="w-full lg:w-1/2 lg:max-w-[500px]">
       <form class="space-y-6" on:submit={handleSubmit}>
 
         <!-- Q1 -->
@@ -254,7 +254,7 @@
     </div>
 
     <!-- Graph column -->
-    <div class="w-full xl:flex-1">
+    <div class="w-full lg:w-1/2">
       <ProductLifecycleChart bind:this={svgRef} />
     </div>
   </div>
