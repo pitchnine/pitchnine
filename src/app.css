@@ -33,7 +33,7 @@
 }
 
 .grid-link {
-  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 rounded-full transition;
+  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 transition;
 }
 
 .grid-link:hover {
@@ -68,6 +68,23 @@
 
 .primary-cta-active {
   @apply border-emerald-50/40 text-emerald-50 rounded-full ring-2 ring-emerald-200/25;
+}
+
+
+.disabled-cta {
+  @apply opacity-30 relative overflow-hidden inline-flex items-center justify-center px-6 py-4 rounded-full border border-emerald-50/10 text-emerald-50/60 transition;
+}
+
+.disabled-cta::before {
+  content: "",
+}
+
+.disabled-cta:hover {
+  animation: none,
+}
+
+.disabled-cta:hover::before {
+  animation: none,
 }
 
 @keyframes shimmer {

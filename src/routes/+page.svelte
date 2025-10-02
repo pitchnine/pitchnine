@@ -4,6 +4,8 @@
 	import Coder from '$lib/components/Coder.svelte';
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
+	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
+	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import Form from '$lib/components/Form.svelte';
 
 	export const load = async () => {
@@ -20,14 +22,14 @@
 
 <Nav />
 
-<!--1. Hero-->
+<!--Hero-->
 
 <Coder />
 
-<!--2. ICP Statement + Logo Cred -->
+<!--Overview + Logo Credentials -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
 	<h2 class="h2 max-w-6xl mx-auto text-left px-4 text-center md:px-0 md:text-left">
-		At lifecycle inflection points, products must modernize without slowing delivery. Pitch Nine audits opportunities, runs pilots safely outside the mainline, and integrates proven winners with discipline, giving leaders the proof and confidence to invest where it matters most.
+		Pitch Nine is the alternative to trend-driven product consultancies, helping established product teams innovate with discipline in compliance-driven industries.
 	</h2>
 	<div class="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -118,21 +120,28 @@
 	</div>
 </section>
 
-<!--3. Process -->
+<!-- Opportunity Audit -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
-   The <i>Opportunity Audit</i> reveals which initiatives are worth pursuing and which are not, turning an overloaded backlog into a disciplined plan leaders can trust and fund with confidence 
+   Every engagement begins with an <i>Opportunity Audit</i> that turns overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
 </h2>
 	<Diagnostics />
 </section>
 
-<!-- 4. Services list -->
+<!--Product Lifecycle Lead Gen--> 
+
+<div>
+	<ProductLifecycleForm />
+</div>
+
+<!-- Phases -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
 	<h2 class="h2 mb-6 text-center">De-risk your next chapter.</h2>
 	<ServicesGrid />
 </section>
 
-<!--5. 
+
+<!-- 
 Case studies or proof in the work
 <section class="relative h-screen">
 	<h2 class="inter mb-24 header-text">
@@ -145,7 +154,7 @@ Case studies or proof in the work
 </section> 
 -->
 
-<!--5. Differentiator linking to about -->
+<!--About us -->
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
 	<h2 class="h2 text-center mb-8">Veteran judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
@@ -159,7 +168,8 @@ Case studies or proof in the work
 	</div>
 </section>
 
-<!--6. CTA-->
+
+<!--CTA-->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
 	<Form />
 </section>
