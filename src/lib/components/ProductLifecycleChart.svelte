@@ -27,7 +27,23 @@
 	);
 
 	let canvasEl: HTMLCanvasElement;
-	let chart: ChartJS | null = null;
+	let chart: Chart | null = null;
+let tooltipModel: { title: string; body: string; footer?: string } = {
+  title: '',
+  body: '',
+  footer: 'Select “Analyze with AI” for a tailored plan'
+};
+
+	const STAGE_COPY: Record<
+		'introduction' | 'growth' | 'maturity' | 'decline' | 'fragmented',
+		string
+	> = {
+		introduction: 'Prove value quickly with disciplined pilots, then prepare to scale.',
+		growth: 'Scale responsibly — standardize delivery while keeping unit economics in check.',
+		maturity: 'Defend market share and extend lifespan through optimization and stickiness.',
+		decline: 'Stabilize the base and plan clear paths for reinvention or sunset.',
+		fragmented: 'Mixed signals — align teams and validate a single operating thesis.'
+	};
 
 	// === Reference curve (same as your SVG path d) ===
 	const lifecyclePathD =
@@ -169,13 +185,26 @@
 			return { x, y: yOnCurveAtX(x) };
 		});
 
+		const stageTitle =
+			summaryStage === 'introduction'
+				? 'Discovery'
+				: summaryStage === 'growth'
+					? 'Growth'
+					: summaryStage === 'maturity'
+						? 'Maturity'
+						: summaryStage === 'decline'
+							? 'Decline'
+							: 'Fragmented';
+
+		
+
 		chart.data.datasets[1].data = pts as any;
 		chart.update();
 	}
 
 	onMount(() => {
 		// Only runs in the browser (avoids SSR 500s)
-		samples = samplePath(lifecyclePathD, 1200);
+		samples = samplePath(lifecyclePathD, 400);
 
 		chart = new Chart(canvasEl, {
 			type: 'scatter',
@@ -186,17 +215,18 @@
 						data: samples.map((p) => ({ x: p.x, y: p.y })),
 						showLine: true,
 						pointRadius: 0,
-						borderWidth: 2,
-						borderColor: 'rgba(255,255,255,0.12)'
+						borderWidth: 1,
+						tension: 0.4,
+						borderColor: 'rgba(255,255,255,0.10)'
 					},
 					{
 						label: 'Result',
 						data: [],
 						showLine: true,
-						pointRadius: 5,
-						borderWidth: 2,
+						pointRadius: 4,
+						borderWidth: 1,
 						borderColor: '#10B981',
-						backgroundColor: '#10B981'
+						backgroundColor: '#34D399'
 					}
 				]
 			},
@@ -223,7 +253,9 @@
 				},
 				plugins: {
 					legend: { display: false },
-					tooltip: { mode: 'nearest', intersect: false },
+					tooltip: {
+						enabled: false,
+					},
 					annotation: {
 						annotations: {
 							intro: {
@@ -253,7 +285,7 @@
 								yMax: 375,
 								backgroundColor: 'rgba(229,231,235,0.10)',
 								borderWidth: 0,
-                                label: {
+								label: {
 									display: true,
 									content: 'GROWTH',
 									position: { x: 'center', y: 'start' },
