@@ -5,6 +5,15 @@
   export let headline = "Disciplined product leadership.";
   export let subhead = "Innovation delivered responsibly in the most demanding environments.";
 
+  let sectionEl;
+  let contentEl;
+
+  onMount(() => {
+    if (!sectionEl || !contentEl) {
+      console.warn("AboutHero refs not bound yet");
+      return;
+    }
+  });
 </script>
 
 
