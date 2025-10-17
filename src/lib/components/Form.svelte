@@ -15,15 +15,12 @@
   export let density: 'base' | 'compact' = 'base';
 
   export let interestsOptions: string[] = [
-    'Executive Review',
+    'Opportunity Audit',
     'AI Readiness',
-    'Innovation Audit',
+    'Innovation Pilots',
     'Backlog Remediation',
     'Customer Insights',
-    'Pilot Enablement',
-    'Data & Integrations',
-    'Process Support',
-    'General Consultation'
+    'Data & Integrations'
   ];
 
   let form = {
