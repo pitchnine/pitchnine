@@ -1,9 +1,9 @@
 <script>
 	import Footer from '$lib/components/Footer.svelte';
 	import ProductPhaseHero from '$lib/components/ProductPhaseHero.svelte';
-	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
+	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import Form from '$lib/components/Form.svelte';
 
 	export const load = async () => {
@@ -21,6 +21,13 @@
 <!--Hero-->
 
 <ProductPhaseHero />
+
+<!-- Opportunity Audit -->
+<section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
+	<h2 class="h2 md:max-w-6xl w-full px-3">
+   Here's a strong trigger statement to hook them on problem with a transition into solution talk or broad questions about balancing debt vs innovation.
+</h2>
+</section>
 
 <!--Product Lifecycle Lead Gen--> 
 
