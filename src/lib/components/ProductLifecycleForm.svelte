@@ -289,7 +289,7 @@
     </div>
 
     <!-- Chart column -->
-    <div class="border rounded-md border-gray-500/25 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
+    <div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
       <ProductLifecycleChart bind:this={svgRef} />
     </div>
   </div>

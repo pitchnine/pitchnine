@@ -217,15 +217,14 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 						pointRadius: 0,
 						borderWidth: 1,
 						tension: 0.4,
-						borderColor: 'rgba(255,255,255,0.10)'
+						borderColor: 'rgba(255,255,255,0.25)'
 					},
 					{
 						label: 'Result',
 						data: [],
-						showLine: true,
-						pointRadius: 4,
+						showLine: false,
+						pointRadius: 6,
 						borderWidth: 1,
-						borderColor: '#10B981',
 						backgroundColor: '#34D399'
 					}
 				]
@@ -264,15 +263,15 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 								xMax: 155,
 								yMin: 25,
 								yMax: 375,
-								backgroundColor: 'rgba(229,231,235,0.10)',
+								backgroundColor: 'rgba(229,231,235,0.03)',
 								borderWidth: 0,
 								label: {
 									display: true,
 									content: 'DISCOVERY',
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
-									color: 'rgba(255,255,255,0.25)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									color: 'rgba(255,255,255,0.50)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -283,15 +282,15 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 								xMax: 295,
 								yMin: 25,
 								yMax: 375,
-								backgroundColor: 'rgba(229,231,235,0.10)',
+								backgroundColor: 'rgba(229,231,235,0.03)',
 								borderWidth: 0,
 								label: {
 									display: true,
 									content: 'GROWTH',
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
-									color: 'rgba(255,255,255,0.25)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									color: 'rgba(255,255,255,0.50)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -302,15 +301,15 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 								xMax: 435,
 								yMin: 25,
 								yMax: 375,
-								backgroundColor: 'rgba(229,231,235,0.10)',
+								backgroundColor: 'rgba(229,231,235,0.03)',
 								borderWidth: 0,
 								label: {
 									display: true,
 									content: 'MATURITY',
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
-									color: 'rgba(255,255,255,0.25)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									color: 'rgba(255,255,255,0.50)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -321,15 +320,15 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 								xMax: 575,
 								yMin: 25,
 								yMax: 375,
-								backgroundColor: 'rgba(229,231,235,0.10)',
+								backgroundColor: 'rgba(229,231,235,0.03)',
 								borderWidth: 0,
 								label: {
 									display: true,
 									content: 'DECLINE',
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
-									color: 'rgba(255,255,255,0.25)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 600 },
+									color: 'rgba(255,255,255,0.50)',
+									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
