@@ -15,15 +15,12 @@
   export let density: 'base' | 'compact' = 'base';
 
   export let interestsOptions: string[] = [
-    'Executive Review',
+    'Opportunity Audit',
     'AI Readiness',
-    'Innovation Audit',
+    'Innovation Pilots',
     'Backlog Remediation',
     'Customer Insights',
-    'Pilot Enablement',
-    'Data & Integrations',
-    'Process Support',
-    'General Consultation'
+    'Data & Integrations'
   ];
 
   let form = {
@@ -78,12 +75,12 @@
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
       <!-- Name -->
       <div>
-        <label for="name" class="inter block text-sm text-gray-50">Name *</label>
+        <label for="name" class="inter block text-sm text-gray-50">* Name:</label>
         <input
           id="name"
           name="name"
           type="text"
-          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          class="inter text-sm mt-2 block w-full rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
           placeholder="Full name"
           bind:value={form.name}
           required
@@ -92,12 +89,12 @@
 
       <!-- Email -->
       <div>
-        <label for="email" class="inter block text-sm text-gray-50">Email *</label>
+        <label for="email" class="inter block text-sm text-gray-50">* Email:</label>
         <input
           id="email"
           name="email"
           type="email"
-          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          class="inter mt-2 text-sm block w-full rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
           placeholder="you@company.com"
           bind:value={form.email}
           required
@@ -106,12 +103,12 @@
 
       <!-- Company -->
       <div class="md:col-span-2">
-        <label for="company" class="inter block text-sm text-gray-50">Company *</label>
+        <label for="company" class="inter block text-sm text-gray-50">* Company:</label>
         <input
           id="company"
           name="company"
           type="text"
-          class="inter mt-2 block w-full rounded-xl border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
+          class="inter text-sm mt-2 block w-full rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-gray-100 placeholder-gray-500 focus:border-emerald-500/50 focus:outline-none focus:ring-1 focus:ring-emerald-500/50"
           placeholder="Acme Corp"
           bind:value={form.company}
           required
@@ -119,49 +116,46 @@
       </div>
     </div>
 
-    <!-- Interests -->
-    <div>
-      <label class="inter block text-sm text-gray-50">Interests</label>
-      <fieldset class="mt-2">
-        <legend class="sr-only">Select one or more interests</legend>
-        <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-          {#each interestsOptions as opt, i}
-            <div>
-              <input
-                id={'interest-' + i}
-                type="checkbox"
-                name="interests"
-                value={opt}
-                class="peer sr-only"
-                bind:group={form.interests}
-              />
-              <label
-                for={'interest-' + i}
-                class="grid-link flex h-12 w-full cursor-pointer items-center justify-start gap-3
-                       transition peer-checked:border-emerald-50/50 peer-checked:text-emerald-50
-                       peer-checked:ring-1 peer-checked:ring-emerald-200/15
-                       [&_.badge-check]:opacity-0
-                       peer-checked:[&_.badge-check]:opacity-100"
-              >
-                <span
-                  class="inline-flex h-6 w-6 items-center justify-center rounded-full
-                         bg-gray-900/50 text-emerald-300/50
-                         transition-colors duration-200
-                         peer-checked:bg-emerald-400 peer-checked:text-emerald-900"
-                  aria-hidden="true"
-                >
-                  <span class="badge-check transition-opacity duration-150 [&_svg]:h-4 [&_svg]:w-4">
-                    {@html CheckIcon}
-                  </span>
-                </span>
+<!-- Interests -->
+<div>
+  <label class="inter block text-sm text-gray-50">Interests</label>
+  <fieldset class="mt-2">
+    <legend class="sr-only">Select one or more interests</legend>
+    <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      {#each interestsOptions as opt, i}
+        <div>
+          <input
+            id={'interest-' + i}
+            type="checkbox"
+            name="interests"
+            value={opt}
+            class="peer sr-only"
+            bind:group={form.interests}
+          />
+          <label
+            for={'interest-' + i}
+            class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
+                   rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
+                   transition
+                   peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
+                   peer-checked:ring-1 peer-checked:ring-emerald-200/25
+                   peer-checked:[&_.dot]:opacity-100"
+          >
+            <!-- Green dot (hidden by default) -->
+            <span
+              class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition"
+              aria-hidden="true"
+            ></span>
 
-                <span class="fine">{opt}</span>
-              </label>
-            </div>
-          {/each}
+            <!-- choice text -->
+            <span class="text-sm">{opt}</span>
+          </label>
         </div>
-      </fieldset>
+      {/each}
     </div>
+  </fieldset>
+</div>
+
 
     <!-- Divider -->
     <div class="border-t border-white/10"></div>
