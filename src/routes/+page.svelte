@@ -6,6 +6,7 @@
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
 	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
+	import LifecycleLeadGen from '$lib/components/LifecycleLeadGen.svelte';
 	import Form from '$lib/components/Form.svelte';
 
 	export const load = async () => {
@@ -25,6 +26,7 @@
 <!--Hero-->
 
 <Coder />
+<LifecycleLeadGen />
 
 <!--Overview + Logo Credentials -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">

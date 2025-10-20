@@ -17,7 +17,7 @@
   export let interestsOptions: string[] = [
     'Opportunity Audit',
     'AI Readiness',
-    'Innovation Pilots',
+    'Feature Validation',
     'Backlog Remediation',
     'Customer Insights',
     'Data & Integrations'

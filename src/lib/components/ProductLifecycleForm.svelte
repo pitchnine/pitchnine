@@ -274,7 +274,7 @@
             </svg>
           </button>
 
-          <!-- CTA 
+          <!-- CTA -->
           <button
             type="submit"
             disabled={!ctaEnabled}
@@ -283,7 +283,7 @@
             title={ctaEnabled ? 'Analyze with AI' : 'Advance to step 3 to analyze'}
           >
             Analyze with AI
-          </button> -->
+          </button> 
         </div>
       </form>
     </div>
