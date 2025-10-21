@@ -165,24 +165,24 @@
 <section class="mx-auto max-w-7xl px-2 py-10">
   <h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
     {#if showLeadForm}
-
   <div class="mt-24">
-       <LifecycleLeadGen
+    <LifecycleLeadGen
       title="Access analysis"
       answers={[q1, q2, q3]}
       on:close={async () => {
         showLeadForm = false;
-        await tick();          
-        plotFromCurrentAnswers();
-      }}
-      on:submit={async (e) => {
-       
-        showLeadForm = false;
         await tick();
         plotFromCurrentAnswers();
       }}
+      on:submit={handleLeadSubmit}
     />
   </div>
+
+{:else if showResult}
+  <div class="mt-24">
+    <LifecycleResult onRestart={restartAssessment} />
+  </div>
+
 {:else}
     <!-- Original quiz + chart layout -->
     <div class="mt-24 flex flex-col items-center gap-12">
