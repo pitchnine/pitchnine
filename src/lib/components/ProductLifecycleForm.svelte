@@ -2,6 +2,7 @@
   import { fade } from 'svelte/transition';
   import { tick } from 'svelte';
   import ProductLifecycleChart from './ProductLifecycleChart.svelte';
+  import LifecycleLeadGen from './LifecycleLeadGen.svelte';
 
   let svgRef: any;
 
@@ -9,6 +10,8 @@
   let q1: 'A' | 'B' | 'C' | 'D' | null = null;
   let q2: 'A' | 'B' | 'C' | 'D' | null = null;
   let q3: 'A' | 'B' | 'C' | 'D' | null = null;
+
+  let showLeadForm = false;
 
   // Focus refs for legends to keep the viewport steady on step changes
   let legend1: HTMLLegendElement;
@@ -48,13 +51,10 @@
     }
   }
 
-  function handleSubmit(e: SubmitEvent) {
-    e.preventDefault();
-    const answers = [q1, q2, q3] as Array<'A' | 'B' | 'C' | 'D' | null>;
-    if (svgRef?.plotFromAnswers) {
-      try { svgRef.plotFromAnswers(answers as ('A'|'B'|'C'|'D')[]); } catch {}
-    }
-    // lead-gen next
+function handleSubmit(e: SubmitEvent) {
+  e.preventDefault();
+  // For Pass 2, just reveal the form. (We’ll wire POST + plot in the next pass.)
+  showLeadForm = true;
   }
 
   const q1Options = [ { id: 'q1-a', value: 'A', label: 'Low; early days' },
@@ -289,9 +289,23 @@
     </div>
 
     <!-- Chart column -->
-    <div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
-      <ProductLifecycleChart bind:this={svgRef} />
-    </div>
+
+<div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
+  {#if showLeadForm}
+    <LifecycleLeadGen
+      title="Access analysis"
+      answers={[q1, q2, q3]}             
+      on:close={() => (showLeadForm = false)}
+      on:submit={(e) => {
+        // Pass 2 behavior: close on submit for now
+        // Next pass: POST e.detail, then close, tick, and plotFromAnswers(...)
+        showLeadForm = false;
+      }}
+    />
+  {:else}
+    <ProductLifecycleChart bind:this={svgRef} />
+  {/if}
+</div>
   </div>
 </section>
 
