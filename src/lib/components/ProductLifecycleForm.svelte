@@ -34,6 +34,22 @@
     }
   }
 
+  function plotFromCurrentAnswers() {
+  const answers = [q1, q2, q3] as Array<'A'|'B'|'C'|'D'|null>;
+  // If all 3 exist, do a full plot:
+  if (answers.every(Boolean) && svgRef?.plotFromAnswers) {
+    try { svgRef.plotFromAnswers(answers as ('A'|'B'|'C'|'D')[]); } catch {}
+    return;
+  }
+
+  // Otherwise, plot whatever's available step-by-step (graceful fallback)
+  if (svgRef?.plotPoint) {
+    if (q1) svgRef.plotPoint(1, q1);
+    if (q2) svgRef.plotPoint(2, q2);
+    if (q3) svgRef.plotPoint(3, q3);
+  }
+}
+
   function focusLegend(step: number) {
     const el = step === 1 ? legend1 : step === 2 ? legend2 : legend3;
     el?.focus({ preventScroll: false });
@@ -95,217 +111,209 @@ function handleSubmit(e: SubmitEvent) {
 
 <section class="mx-auto max-w-7xl px-2 py-10">
   <h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
+    {#if showLeadForm}
 
-  <div class="mt-24 flex flex-col items-center gap-12">
-    <!-- Form column -->
-    <div class="w-full md:flex-1 md:basis-0">
-      <form class="space-y-6" on:submit={handleSubmit}>
-        <!-- STEP 1 (always mounted) -->
-        <fieldset
-          class="space-y-3"
-          aria-hidden={currentStep !== 1}
-          {...inertFor(currentStep !== 1)}
-          hidden={currentStep !== 1}
-        >
-          <legend
-            bind:this={legend1}
-            tabindex="-1"
-            class="inter mb-2 block text-sm text-gray-50 focus:outline-none"
-          >
-            Current sales trajectory:
-          </legend>
-
-          <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-            <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-              {#each q1Options as opt}
-                <div>
-                  <input
-                    id={opt.id}
-                    type="radio"
-                    name="q1"
-                    value={opt.value}
-                    class="peer sr-only"
-                    checked={q1 === opt.value}
-                    on:change={() => onPick(1, opt.value)}
-                  />
-                  <label
-                    for={opt.id}
-                    class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
-                           rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
-                           transition
-                           peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
-                           peer-checked:ring-1 peer-checked:ring-emerald-200/25
-                           peer-checked:[&_.dot]:opacity-100"
-                  >
-                    <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
-                    <span class="text-sm">{opt.label}</span>
-                  </label>
-                </div>
-              {/each}
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- STEP 2 (always mounted) -->
-        <fieldset
-          class="space-y-3"
-          aria-hidden={currentStep !== 2}
-          {...inertFor(currentStep !== 2)}
-          hidden={currentStep !== 2}
-        >
-          <legend
-            bind:this={legend2}
-            tabindex="-1"
-            class="inter mb-2 block text-sm text-gray-50 focus:outline-none"
-          >
-            Team’s current focus:
-          </legend>
-
-          <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-            <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-              {#each q2Options as opt}
-                <div>
-                  <input
-                    id={opt.id}
-                    type="radio"
-                    name="q2"
-                    value={opt.value}
-                    class="peer sr-only"
-                    checked={q2 === opt.value}
-                    on:change={() => onPick(2, opt.value)}
-                  />
-                  <label
-                    for={opt.id}
-                    class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
-                           rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
-                           transition
-                           peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
-                           peer-checked:ring-1 peer-checked:ring-emerald-200/25
-                           peer-checked:[&_.dot]:opacity-100"
-                  >
-                    <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
-                    <span class="text-sm">{opt.label}</span>
-                  </label>
-                </div>
-              {/each}
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- STEP 3 (always mounted) -->
-        <fieldset
-          class="space-y-3"
-          aria-hidden={currentStep !== 3}
-          {...inertFor(currentStep !== 3)}
-          hidden={currentStep !== 3}
-        >
-          <legend
-            bind:this={legend3}
-            tabindex="-1"
-            class="inter mb-2 block text-sm text-gray-50 focus:outline-none"
-          >
-            Competitive landscape:
-          </legend>
-
-          <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-            <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-              {#each q3Options as opt}
-                <div>
-                  <input
-                    id={opt.id}
-                    type="radio"
-                    name="q3"
-                    value={opt.value}
-                    class="peer sr-only"
-                    checked={q3 === opt.value}
-                    on:change={() => onPick(3, opt.value)}
-                  />
-                  <label
-                    for={opt.id}
-                    class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
-                           rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
-                           transition
-                           peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
-                           peer-checked:ring-1 peer-checked:ring-emerald-200/25
-                           peer-checked:[&_.dot]:opacity-100"
-                  >
-                    <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
-                    <span class="text-sm">{opt.label}</span>
-                  </label>
-                </div>
-              {/each}
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- Shared nav row -->
-        <div class="flex items-center gap-3 pt-4">
-          <!-- Back -->
-          <button
-            type="button"
-            on:click={() => canBack && goBack()}
-            disabled={!canBack}
-            class="rounded-md p-2 transition
-                   text-white hover:text-gray-200
-                   disabled:text-white/20 disabled:hover:text-white/20 disabled:cursor-not-allowed"
-            aria-label="Go back"
-            title={canBack ? 'Back' : 'Back (not available)'}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <!-- Forward -->
-          <button
-            type="button"
-            on:click={() => canForward && goForward()}
-            disabled={!canForward}
-            class="rounded-md p-2 transition
-                   text-white hover:text-gray-200
-                   disabled:text-white/20 disabled:hover:text-white/20 disabled:cursor-not-allowed"
-            aria-label="Go forward"
-            title={canForward ? 'Next' : 'Next (select an option)'}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                 viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
-          <!-- CTA -->
-          <button
-            type="submit"
-            disabled={!ctaEnabled}
-            aria-disabled={!ctaEnabled}
-            class={`inter ${ctaEnabled ? 'primary-cta' : 'disabled-cta'} ml-auto`}
-            title={ctaEnabled ? 'Analyze with AI' : 'Advance to step 3 to analyze'}
-          >
-            Analyze with AI
-          </button> 
-        </div>
-      </form>
-    </div>
-
-    <!-- Chart column -->
-
-<div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
-  {#if showLeadForm}
-    <LifecycleLeadGen
+  <div class="mt-24">
+       <LifecycleLeadGen
       title="Access analysis"
-      answers={[q1, q2, q3]}             
-      on:close={() => (showLeadForm = false)}
-      on:submit={(e) => {
-        // Pass 2 behavior: close on submit for now
-        // Next pass: POST e.detail, then close, tick, and plotFromAnswers(...)
+      answers={[q1, q2, q3]}
+      on:close={async () => {
         showLeadForm = false;
+        await tick();          
+        plotFromCurrentAnswers();
+      }}
+      on:submit={async (e) => {
+       
+        showLeadForm = false;
+        await tick();
+        plotFromCurrentAnswers();
       }}
     />
-  {:else}
-    <ProductLifecycleChart bind:this={svgRef} />
-  {/if}
-</div>
   </div>
+{:else}
+    <!-- Original quiz + chart layout -->
+    <div class="mt-24 flex flex-col items-center gap-12">
+      <!-- Form column (quiz questions + arrows + CTA) -->
+      <div class="w-full md:flex-1 md:basis-0">
+        <form class="space-y-6" on:submit={handleSubmit}>
+          <!-- STEP 1 -->
+          <fieldset
+            class="space-y-3"
+            aria-hidden={currentStep !== 1}
+            {...inertFor(currentStep !== 1)}
+            hidden={currentStep !== 1}
+          >
+            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+              Current sales trajectory:
+            </legend>
+
+            <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
+              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                {#each q1Options as opt}
+                  <div>
+                    <input
+                      id={opt.id}
+                      type="radio"
+                      name="q1"
+                      value={opt.value}
+                      class="peer sr-only"
+                      checked={q1 === opt.value}
+                      on:change={() => onPick(1, opt.value)}
+                    />
+                    <label
+                      for={opt.id}
+                      class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
+                             rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
+                             transition
+                             peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
+                             peer-checked:ring-1 peer-checked:ring-emerald-200/25
+                             peer-checked:[&_.dot]:opacity-100"
+                    >
+                      <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
+                      <span class="text-sm">{opt.label}</span>
+                    </label>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 2 -->
+          <fieldset
+            class="space-y-3"
+            aria-hidden={currentStep !== 2}
+            {...inertFor(currentStep !== 2)}
+            hidden={currentStep !== 2}
+          >
+            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+              Team’s current focus:
+            </legend>
+
+            <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
+              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                {#each q2Options as opt}
+                  <div>
+                    <input
+                      id={opt.id}
+                      type="radio"
+                      name="q2"
+                      value={opt.value}
+                      class="peer sr-only"
+                      checked={q2 === opt.value}
+                      on:change={() => onPick(2, opt.value)}
+                    />
+                    <label
+                      for={opt.id}
+                      class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
+                             rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
+                             transition
+                             peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
+                             peer-checked:ring-1 peer-checked:ring-emerald-200/25
+                             peer-checked:[&_.dot]:opacity-100"
+                    >
+                      <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
+                      <span class="text-sm">{opt.label}</span>
+                    </label>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- STEP 3 -->
+          <fieldset
+            class="space-y-3"
+            aria-hidden={currentStep !== 3}
+            {...inertFor(currentStep !== 3)}
+            hidden={currentStep !== 3}
+          >
+            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+              Competitive landscape:
+            </legend>
+
+            <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
+              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+                {#each q3Options as opt}
+                  <div>
+                    <input
+                      id={opt.id}
+                      type="radio"
+                      name="q3"
+                      value={opt.value}
+                      class="peer sr-only"
+                      checked={q3 === opt.value}
+                      on:change={() => onPick(3, opt.value)}
+                    />
+                    <label
+                      for={opt.id}
+                      class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap
+                             rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left
+                             transition
+                             peer-checked:border-emerald-500/50 peer-checked:text-emerald-50
+                             peer-checked:ring-1 peer-checked:ring-emerald-200/25
+                             peer-checked:[&_.dot]:opacity-100"
+                    >
+                      <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
+                      <span class="text-sm">{opt.label}</span>
+                    </label>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Nav row -->
+          <div class="flex items-center gap-3 pt-4">
+            <button
+              type="button"
+              on:click={() => canBack && goBack()}
+              disabled={!canBack}
+              class="rounded-md p-2 transition
+                     text-white hover:text-gray-200
+                     disabled:text-white/20 disabled:hover:text-white/20 disabled:cursor-not-allowed"
+              aria-label="Go back"
+              title={canBack ? 'Back' : 'Back (not available)'}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              on:click={() => canForward && goForward()}
+              disabled={!canForward}
+              class="rounded-md p-2 transition
+                     text-white hover:text-gray-200
+                     disabled:text-white/20 disabled:hover:text-white/20 disabled:cursor-not-allowed"
+              aria-label="Go forward"
+              title={canForward ? 'Next' : 'Next (select an option)'}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                   viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <button
+              type="submit"
+              disabled={!ctaEnabled}
+              aria-disabled={!ctaEnabled}
+              class={`inter ${ctaEnabled ? 'primary-cta' : 'disabled-cta'} ml-auto`}
+              title={ctaEnabled ? 'Analyze with AI' : 'Advance to step 3 to analyze'}
+            >
+              Analyze with AI
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Chart column -->
+      <div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
+        <ProductLifecycleChart bind:this={svgRef} />
+      </div>
+    </div>
+  {/if}
 </section>
 
