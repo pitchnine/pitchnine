@@ -3,7 +3,12 @@
   import { tick } from 'svelte';
   import ProductLifecycleChart from './ProductLifecycleChart.svelte';
   import LifecycleLeadGen from './LifecycleLeadGen.svelte';
+  import LifecycleResult from './LifecycleResult.svelte';
 
+  // ---- Formspree: use your direct endpoint URL (no env var needed) ----
+  const FORMSPREE_URL = 'https://formspree.io/f/xldpkawp';
+
+  // Refs & state
   let svgRef: any;
 
   let currentStep = 1;
@@ -12,12 +17,21 @@
   let q3: 'A' | 'B' | 'C' | 'D' | null = null;
 
   let showLeadForm = false;
+  let showResult = false;
 
-  // Focus refs for legends to keep the viewport steady on step changes
+  // Focus refs for legends
   let legend1: HTMLLegendElement;
   let legend2: HTMLLegendElement;
   let legend3: HTMLLegendElement;
 
+  type LeadDetail = {
+    email: string;
+    company: string;
+    consent: boolean;
+    answers: ('A'|'B'|'C'|'D'|null)[];
+  };
+
+  // Quiz interactions
   async function onPick(step: number, value: 'A' | 'B' | 'C' | 'D') {
     if (step === 1) q1 = value;
     if (step === 2) q2 = value;
@@ -25,30 +39,13 @@
 
     plotStep(step);
 
-    // Let peer styles animate, then advance
     if (step < 3) {
-      await new Promise(r => setTimeout(r, 140)); // match fade duration
+      await new Promise(r => setTimeout(r, 140));
       currentStep = step + 1;
       await tick();
       focusLegend(currentStep);
     }
   }
-
-  function plotFromCurrentAnswers() {
-  const answers = [q1, q2, q3] as Array<'A'|'B'|'C'|'D'|null>;
-  // If all 3 exist, do a full plot:
-  if (answers.every(Boolean) && svgRef?.plotFromAnswers) {
-    try { svgRef.plotFromAnswers(answers as ('A'|'B'|'C'|'D')[]); } catch {}
-    return;
-  }
-
-  // Otherwise, plot whatever's available step-by-step (graceful fallback)
-  if (svgRef?.plotPoint) {
-    if (q1) svgRef.plotPoint(1, q1);
-    if (q2) svgRef.plotPoint(2, q2);
-    if (q3) svgRef.plotPoint(3, q3);
-  }
-}
 
   function focusLegend(step: number) {
     const el = step === 1 ? legend1 : step === 2 ? legend2 : legend3;
@@ -62,51 +59,107 @@
       return;
     }
     if (svgRef?.plotFromAnswers) {
-      const answers = [q1, q2, q3] as Array<'A' | 'B' | 'C' | 'D' | null>;
+      const answers = [q1, q2, q3] as Array<'A'|'B'|'C'|'D'|null>;
       try { svgRef.plotFromAnswers(answers); } catch {}
     }
   }
 
-function handleSubmit(e: SubmitEvent) {
-  e.preventDefault();
-  // For Pass 2, just reveal the form. (We’ll wire POST + plot in the next pass.)
-  showLeadForm = true;
-  }
-
-  const q1Options = [ { id: 'q1-a', value: 'A', label: 'Low; early days' },
-    { id: 'q1-b', value: 'B', label: 'Rising; rivals entering' },
-    { id: 'q1-c', value: 'C', label: 'Stalling; market saturated' },
-    { id: 'q1-d', value: 'D', label: 'Shrinking; churn rising' } ] as const;
-  const q2Options = [   { id: 'q2-a', value: 'A', label: 'High experimentation' },
-    { id: 'q2-b', value: 'B', label: 'Steady feature delivery' },
-    { id: 'q2-c', value: 'C', label: 'Defending share, optimizing' },
-    { id: 'q2-d', value: 'D', label: 'Maintenance-heavy, reactive' } ] as const;
-  const q3Options = [   { id: 'q3-a', value: 'A', label: 'Few direct rivals' },
-    { id: 'q3-b', value: 'B', label: 'Differentiation critical' },
-    { id: 'q3-c', value: 'C', label: 'Crowded with price pressure' },
-    { id: 'q3-d', value: 'D', label: 'Exits, consolidation' } ] as const;
-
-  function goBack() {
-    if (currentStep > 1) {
-      currentStep -= 1;
-      focusLegend(currentStep);
+  function plotFromCurrentAnswers() {
+    const answers = [q1, q2, q3] as Array<'A'|'B'|'C'|'D'|null>;
+    if (answers.every(Boolean) && svgRef?.plotFromAnswers) {
+      try { svgRef.plotFromAnswers(answers as ('A'|'B'|'C'|'D')[]); } catch {}
+      return;
     }
-  }
-  function goForward() {
-    if (currentStep < 3) {
-      currentStep += 1;
-      focusLegend(currentStep);
+    if (svgRef?.plotPoint) {
+      if (q1) svgRef.plotPoint(1, q1);
+      if (q2) svgRef.plotPoint(2, q2);
+      if (q3) svgRef.plotPoint(3, q3);
     }
   }
 
-    function inertFor(condition: boolean): Record<string, true> | Record<string, never> {
-  return condition ? { inert: true } : {};
-}
+  // Analyze CTA -> show lead form
+  function handleSubmit(e: SubmitEvent) {
+    e.preventDefault();
+    showLeadForm = true;
+  }
 
+  // Lead form submit -> POST to Formspree, then show result view
+  async function handleLeadSubmit(e: CustomEvent<LeadDetail>) {
+    const payload = e.detail;
+
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: payload.email,
+          company: payload.company,
+          consent: payload.consent,
+          source: 'product-lifecycle-quiz',
+          answers: payload.answers
+        })
+      });
+
+      if (!res.ok) {
+        // Log the server's response to debug 4xx/5xx if needed
+        console.warn('Formspree non-OK', res.status, await res.text());
+      }
+    } catch (err) {
+      console.error('Formspree submission error', err);
+      // We’ll add user-facing errors in the next pass
+    }
+
+    showLeadForm = false;
+    showResult = true;
+  }
+
+  // Result -> restart assessment
+  async function restartAssessment() {
+    q1 = q2 = q3 = null;
+    currentStep = 1;
+    showResult = false;
+    showLeadForm = false;
+    if (svgRef?.reset) { try { svgRef.reset(); } catch {} }
+    else { await tick(); }
+  }
+
+  // Helpers
+  function inertFor(condition: boolean): Record<string, true> | Record<string, never> {
+    return condition ? { inert: true } : {};
+  }
+
+  // Reactive UI flags
   $: canBack = currentStep > 1;
   $: canForward = currentStep === 1 ? !!q1 : currentStep === 2 ? !!q2 : false;
   $: ctaEnabled = currentStep === 3;
+
+  // Options
+  const q1Options = [
+    { id: 'q1-a', value: 'A', label: 'Low; early days' },
+    { id: 'q1-b', value: 'B', label: 'Rising; rivals entering' },
+    { id: 'q1-c', value: 'C', label: 'Stalling; market saturated' },
+    { id: 'q1-d', value: 'D', label: 'Shrinking; churn rising' }
+  ] as const;
+
+  const q2Options = [
+    { id: 'q2-a', value: 'A', label: 'High experimentation' },
+    { id: 'q2-b', value: 'B', label: 'Steady feature delivery' },
+    { id: 'q2-c', value: 'C', label: 'Defending share, optimizing' },
+    { id: 'q2-d', value: 'D', label: 'Maintenance-heavy, reactive' }
+  ] as const;
+
+  const q3Options = [
+    { id: 'q3-a', value: 'A', label: 'Few direct rivals' },
+    { id: 'q3-b', value: 'B', label: 'Differentiation critical' },
+    { id: 'q3-c', value: 'C', label: 'Crowded with price pressure' },
+    { id: 'q3-d', value: 'D', label: 'Exits, consolidation' }
+  ] as const;
 </script>
+
+
 
 
 <section class="mx-auto max-w-7xl px-2 py-10">
