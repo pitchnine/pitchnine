@@ -100,40 +100,18 @@
                 <a
                   href={`mailto:${s.email}`}
                   data-cta="module"
-                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider
-                         text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
+                  class="secondary-cta"
                 >
                   <span>Email</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                           hover:translate-x-[4px] focus-visible:translate-x-[4px]"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
                 </a>
 
                  <!-- Cal -->
                 <a
                   href={s.cal}
                   data-cta="module"
-                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider
-                         text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
+                  class="secondary-cta"
                 >
                   <span>Calendar</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                           hover:translate-x-[4px] focus-visible:translate-x-[4px]"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
                 </a>
 
                 <!-- LinkedIn -->
@@ -142,20 +120,9 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cta="module"
-                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider
-                         text-emerald-300/80 hover:text-emerald-200 focus:outline-none"
+                  class="secondary-cta"
                 >
-                  <span>LinkedIn</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                           hover:translate-x-[4px] focus-visible:translate-x-[4px]"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
+                  <span>Linkedin</span>
                 </a>
               </div>
             </div>

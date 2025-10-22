@@ -163,9 +163,14 @@
 
 
 <section class="mx-auto max-w-7xl px-2 py-10">
+  {#if !showLeadForm && !showResult}
+    <h2 class="h2 mx-auto text-center" in:fade out:fade>
+      Inflection points require modernization.
+    </h2>
+  {/if}
+
   {#if showLeadForm}
-  <h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
-  <div class="mt-24">
+    <div class="mt-24" in:fade>
     <LifecycleLeadGen
       title="Access analysis"
       answers={[q1, q2, q3]}
@@ -178,8 +183,8 @@
     />
   </div>
 
-{:else if showResult}
-  <div class="mt-24">
+  {:else if showResult}
+    <div class="mt-24" in:fade>
     <LifecycleResult 
     answers={[q1, q2, q3]}
     onRestart={restartAssessment} />
@@ -187,7 +192,7 @@
 
 {:else}
     <!-- Original quiz + chart layout -->
-    <div class="mt-24 flex flex-col items-center gap-12">
+      <div class="mt-24 flex flex-col items-center gap-12" in:fade>
       <!-- Form column (quiz questions + arrows + CTA) -->
       <div class="w-full md:flex-1 md:basis-0">
         <form class="space-y-6" on:submit={handleSubmit}>
