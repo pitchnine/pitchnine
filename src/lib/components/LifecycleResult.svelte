@@ -29,7 +29,7 @@ export let onRestart: () => void = () => {};
           class="secondary-cta"
           on:click={onRestart}
         >
-          Restart assessment
+          Restart
         </button>
       </div>
     </article>

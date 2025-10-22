@@ -24,6 +24,10 @@
   let legend2: HTMLLegendElement;
   let legend3: HTMLLegendElement;
 
+  // Form lets
+  let submitting = false;
+  let serverError = '';
+
   type LeadDetail = {
     email: string;
     company: string;
@@ -87,6 +91,9 @@
   async function handleLeadSubmit(e: CustomEvent<LeadDetail>) {
     const payload = e.detail;
 
+     serverError = '';
+  submitting = true;
+
     try {
       const res = await fetch(FORMSPREE_URL, {
         method: 'POST',
@@ -102,19 +109,19 @@
           answers: payload.answers
         })
       });
-
-      if (!res.ok) {
-        // Log the server's response to debug 4xx/5xx if needed
-        console.warn('Formspree non-OK', res.status, await res.text());
-      }
-    } catch (err) {
-      console.error('Formspree submission error', err);
-      // We’ll add user-facing errors in the next pass
+    if (!res.ok) {
+      serverError = 'Something went wrong sending your details. Please try again.';
+      return;
     }
 
     showLeadForm = false;
     showResult = true;
+  } catch {
+    serverError = 'Network error. Please try again.';
+  } finally {
+    submitting = false;
   }
+}
 
   // Result -> restart assessment
   async function restartAssessment() {
@@ -171,16 +178,18 @@
 
   {#if showLeadForm}
     <div class="mt-24" in:fade>
-    <LifecycleLeadGen
-      title="Access analysis"
-      answers={[q1, q2, q3]}
-      on:close={async () => {
-        showLeadForm = false;
-        await tick();
-        plotFromCurrentAnswers();
-      }}
-      on:submit={handleLeadSubmit}
-    />
+   <LifecycleLeadGen
+  title="Access analysis"
+  answers={[q1, q2, q3]}
+  submitting={submitting}
+  serverError={serverError}
+  on:close={async () => {
+    showLeadForm = false;
+    await tick();
+    plotFromCurrentAnswers();
+  }}
+  on:submit={handleLeadSubmit}
+/>
   </div>
 
   {:else if showResult}
@@ -204,7 +213,7 @@
             hidden={currentStep !== 1}
           >
             <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
-              Current sales trajectory:
+              How would you describe your current sales trajectory?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
@@ -246,7 +255,7 @@
             hidden={currentStep !== 2}
           >
             <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
-              Team’s current focus:
+              What is your product team's current focus and posture?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
@@ -288,7 +297,7 @@
             hidden={currentStep !== 3}
           >
             <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
-              Competitive landscape:
+              How would you describe the current competative landscape?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
@@ -370,7 +379,7 @@
       </div>
 
       <!-- Chart column -->
-      <div class="border rounded-md border-gray-500/15 w-full h-[260px] md:h-[400px] lg:h-[600px] xl:h-[700px]">
+      <div class="border rounded-md border-gray-500/15 w-full h-[300px] md:h-[400px] lg:h-[600px]">
         <ProductLifecycleChart bind:this={svgRef} />
       </div>
     </div>
