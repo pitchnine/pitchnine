@@ -23,7 +23,7 @@ const AAA_DISCOVERY: ResultContent = {
     'You’re operating on thin ice between insight and chaos. Move too fast and you’ll misread noise as signal; move too slow and you’ll lose the one advantage that matters — speed.',
   help:
     'We help early teams turn pace into precision — establishing the right validation signals, aligning every backlog item to measurable learning, and embedding disciplined product cycles that turn momentum into proof.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const BBB_GROWTH: ResultContent = {
@@ -34,7 +34,7 @@ const BBB_GROWTH: ResultContent = {
     'Momentum hides cracks. Without clarity and prioritization, growth turns into noise — more people, more features, but less signal.',
   help:
     'We help growth-stage teams scale without drift — building the systems, ownership models, and delivery rhythms that protect your edge while preparing you to expand into the next market with confidence.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const CCC_MATURITY: ResultContent = {
@@ -45,7 +45,7 @@ const CCC_MATURITY: ResultContent = {
     'Success can breed stagnation. If process overtakes purpose, you’ll optimize yesterday’s wins instead of creating tomorrow’s advantage.',
   help:
     'We modernize from within — aligning teams to fresh value signals, pruning low-impact work, and introducing measured innovation that keeps your advantage sharp without disrupting operations.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const DDD_DECLINE: ResultContent = {
@@ -56,7 +56,7 @@ const DDD_DECLINE: ResultContent = {
     'The biggest risk isn’t failure — it’s denial. Waiting to reframe erodes morale, talent, and opportunity at the same time.',
   help:
     'We guide strategic restart — diagnosing where value eroded, designing a renewal plan, and leading the transition from slow decline to sustainable reinvention.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const FRAGMENTED: ResultContent = {
@@ -67,7 +67,7 @@ const FRAGMENTED: ResultContent = {
     'When everything’s important, nothing is. Teams burn out chasing conflicting goals while leadership loses clarity on what’s actually working.',
   help:
     'We map signals across product, market, and delivery to expose real friction, then guide a reset that unifies priorities and rebuilds confidence in direction.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 // Partial alignments
@@ -79,7 +79,7 @@ const PARTIAL_COMPETITION_OFF: ResultContent = {
     'Strong teams can waste years perfecting a product in the wrong fight. Market misfit shows up late — in sales slowdowns, pricing pressure, or buyer confusion.',
   help:
     'We test your advantage against sharper wedges — uncovering markets where your strengths differentiate, and guiding repositioning that preserves focus while reigniting growth.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const PARTIAL_TEAM_OFF: ResultContent = {
@@ -90,7 +90,7 @@ const PARTIAL_TEAM_OFF: ResultContent = {
     'Misalignment between opportunity and delivery quietly stalls growth. When teams chase urgency without clarity, quality dips and velocity becomes noise.',
   help:
     'We rebuild delivery rhythm — tightening product operations, clarifying ownership, and reframing goals around measurable signals so hard-won traction compounds.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 const PARTIAL_SALES_OFF: ResultContent = {
@@ -101,7 +101,7 @@ const PARTIAL_SALES_OFF: ResultContent = {
     'When sales lag strategy, teams over-rotate on features while leadership loses confidence in what’s blocking growth.',
   help:
     'We clarify your value signal — tightening the product narrative, aligning GTM with buyer behavior, and reconnecting daily work to commercial outcomes.',
-  cta: { label: 'Continue the conversation', href: '/contact' }
+  cta: { label: 'Continue the conversation', href: '/contact#contact' }
 };
 
 
