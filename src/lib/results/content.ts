@@ -14,33 +14,34 @@ export type ResultContent = {
 const AAA_DISCOVERY: ResultContent = {
   title: 'Prove your worth.',
   summary:
-    'You’re squarely in Discovery, high experimentation, low traction, and fast learning. This is the phase where disciplined velocity matters most: every iteration should move you closer to proof, not just motion.',
+    'You’re squarely in Discovery, which is classically defined by high experimentation, low traction, and fast learning. At this stage, the goal isn’t scale or polish; it’s survive long enough to keep trying. Teams often confuse activity with progress here, but what truly matters is disciplined learning velocity.\n\nCommon symptoms of this phase include blurry or vague problem definition (pain points surface as broad themes rather than specific burning issues), unclear measures of success as the product continues to take shape, and frequent iterations that may not feel anchored to explicit hypotheses.',
   risks:
-    'You’re operating on thin ice between insight and chaos. Move too fast and you’ll misread noise as signal; move too slow and you’ll lose the one advantage that matters — speed.',
+    'You’re skating a thin line between insight and chaos. Move too fast and you’ll mistake noise for signal; move too slow and you’ll lose your only real advantage (speed of insight). Many teams in this phase over-index on manic building instead of rapid testing, or misinterpret what truly qualifies as an MVP experience.\n\nAs Cagan often says: ‘Validate the problem before you validate the solution,’ and in an era of AI agents and no-code platforms, there are more ways than ever to make your bets feel real without sinking precious time into building in the wrong direction.',
   help:
-    'We help early teams turn pace into precision — establishing the right validation signals, aligning every backlog item to measurable learning, and embedding disciplined product cycles that turn momentum into proof.',
+    'Zero-to-one is our specialty. Pitch Nine’s partners have built their careers proving and validating early theories and ideas. We help teams channel pace into precision by establishing clear validation signals, aligning the backlog around assumptions and hypotheses, and turning every feature request into an experiment.\n\nWhen needed, we also provide execution support — from full-stack design and research synthesis to full-stack development.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const BBB_GROWTH: ResultContent = {
-  title: 'Protect your edge',
+  title: 'Protect your (w)edge',
   summary:
-    'You’ve hit Growth — customers are converting, demand is compounding, and the flywheel is turning. The real challenge now is keeping focus as you scale delivery, complexity, and expectations all at once.',
+    'You’ve entered Growth phase, a notoriously optimistic yet subtly challenging period often called the messy middle. Customers are converting, demand is compounding, and the flywheel is finally turning. The challenge now is maintaining focus while scaling delivery, complexity, and expectations all at once.\n\nThis is where product–market fit meets organizational stress: what once felt nimble now starts to feel heavy under the weight of cross-team coordination, shifting priorities, and the first layers of process. The goal isn’t to slow down but instead to build the foundation for sustainable speed.',
   risks:
-    'Momentum hides cracks. Without clarity and prioritization, growth turns into noise — more people, more features, but less signal.',
+    'Momentum can mask cracks in the product experience. These cracks are what we often call "death by a thousand cuts" moments. They appear quickly and quietly: inconsistent styling in form fields, broken error states, or messy architecture left over from early experimentation. Individually, they seem harmless; together, they accumulate into mounting tech debt.',
+  
   help:
-    'We help growth-stage teams scale without drift — building the systems, ownership models, and delivery rhythms that protect your edge while preparing you to expand into the next market with confidence.',
+    'We help you introduce just enough structure to scale properly: paying down the most hurtful debt today to help you scale tomorrow, shaping your first design system, tightening architecture to remain compliant, and reinforcing a delivery culture that keeps customer signal at the center of every sprint.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const CCC_MATURITY: ResultContent = {
   title: 'Defend the core',
   summary:
-    'You’re firmly in Maturity — predictable revenue, clear market position, and deeply embedded customers. Stability has a shelf life; growth now depends on efficiency, innovation, and defending the core from disruption.',
+    'Welcome to Maturity: predictable revenue, strong margins, and deeply embedded customers. But stability creates a paradox. The same processes that protect your earned turf can quietly suffocate innovation.\n\nAs Marty Cagan notes, great product organizations balance *two competing systems*: the machine that delivers value today, and the discovery engine that defines tomorrow. The challenge now isn’t about resources or vision, it’s creating the conditions for both to thrive without impeding each other.',
   risks:
-    'Success can breed stagnation. If process overtakes purpose, you’ll optimize yesterday’s wins instead of creating tomorrow’s advantage.',
+    'When everything competes for the same backlog priority, urgency always wins. Technical debt accumulates under the surface, “quick fixes” crowd out meaningful bets, and the roadmap becomes a mirror of the past instead of a map to the future.',
   help:
-    'We modernize from within — aligning teams to fresh value signals, pruning low-impact work, and introducing measured innovation that keeps your advantage sharp without disrupting operations.',
+    'We specialize in restoring the equilibrium, establishing a dual-track rhythm where discovery and delivery can work alongside and inform each other. Our work realigns teams around evidence-based prioritization, modernizes systems for faster learning, and introduces measured innovation that keeps your edge sharp while safeguarding the trust you’ve earned.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
