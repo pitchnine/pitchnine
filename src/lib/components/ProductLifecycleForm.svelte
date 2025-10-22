@@ -163,8 +163,8 @@
 
 
 <section class="mx-auto max-w-7xl px-2 py-10">
+  {#if showLeadForm}
   <h2 class="h2 mx-auto text-center">Inflection points require modernization.</h2>
-    {#if showLeadForm}
   <div class="mt-24">
     <LifecycleLeadGen
       title="Access analysis"
@@ -180,7 +180,9 @@
 
 {:else if showResult}
   <div class="mt-24">
-    <LifecycleResult onRestart={restartAssessment} />
+    <LifecycleResult 
+    answers={[q1, q2, q3]}
+    onRestart={restartAssessment} />
   </div>
 
 {:else}
