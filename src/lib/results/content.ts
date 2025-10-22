@@ -48,11 +48,11 @@ const CCC_MATURITY: ResultContent = {
 const DDD_DECLINE: ResultContent = {
   title: 'Reclaim the spark',
   summary:
-    'You’re in Decline — slowing growth, rising churn, and a product that’s lost its edge. This isn’t the end; it’s the moment for renewal, and the next move decides whether you sunset or engineer a comeback.',
+    'Growth is slowing, churn is rising, and the product that once led now feels reactive. You’ve entered Decline and although this may feel like the end of an era, it isn’t. It’s the moment for renewal.\n\nEvery enduring product eventually drifts from its edge. Markets evolve, teams optimize for maintenance, and the discovery engine that once fueled innovation goes quiet. The question now isn’t if you can recover but how fast you can rebuild momentum without breaking what still works.',
   risks:
-    'The biggest risk isn’t failure — it’s denial. Waiting to reframe erodes morale, talent, and opportunity at the same time.',
+    'On the surface, technical debt can look like the biggest blocker to innovation in aging products. But in truth, the most common barrier we see at this stage is denial. The longer a team waits to confront drift, the harder it becomes to attract talent, retain customers, or inspire belief internally.\n\nStagnation compounds just like technical debt and if you wait too long to act it will become too expensive to undo.',
   help:
-    'We guide strategic restart — diagnosing where value eroded, designing a renewal plan, and leading the transition from slow decline to sustainable reinvention.',
+    'We help organizations engineer their comeback by re-establishing a healthy dual-track rhythm to product work. This means restoring the discovery engine alongside reliable delivery so innovation and improvement run in parallel again.\n\nWe act as a fractional R&D team: diagnosing where value has eroded, re-defining the product’s edge, and guiding a pragmatic reinvention that balances new bets with operational reality.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
