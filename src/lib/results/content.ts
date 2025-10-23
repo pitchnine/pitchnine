@@ -6,98 +6,98 @@ export type Domain = 'sales' | 'team' | 'competition';
 export type ResultContent = {
   title: string;
   summary: string; 
-  risks: string;    
+  sideEffects: string;    
   help: string;     
   cta?: { label: string; href: string };
 };
 
 const AAA_DISCOVERY: ResultContent = {
-  title: 'Prove your worth.',
+  title: 'Prove your worth',
   summary:
-    'You’re squarely in Discovery, which is classically defined by high experimentation, low traction, and fast learning. At this stage, the goal isn’t scale or polish; it’s survive long enough to keep trying. Teams often confuse activity with progress here, but what truly matters is disciplined learning velocity.\n\nCommon symptoms of this phase include blurry or vague problem definition (pain points surface as broad themes rather than specific burning issues), unclear measures of success as the product continues to take shape, and frequent iterations that may not feel anchored to explicit hypotheses.',
-  risks:
-    'You’re skating a thin line between insight and chaos. Move too fast and you’ll mistake noise for signal; move too slow and you’ll lose your only real advantage (speed of insight). Many teams in this phase over-index on manic building instead of rapid testing, or misinterpret what truly qualifies as an MVP experience.\n\nAs Cagan often says: ‘Validate the problem before you validate the solution,’ and in an era of AI agents and no-code platforms, there are more ways than ever to make your bets feel real without sinking precious time into building in the wrong direction.',
+    'You’re squarely in Discovery, which is classically defined by high experimentation, low traction, and fast learning. At this stage, the goal isn’t scale or polish; it’s survival. Teams often confuse activity with progress here, but what truly matters is disciplined learning velocity.\n\nCommon symptoms of this phase include blurry or vague problem definition (pain points surface as broad themes rather than specific burning issues), unclear measures of success as the product continues to take shape, and frequent iterations that may not feel anchored to explicit hypotheses.',
+  sideEffects:
+    'Without deliberate test design, teams more easily mistake noise for signal and burn time on the wrong bets. “MVPs” inflate into mini-builds, learning slows, and the backlog fills with guesses instead of experiments. Morale may start to dip as effort outpaces insight.',
   help:
-    'Zero-to-one is our specialty. Pitch Nine’s partners have built their careers proving and validating early theories and ideas. We help teams channel pace into precision by establishing clear validation signals, aligning the backlog around assumptions and hypotheses, and turning every feature request into an experiment.\n\nWhen needed, we also provide execution support — from full-stack design and research synthesis to full-stack development.',
+    'Zero-to-one experimentation is our specialty. We help teams channel pace into precision by establishing clear validation signals, aligning the backlog around assumptions and hypotheses, and turning every feature request into an experiment.\n\nWhen needed, we also provide execution support — from full-stack design and research synthesis to full-stack development.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const BBB_GROWTH: ResultContent = {
-  title: 'Protect your (w)edge',
+  title: 'Protect your (w)edge.',
   summary:
     'You’ve entered Growth phase, a notoriously optimistic yet subtly challenging period often called the messy middle. Customers are converting, demand is compounding, and the flywheel is finally turning. The challenge now is maintaining focus while scaling delivery, complexity, and expectations all at once.\n\nThis is where product–market fit meets organizational stress: what once felt nimble now starts to feel heavy under the weight of cross-team coordination, shifting priorities, and the first layers of process. The goal isn’t to slow down but instead to build the foundation for sustainable speed.',
-  risks:
-    'Momentum can mask cracks in the product experience. These cracks are what we often call "death by a thousand cuts" moments. They appear quickly and quietly: inconsistent styling in form fields, broken error states, or messy architecture left over from early experimentation. Individually, they seem harmless; together, they accumulate into mounting tech debt.',
+  sideEffects:
+  'Momentum and energy can sometimes mask a “death by a thousand cuts”: inconsistent UI, brittle error states, and experimental scaffolding that never got rebuilt. Individually harmless, together they compound into tech debt, sap engineering focus, and quietly erode user trust.',
   
   help:
-    'We help you introduce just enough structure to scale properly: paying down the most hurtful debt today to help you scale tomorrow, shaping your first design system, tightening architecture to remain compliant, and reinforcing a delivery culture that keeps customer signal at the center of every sprint.',
+    'We add just enough structure to scale: pay down the debt that hurts most, establish your first design system, tighten architecture for compliance, and reinforce a delivery culture that keeps customer signal at the center of every sprint.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const CCC_MATURITY: ResultContent = {
-  title: 'Defend the core',
+  title: 'Defend the core.',
   summary:
-    'Welcome to Maturity: predictable revenue, strong margins, and deeply embedded customers. But stability creates a paradox. The same processes that protect your earned turf can quietly suffocate innovation.\n\nAs Marty Cagan notes, great product organizations balance *two competing systems*: the machine that delivers value today, and the discovery engine that defines tomorrow. The challenge now isn’t about resources or vision, it’s creating the conditions for both to thrive without impeding each other.',
-  risks:
-    'When everything competes for the same backlog priority, urgency always wins. Technical debt accumulates under the surface, “quick fixes” crowd out meaningful bets, and the roadmap becomes a mirror of the past instead of a map to the future.',
+    'Welcome to Maturity: predictable revenue, strong margins, and deeply embedded customers. But stability creates a paradox. The same processes that protect your earned turf can quietly suffocate innovation.\n\nAs Marty Cagan notes, great product organizations balance two competing systems: the machine that delivers value today, and the discovery engine that defines tomorrow. The challenge now isn’t about resources or vision, it’s creating the conditions for both machines to thrive without impeding each other.',
+  sideEffects:
+    'When everything competes for the same backlog, urgency wins. Quick fixes crowd out meaningful bets, technical debt calcifies, experimentation slows, and the roadmap begins to feel small and meaningless.',
   help:
-    'We specialize in restoring the equilibrium, establishing a dual-track rhythm where discovery and delivery can work alongside and inform each other. Our work realigns teams around evidence-based prioritization, modernizes systems for faster learning, and introduces measured innovation that keeps your edge sharp while safeguarding the trust you’ve earned.',
+    'We restore the equilibrium, establishing a dual-track rhythm where discovery and delivery can work alongside and inform each other. Our work realigns teams around evidence-based prioritization, modernizes systems for faster learning, and introduces measured innovation that keeps your edge sharp while safeguarding the trust you’ve earned.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const DDD_DECLINE: ResultContent = {
-  title: 'Reclaim the spark',
+  title: 'Reclaim the spark.',
   summary:
-    'Growth is slowing, churn is rising, and the product that once led now feels reactive. You’ve entered Decline and although this may feel like the end of an era, it isn’t. It’s the moment for renewal.\n\nEvery enduring product eventually drifts from its edge. Markets evolve, teams optimize for maintenance, and the discovery engine that once fueled innovation goes quiet. The question now isn’t if you can recover but how fast you can rebuild momentum without breaking what still works.',
-  risks:
+    'Growth is slowing, churn is rising, and the product that once led now feels reactive. You’ve entered Decline and although this may feel like the end of an era, it’s actually the perfect moment for renewal.\n\nEvery enduring product eventually drifts from its edge. Markets and technology evolve, teams optimize for maintenance, and the discovery engine that once fueled innovation goes quiet. The question now isn’t if you can recover but how fast you can rebuild momentum without breaking what still works.',
+  sideEffects:
     'On the surface, technical debt can look like the biggest blocker to innovation in aging products. But in truth, the most common barrier we see at this stage is denial. The longer a team waits to confront drift, the harder it becomes to attract talent, retain customers, or inspire belief internally.\n\nStagnation compounds just like technical debt and if you wait too long to act it will become too expensive to undo.',
   help:
-    'We help organizations engineer their comeback by re-establishing a healthy dual-track rhythm to product work. This means restoring the discovery engine alongside reliable delivery so innovation and improvement run in parallel again.\n\nWe act as a fractional R&D team: diagnosing where value has eroded, re-defining the product’s edge, and guiding a pragmatic reinvention that balances new bets with operational reality.',
+    'We help organizations engineer their comeback by re-establishing a healthy dual-track rhythm to product work. This means restoring the discovery engine alongside reliable delivery so innovation and improvement run parallel.\n\nWe act as a fractional R&D team: diagnosing where value has eroded, re-defining the product’s edge, and guiding a pragmatic reinvention that balances new bets with operational reality.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const FRAGMENTED: ResultContent = {
-  title: 'Find the signal',
+  title: 'Find the signal.',
   summary:
-    'Your product is sending mixed messages — sales, team focus, and market signals don’t agree. Some parts are experimenting while others are preparing for scale or decline, creating a blur of effort that hides opportunity.',
-  risks:
-    'When everything’s important, nothing is. Teams burn out chasing conflicting goals while leadership loses clarity on what’s actually working.',
+    'Your product is sending mixed messages. Sales, product, and competitive signals are out of sync. This fragmentation isn’t failure; it’s a symptom of growth without shared alignment. As Marty Cagan notes, strong product organizations align around problems to solve, not features to build.\n\nRight now, your teams may be trying to solve different problems at the same time, which makes market analysis and competitive positioning difficult to read',
+  sideEffects:
+    'When everything is a priority, nothing is. Teams burn out chasing conflicting goals, quality wobbles, and leadership loses clarity on what’s actually working. Small decisions pull in opposite directions and drift compounds.',
   help:
-    'We map signals across product, market, and delivery to expose real friction, then guide a reset that unifies priorities and rebuilds confidence in direction.',
+    'We help teams reconnect the dots between product, market, and delivery. We map cross-functional signals to surface where friction and duplication live in the product, then guide a structured reset that re-establishes shared priorities and rebuilds confidence in direction.\n\nThink of us as a fractional R&D and strategy partner: bringing the discipline of discovery back into the fold, tightly aligned with core delivery, so every team is learning from the same signals.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 // Partial alignments
 const PARTIAL_COMPETITION_OFF: ResultContent = {
-  title: 'Right product, wrong arena',
+  title: 'Internal alignment, external drift.',
   summary:
-    'Your team is building the right thing the right way — but the market isn’t rewarding it. Execution is strong, yet the competitive landscape is too crowded or too cold for traction to compound.',
-  risks:
-    'Strong teams can waste years perfecting a product in the wrong fight. Market misfit shows up late — in sales slowdowns, pricing pressure, or buyer confusion.',
+    'Your team is building the right thing the right way, but the market isn’t rewarding it. Execution is strong, yet competitive dynamics have shifted faster than your learning loops. The landscape may now be too crowded, too empty, or simply moving in a different direction for traction to compound.',
+  sideEffects:
+    'Late-arriving market misfit: longer sales cycles, pricing pressure, and buyer confusion that polish can’t fix. Teams with this mismatch tend to double-down on delivery while the discovery engine stays quiet — reinforcing this gap.',
   help:
-    'We test your advantage against sharper wedges — uncovering markets where your strengths differentiate, and guiding repositioning that preserves focus while reigniting growth.',
+    'We help teams reconnect internal excellence with external truth. Through competitive analysis and rapid-fit validation, we test your product’s wedge against sharper opportunities and guide a repositioning that preserves focus while reigniting growth.\n\nOur goal is to re-establish a dual-track rhythm, keeping delivery strong while embedding discovery so your market insight compounds as fast as your execution.',
   cta: { label: 'Book conversation', href: 'https://cal.com/joellstocchero/30min' }
 };
 
 const PARTIAL_TEAM_OFF: ResultContent = {
-  title: 'Momentum without rhythm',
+  title: 'Momentum without rhythm.',
   summary:
-    'You’ve found your market and earned traction — but internal focus hasn’t kept pace. The opportunity is real, yet delivery rhythm or prioritization is holding back consistent execution.',
-  risks:
-    'Misalignment between opportunity and delivery quietly stalls growth. When teams chase urgency without clarity, quality dips and velocity becomes noise.',
+    'You’ve found your market and earned traction with sales and competition data signaling clear opportunity. But internal focus hasn’t kept pace. The opportunity is real, yet delivery rhythm, prioritization, or ownership gaps are holding back consistent execution.',
+  sideEffects:
+  'Roadmaps wobble, context switching multiplies, handoffs fray, and quality dips. Velocity can seem high on the surface but internally feels noisy and fractured; wins are hard to come by as every iteration feels more "just in time" than it should.',
   help:
-    'We rebuild delivery rhythm — tightening product operations, clarifying ownership, and reframing goals around measurable signals so hard-won traction compounds.',
+    'We help teams translate external momentum into internal rhythm. That means tightening product learning loops, clarifying process, and aligning discovery and delivery around measurable signals so hard-won traction compounds.\n\nOur goal is to turn reactive energy into disciplined execution where every sprint reinforces your market advantage instead of eroding it.',
   cta: { label: 'Book conversation', href: '/contact#contact' }
 };
 
 const PARTIAL_SALES_OFF: ResultContent = {
-  title: 'Strong story, weak signal',
+  title: 'Strong story, weak signal.',
   summary:
-    'Your team is focused and your market position makes sense — but sales aren’t following. The product story isn’t landing, the buyer path is unclear, or commercial strategy hasn’t caught up.',
-  risks:
-    'When sales lag strategy, teams over-rotate on features while leadership loses confidence in what’s blocking growth.',
+    'Your team is focused and your market position makes sense, but sales aren’t following. The product story isn’t landing, the buyer path is unclear, or your commercial strategy hasn’t caught up. As Gibson Biddle notes: great products fail when the ‘delight gap’ between what’s built and what’s understood widens. You may be delivering real value, but the market can’t yet see it.',
+  sideEffects:
+   'Feature thrash, discount reflexes, and anecdotal feedback loops. Confidence erodes as teams debate root causes instead of instrumenting proof, breaking the link between discovery, delivery, and demand.',
   help:
-    'We clarify your value signal — tightening the product narrative, aligning GTM with buyer behavior, and reconnecting daily work to commercial outcomes.',
+    'We clarify your value signal by tightening the product narrative and reconnecting daily work to commercial outcomes. Our role is to rebuild the dual-track motion that creates a bridge between product and sales, ensuring your discovery insights flow through to how you sell, not just what you ship.',
   cta: { label: 'Book conversation', href: '/contact#contact' }
 };
 
