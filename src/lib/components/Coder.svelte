@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "All products age, few endure.";
-  export let subhead = "Modernizing aging products, restoring strategic priority, and innovating with confidence.";
+  export let headline = "Restore momentum and discovery.";
+  export let subhead = "Pitch Nine helps product teams pinpoint where discovery and delivery have fallen out of sync, re-establish disciplined learning cycles, and embed as fractional research, design, and engineering support without disrupting delivery.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 
@@ -341,10 +341,10 @@
 
    <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="h1 mb-6 animate-fadeUp">
+    <h1 class="h1 max-w-7xl mb-9 animate-fadeUp">
       {headline}
     </h1>
-    <p class="lede max-w-3xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
+    <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
       {subhead}
     </p>
     <a
