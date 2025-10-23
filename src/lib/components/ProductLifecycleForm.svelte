@@ -243,7 +243,7 @@
             {...inertFor(currentStep !== 1)}
             hidden={currentStep !== 1}
           >
-            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               How would you describe your current sales trajectory?
             </legend>
 
@@ -285,7 +285,7 @@
             {...inertFor(currentStep !== 2)}
             hidden={currentStep !== 2}
           >
-            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               What is your product team's current focus and posture?
             </legend>
 
@@ -327,7 +327,7 @@
             {...inertFor(currentStep !== 3)}
             hidden={currentStep !== 3}
           >
-            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               How would you describe the current competative landscape?
             </legend>
 
