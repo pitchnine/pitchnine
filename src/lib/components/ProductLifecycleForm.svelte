@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import { tick } from 'svelte';
+  import { tick, onMount } from 'svelte';
   import ProductLifecycleChart from './ProductLifecycleChart.svelte';
   import LifecycleLeadGen from './LifecycleLeadGen.svelte';
   import LifecycleResult from './LifecycleResult.svelte';
@@ -18,6 +18,25 @@
 
   let showLeadForm = false;
   let showResult = false;
+  let leadGenCompleted = false;
+  // cookie helpers
+  function getCookie(name: string): string | null {
+    const m = document.cookie.match(
+      new RegExp('(?:^|; )' + name.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)')
+    );
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  function setLeadCookie() {
+    // session-scoped cookie
+    document.cookie = 'leadgen_submitted=1; Path=/; SameSite=Lax';
+  }
+  function clearLeadCookie() {
+    document.cookie = 'leadgen_submitted=; Max-Age=0; Path=/; SameSite=Lax';
+  }
+
+  onMount(() => {
+    leadGenCompleted = getCookie('leadgen_submitted') === '1';
+  });
 
   // Focus refs for legends
   let legend1: HTMLLegendElement;
@@ -81,10 +100,16 @@
     }
   }
 
-  // Analyze CTA -> show lead form
+   // Analyze CTA -> show lead form (unless already captured in this session)
   function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
-    showLeadForm = true;
+    leadGenCompleted = getCookie('leadgen_submitted') === '1';
+    if (leadGenCompleted) {
+      showResult = true;           // go straight to results
+      showLeadForm = false;
+    } else {
+      showLeadForm = true;         // collect details first time
+    }
   }
 
   // Lead form submit -> POST to Formspree, then show result view
@@ -109,10 +134,16 @@
           answers: payload.answers
         })
       });
-    if (!res.ok) {
+       if (!res.ok) {
       serverError = 'Something went wrong sending your details. Please try again.';
       return;
     }
+
+    setLeadCookie();
+    leadGenCompleted = true;
+
+    showLeadForm = false;
+    showResult = true;
 
     showLeadForm = false;
     showResult = true;

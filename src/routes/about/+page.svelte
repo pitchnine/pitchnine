@@ -78,7 +78,7 @@ export const load = async () => {
   <!-- Hero / Philosophy -->
   <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-8 pt-20 pb-16">
     <h2 class="h2 mb-6">
-      Pitch Nine is a product leadership agency built for regulated industries, with a focus on turning complex backlogs into clear priorities, preparing organizations for AI adoption, and delivering innovation without compliance risk.
+      Pitch Nine is an embedded product agency with a focus on establishing a dual-track product rhythm, preparing organizations for AI adoption, and delivering innovation without compliance risk.
     </h2>
   </header>
 

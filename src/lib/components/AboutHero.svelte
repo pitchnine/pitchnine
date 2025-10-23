@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Disciplined product leadership.";
-  export let subhead = "Innovation delivered responsibly in the most demanding environments.";
+  export let headline = "Decades in product.";
+  export let subhead = "Innovation delivered responsibly from seasoned strategists and operators.";
 
 </script>
 
@@ -12,7 +12,7 @@
 
    <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="h1 mb-9 animate-fadeUp">
+    <h1 class="h1 max-w-7xl mb-9 animate-fadeUp">
       {headline}
     </h1>
     <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">

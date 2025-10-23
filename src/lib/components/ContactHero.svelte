@@ -17,7 +17,7 @@
 <section bind:this={sectionEl} class="relative h-screen overflow-hidden flex items-center justify-center">
   <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="h1 mb-6 animate-fadeUp">{headline}</h1>
+    <h1 class="h1 mb-9 max-w-7xl animate-fadeUp">{headline}</h1>
     <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay:120ms;">
       {subhead}
     </p>
