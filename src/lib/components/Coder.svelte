@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Restore momentum and discovery.";
-  export let subhead = "Pitch Nine helps product teams pinpoint where discovery and delivery have fallen out of sync, re-establish disciplined learning cycles, and embed as fractional research, design, and engineering support without disrupting delivery.";
+  export let headline = "Discovery meets delivery.";
+  export let subhead = "Pitch Nine helps product teams create or regain rhythm, clarity, and evidence-driven momentum by implementing disciplined learning alongside delivery.”";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

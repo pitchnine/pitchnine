@@ -8,15 +8,6 @@
   export let method: 'POST' | 'GET' = 'POST';
   export let density: 'base' | 'compact' = 'base';
 
-  export let interestsOptions: string[] = [
-    'Opportunity Audit',
-    'AI Readiness',
-    'Feature Validation',
-    'Backlog Remediation',
-    'Customer Alignment',
-    'Architecture & Integrations'
-  ];
-
   // Model
   let form = { name: '', email: '', company: '', interests: [] as string[], website: '' };
 
@@ -154,29 +145,6 @@
           <p id="company-error" role="alert" class="mt-2 text-xs text-rose-400">{errors.company}</p>
         {/if}
       </div>
-    </div>
-
-    <!-- Interests -->
-    <div>
-      <label class="inter block text-sm text-gray-50">Interests</label>
-      <fieldset class="mt-2">
-        <legend class="sr-only">Select one or more interests</legend>
-        <div class="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
-          {#each interestsOptions as opt, i}
-            <div>
-              <input id={'interest-' + i} type="checkbox" name="interests" value={opt} class="peer sr-only" bind:group={form.interests} />
-              <label
-                for={'interest-' + i}
-                class="grid-link flex w-full cursor-pointer items-center gap-2 whitespace-nowrap rounded-md border border-gray-700 bg-gray-900/60 px-4 py-3 text-left transition
-                       peer-checked:border-emerald-500/50 peer-checked:text-emerald-50 peer-checked:ring-1 peer-checked:ring-emerald-200/25 peer-checked:[&_.dot]:opacity-100"
-              >
-                <span class="dot h-2 w-2 rounded-full bg-emerald-400 opacity-0 transition" aria-hidden="true"></span>
-                <span class="text-sm">{opt}</span>
-              </label>
-            </div>
-          {/each}
-        </div>
-      </fieldset>
     </div>
 
     <div class="border-t border-white/10"></div>
