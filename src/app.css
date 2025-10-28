@@ -32,18 +32,6 @@
   transition: transform 300ms ease;
 }
 
-.grid-link {
-  @apply inline-flex items-center px-4 py-3 border border-emerald-50/10 text-emerald-50/60 transition;
-}
-
-.grid-link:hover {
-  @apply border-emerald-50/30 text-emerald-50 shadow-md;
-}
-
-.grid-link-active {
-  @apply border-emerald-50/40 text-emerald-50 rounded-full ring-1 ring-emerald-200/15;
-}
-
 .primary-cta {
   @apply relative overflow-hidden inline-flex items-center justify-center px-6 py-4 rounded-full border border-emerald-50/10 text-emerald-50/60 transition;
 }
@@ -68,6 +56,12 @@
 
 .primary-cta-active {
   @apply border-emerald-50/40 text-emerald-50 rounded-full ring-2 ring-emerald-200/25;
+}
+
+.secondary-cta {
+  @apply relative inline-flex items-center text-sm font-bold uppercase tracking-wider text-emerald-400 transition-colors duration-200 hover:text-emerald-300
+         after:absolute after:left-0 after:-bottom-[0.15em] after:h-px after:w-0
+         after:bg-current after:transition-all after:duration-200 hover:after:w-full
 }
 
 
@@ -121,6 +115,12 @@
     @apply inter font-semibold tracking-tight
            text-xl md:text-2xl lg:text-3xl;
   }
+
+    .h4 {
+    @apply inter font-semibold tracking-tight
+           text-lg md:text-xl lg:text-2xl;
+  }
+
 
   /* ----- Paragraph tiers ----- */
   .lede { /* big intro sentence under H1 */
