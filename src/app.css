@@ -156,30 +156,29 @@
 
 /* --- Landing Page Gradient Noise --- */
 :root {
-  /* Base gradient stops (Enveda-ish, tweak later) */
-  --hero-from: #1c1b4a;  /* deep indigo */
-  --hero-to:   #b44b84;  /* rose/pink */
+  /* Base gradient stops (emerald→sky) */
+  --hero-from: #030712; /* gray-950 */
+  --hero-to:   #022c22; /* emerald-950  */
 
-  /* Mesh blob tints (soft, semi-transparent) */
-  --blob-a: #6b46c1;     /* violet */
-  --blob-b: #ff7ab3;     /* pink */
-  --blob-c: #4f46e5;     /* indigo */
-  --blob-d: #ff8a65;     /* coral */
+  /* Mesh blob tints (accents) */
+  --blob-a: #14b8a6;    /* teal-500  */
+  --blob-b: #059669;    /* emerald-600 */
+  --blob-c: #0ea5e9;    /* sky-500   */
+  --blob-d: #f59e0b;    /* amber-400 */
 
   /* Opacities */
-  --mesh-o: 0.28;
-  --vignette-o: 0.36;
-  --noise-o: 0.06;
+  --mesh-o: 0.25;       /* slightly lower so colors stay executive */
+  --vignette-o: 0.75;   /* softer edge than before */
+  --noise-o: 0.10;
 
-  /* Radius */
-  --hero-radius: 28px;
-  --hero-min-h: min(78vh, 760px);
+  /* Height (optional tweak) */
+  --hero-min-h: min(88vh, 900px);
 }
 
 /* --- Hero container --- */
 .hero {
   position: relative;
-  min-height: min(10vh, 900px); /* up to you */
+  min-height: min(100vh, 900px); /* up to you */
   border-radius: 0;             /* remove rounding */
   overflow: hidden;
   isolation: isolate;

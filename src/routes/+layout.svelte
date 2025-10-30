@@ -73,10 +73,4 @@
   @media (min-width: 1280px) {
     :root { --page-x: 6rem; }
   }
-  main { padding: var(--page-y) var(--page-x); }
-  .full-bleed {
-    margin-left: calc(var(--page-x) * -1);
-    margin-right: calc(var(--page-x) * -1);
-  }
-  .narrow { max-width: 72ch; margin-inline: auto; }
 </style>
