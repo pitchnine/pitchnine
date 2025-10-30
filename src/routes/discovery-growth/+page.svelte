@@ -3,17 +3,18 @@
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
 	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import LandingFooter from '$lib/components/LandingFooter.svelte';
+	import Motifs from '$lib/components/Motifs.svelte';
 </script>
 
 <section class="hero full-bleed full-bleed-top flex flex-col align-center text-center justify-center">
   <div class="hero__halo" aria-hidden="true">
     <div class="noise"></div>
   </div>
-
+ <Motifs maxVisible={2} cycleMs={1000} spawnMs={1000} />
   <div class="hero__content max-w-4xl mx-auto">
     <h1 class="h1 mb-9">Find your phase to find your way.</h1>
     <p class="body mb-8">Plot your product and receive custom strategic analysis for your best next step.</p>
-    <a class="primary-cta" href="#">Begin assessment</a>
+    <a class="primary-cta" href="/contact">Begin assessment</a>
   </div>
 </section>
 
