@@ -1,126 +1,99 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-
-  // Config (tweak freely)
+  // Svelte 5 runes
   const {
-    maxVisible = 2,             // how many motifs at once
-    cycleMs   = 4000,           // how long a motif stays before fading out
-    spawnMs   = 1000,            // how often to try adding a motif
-    pauseWhenOffscreen = true
+    count = 6,                 // # of motifs rendered
+    durationMs = 16000,        // full fade-in/hold/fade-out cycle
+    baseSize="25vw" // motif width
   } = $props();
 
-  // Anchors (percent positions around center); add/remove as you like
+  // keep anchors near the hero headline area (center-ish)
   const anchors = [
-    { x: 16, y: 24 }, { x: 28, y: 14 }, { x: 42, y: 18 },
-    { x: 60, y: 16 }, { x: 74, y: 26 }, { x: 86, y: 22 },
-    { x: 18, y: 68 }, { x: 32, y: 76 }, { x: 46, y: 72 },
-    { x: 60, y: 64 }, { x: 76, y: 78 }, { x: 88, y: 66 }
+    { x: 38, y: 34 }, { x: 46, y: 26 }, { x: 58, y: 30 },
+    { x: 64, y: 40 }, { x: 54, y: 52 }, { x: 42, y: 48 },
+    { x: 32, y: 42 }, { x: 68, y: 46 }
   ];
 
-  // Import raw SVGs (SvelteKit/Vite): place files in /static/motifs and import with ?raw
-  // Replace/extend with your own
-import orbit from '$lib/motifs/orbit.svg?raw';
-import scatter from '$lib/motifs/scatter.svg?raw';
-import star from '$lib/motifs/star.svg?raw';
-import whiteboard from '$lib/motifs/whiteboard.svg?raw';
+  // import your white, stroke-only svgs as raw
+  import orbit      from '$lib/motifs/orbit.svg?raw';
+  import scatter    from '$lib/motifs/scatter.svg?raw';
+  import star       from '$lib/motifs/star.svg?raw';
+  import whiteboard from '$lib/motifs/whiteboard.svg?raw';
 
-  const motifs: string[] = [orbit, scatter, star, whiteboard];
+  const library: string[] = [orbit, scatter, star, whiteboard];
 
-  type Spawn = { id: number; anchor: number; svg: string; bornAt: number; };
-  let pool: Spawn[] = $state([]);
-  let tid: number | null = null;
-  let root: HTMLElement | null = null;
-  let io: IntersectionObserver | null = null;
-  let prefersReduced = $state(false);
-
-  function tick() {
-    const now = performance.now();
-    // Cull expired
-    pool = pool.filter(s => now - s.bornAt < cycleMs);
-    // Spawn if room
-    if (!prefersReduced && pool.length < maxVisible) {
-      const anchor = Math.floor(Math.random() * anchors.length);
-      const svg = motifs[Math.floor(Math.random() * motifs.length)];
-      const id = Math.floor(Math.random() * 1e9);
-      pool = [...pool, { id, anchor, svg, bornAt: now }];
-    }
-  }
-  function start() {
-    stop();
-    if (prefersReduced) return;
-    tid = window.setInterval(tick, spawnMs) as unknown as number;
-  }
-  function stop() { if (tid) clearInterval(tid); tid = null; }
-
-  function styleFor(anchorIdx: number) {
-    const a = anchors[anchorIdx % anchors.length];
-    const delay = Math.floor(Math.random() * 400);
-    const rotate = Math.floor(Math.random() * 8) - 4; // slight variation
-    const scale = 1 + (Math.random() * 0.1 - 0.05);
-    return `
-      left:${a.x}%;
-      top:${a.y}%;
-      animation-delay:${delay}ms;
-      transform: translateZ(0) rotate(${rotate}deg) scale(${scale});
-    `;
-  }
-
-  function observe() {
-    if (!pauseWhenOffscreen || !root) return;
-    io = new IntersectionObserver((ents) => {
-      const vis = ents.some(e => e.isIntersecting);
-      if (vis) start(); else stop();
-    }, { threshold: 0.2 });
-    io.observe(root);
-  }
-
-  onMount(() => {
-    prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // seed a few
-    for (let i = 0; i < Math.min(3, maxVisible); i++) tick();
-    start();
-    observe();
+  // build a stable set of items (no timers)
+  type Item = { svg: string; x: number; y: number; delay: number; rot: number; scale: number };
+  const items: Item[] = Array.from({ length: count }, (_, i) => {
+    const a = anchors[i % anchors.length];
+    // gentle randomization, but stable for initial render
+    const rot   = (Math.random() * 3) - 1.5;     // -1.5..+1.5deg
+    const scale = 1 + (Math.random() * 0.04 - 0.02); // -2%..+2%
+    const delay = i * (durationMs / count) + Math.random() * 600; // phased offsets
+    const svg   = library[i % library.length];
+    return { svg, x: a.x, y: a.y, delay, rot, scale };
   });
-  onDestroy(() => { stop(); if (io) io.disconnect(); });
 </script>
 
 <style>
-  .motif {
-    position: absolute; inset: 0; pointer-events: none; z-index: 2;
-  }
-  .motif {
-    position: absolute;
-    width: clamp(40px, 5.5vw, 90px);
-    height: auto;
-    opacity: 50%;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.06));
-    will-change: opacity, transform;
-    mix-blend-mode: screen;
-    transition: opacity 800ms ease, transform 800ms ease, filter 800ms ease;
-  }
-  /* enter/hold/exit via keyframes for buttery fade */
-  .motif.enter {
-    animation: motif-cycle var(--motif-cycle, 3.2s) ease-in-out forwards;
+  .motifs {
+    position: relative;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;             
   }
 
-  @keyframes motif-cycle {
-    0%   { opacity: 0; transform: translateY(2px) scale(1); }
-    42%  { opacity: 0.9; transform: translateY(-2px) scale(1.02); }
-    100% { opacity: 0; transform: translateY(0px)  scale(1); }
+  .motif {
+    position: absolute;
+    width: var(--size);
+    height: auto;
+    opacity: 0;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.05));
+    mix-blend-mode: screen;          /* airy, Enveda-like */
+    will-change: opacity, transform;
+    animation: fadeFloat var(--dur) cubic-bezier(.22,1,.36,1) infinite; /* easeOutBack-ish */
+    animation-delay: var(--delay);
+    transform: translateZ(0) rotate(var(--rot)) scale(var(--scale));
+  }
+
+  /* keep strokes elegant even when we scale containers */
+  .motif :where(svg) {
+    display: block;
+    width: 25vw;
+    height: auto;
+    vector-effect: non-scaling-stroke;
+    stroke: rgba(255,255,255,0.85);
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  /* long, quiet cycle: slow fade in, long hold, gentle exit */
+  @keyframes fadeFloat {
+    0%   { opacity: 0;   transform: translateY(2px)  rotate(var(--rot)) scale(var(--scale)); }
+    18%  { opacity: .85; transform: translateY(-1px) rotate(var(--rot)) scale(calc(var(--scale) * 1.005)); }
+    82%  { opacity: .85; transform: translateY(-1px) rotate(var(--rot)) scale(calc(var(--scale) * 1.005)); }
+    100% { opacity: 0;   transform: translateY(0px)  rotate(var(--rot)) scale(var(--scale)); }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .motif { transition: none !important; animation: none !important; opacity: .25 !important; }
+    .motif { animation: none !important; opacity: .35 !important; }
   }
 </style>
 
-<div bind:this={root} class="motifs" aria-hidden="true">
-  {#each pool as item (item.id)}
+<div class="motifs" aria-hidden="true">
+  {#each items as it, idx}
     <div
-      class="motif enter"
-      style={`--motif-cycle:${cycleMs}ms; ${styleFor(item.anchor)}`}
+      class="motif"
+      style={`
+        --dur:${durationMs}ms;
+        --delay:${it.delay}ms;
+        --size:${baseSize};
+        --rot:${it.rot}deg;
+        --scale:${it.scale};
+        left:${it.x}%;
+        top:${it.y}%;
+      `}
     >
-      {@html item.svg}
+      {@html it.svg}
     </div>
   {/each}
 </div>
