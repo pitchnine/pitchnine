@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 /* Fonts */
 .playfair {
   font-family: 'Playfair Display', serif;
@@ -152,4 +153,95 @@
   .stack-sm { --stack-gap: 1rem; }
   .stack-lg { --stack-gap: 3rem; }
 }
+
+/* --- Landing Page Gradient Noise --- */
+:root {
+  /* Base gradient stops (Enveda-ish, tweak later) */
+  --hero-from: #1c1b4a;  /* deep indigo */
+  --hero-to:   #b44b84;  /* rose/pink */
+
+  /* Mesh blob tints (soft, semi-transparent) */
+  --blob-a: #6b46c1;     /* violet */
+  --blob-b: #ff7ab3;     /* pink */
+  --blob-c: #4f46e5;     /* indigo */
+  --blob-d: #ff8a65;     /* coral */
+
+  /* Opacities */
+  --mesh-o: 0.28;
+  --vignette-o: 0.36;
+  --noise-o: 0.06;
+
+  /* Radius */
+  --hero-radius: 28px;
+  --hero-min-h: min(78vh, 760px);
+}
+
+/* --- Hero container --- */
+.hero {
+  position: relative;
+  min-height: min(10vh, 900px); /* up to you */
+  border-radius: 0;             /* remove rounding */
+  overflow: hidden;
+  isolation: isolate;
+  margin: 0;                    /* no inset */
+  /* base gradient will come from the new emerald/teal palette below */
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+}
+
+/* Layer 1: mesh blobs (multiple radial-gradients) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 600px at 18% 22%, color-mix(in oklab, var(--blob-b), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 60%),
+    radial-gradient(720px 520px at 78% 28%, color-mix(in oklab, var(--blob-c), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%),
+    radial-gradient(640px 520px at 28% 78%, color-mix(in oklab, var(--blob-a), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%),
+    radial-gradient(780px 540px at 82% 78%, color-mix(in oklab, var(--blob-d), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%);
+  mix-blend-mode: screen; /* keeps it airy over the base gradient */
+  pointer-events: none;
+}
+
+/* Layer 2: vignette (soft edge darkening) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 90% at 50% 40%,
+      transparent 0%,
+      rgba(0,0,0, calc(var(--vignette-o) * 0.35)) 68%,
+      rgba(0,0,0, var(--vignette-o)) 100%);
+}
+
+/* Layer 3: subtle noise  */
+.hero .noise {
+  position: absolute;      
+  inset: 0;                
+  pointer-events: none;
+  opacity: var(--noise-o);
+  mix-blend-mode: overlay;
+  background-image: url('/images/noise.png'); 
+  background-size: 500px;   
+  z-index: 1;               /* sit under content */
+}
+/* ensure content sits above noise */
+.hero__content { position: relative; z-index: 2; }
+
+/* Optional: barely-there slow drift of blobs (disable for strict parity) */
+@media (prefers-reduced-motion: no-preference) {
+  .hero::before {
+    animation: hero-drift 26s ease-in-out infinite alternate;
+  }
+}
+@keyframes hero-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(0.5%, -0.8%, 0) scale(1.02); }
+}
+
+
+
+
+
 

@@ -1,63 +1,20 @@
 <script>
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
-	import Orbit from '$lib/components/Orbit.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
 	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import LandingFooter from '$lib/components/LandingFooter.svelte';
-
-	export const load = async () => {
-  return {
-    seo: {
-      title: 'Pitch Nine',
-      description: 'Turn product backlogs into roadmaps and deliver AI innovation with discipline in the toughest industries.',
-      image: 'https://pitchnine.com/images/social-share.jpg'
-    }
-  };
-};
-
-
 </script>
 
-<!--Hero-->
-<section class="relative isolate overflow-hidden">
-<!-- BACKGROUND LAYER -->
-<div class="absolute inset-0 min-h-90vh -z-10">
-
-
-<!-- Scatter overlay (subtle) -->
-<Orbit
-class="absolute inset-0 h-full w-full opacity-90"
-count={240}
-jitterX={15}
-jitterY={100}
-inDuration={2200}
-maxStagger={2200}
-holdDuration={1200}
-outDuration={1200}
-loop={false}
-once={true}
-ariaLabel="Animated scatterplot illustrating product lifecycle curve"
-/>
-
-
-
-</div>
-
-
-<!-- FOREGROUND CONTENT -->
-<div class="relative container text-center px-6 py-24 lg:py-40">
-<h1 class="h1">Disciplined innovation, without the theatre.</h1>
-<p class="body">
-We restore the rhythm between discovery and delivery for product teams in regulated markets.
-</p>
-
-
-<!-- CTA Row -->
-<div class="mt-8 flex flex-wrap gap-3">
-<a href="#quiz" class="primary-cta mx-auto">Analyze with AI</a>
-</div>
-</div>
+<!-- Put your hero content inside .hero__content -->
+<section class="hero">
+  <div class="hero__content">
+	  <div class="noise"></div>
+    <h1>Find your phase to find your way.</h1>
+    <p>Plot your product and receive custom strategic analysis for your best next step.</p>
+    <a class="cta" href="/contact">Start short assessment</a>
+  </div>
 </section>
+
 
 <!-- Problem framing -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
