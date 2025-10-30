@@ -5,13 +5,15 @@
 	import LandingFooter from '$lib/components/LandingFooter.svelte';
 </script>
 
-<!-- Put your hero content inside .hero__content -->
-<section class="hero">
-  <div class="hero__content">
-	  <div class="noise"></div>
-    <h1>Find your phase to find your way.</h1>
-    <p>Plot your product and receive custom strategic analysis for your best next step.</p>
-    <a class="cta" href="/contact">Start short assessment</a>
+<section class="hero full-bleed full-bleed-top flex flex-col align-center text-center justify-center">
+  <div class="hero__halo" aria-hidden="true">
+    <div class="noise"></div>
+  </div>
+
+  <div class="hero__content max-w-4xl mx-auto">
+    <h1 class="h1 mb-9">Find your phase to find your way.</h1>
+    <p class="body mb-8">Plot your product and receive custom strategic analysis for your best next step.</p>
+    <a class="primary-cta" href="#">Begin assessment</a>
   </div>
 </section>
 

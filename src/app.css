@@ -161,15 +161,15 @@
   --hero-to:   #022c22; /* emerald-950  */
 
   /* Mesh blob tints (accents) */
-  --blob-a: #14b8a6;    /* teal-500  */
+  --blob-a: #0d9488;    /* teal-600  */
   --blob-b: #059669;    /* emerald-600 */
-  --blob-c: #0ea5e9;    /* sky-500   */
+  --blob-c: #0284c7;    /* sky-600   */
   --blob-d: #f59e0b;    /* amber-400 */
 
   /* Opacities */
   --mesh-o: 0.25;       /* slightly lower so colors stay executive */
   --vignette-o: 0.75;   /* softer edge than before */
-  --noise-o: 0.10;
+  --noise-o: 0.005;
 
   /* Height (optional tweak) */
   --hero-min-h: min(88vh, 900px);
@@ -182,10 +182,12 @@
   border-radius: 0;             /* remove rounding */
   overflow: hidden;
   isolation: isolate;
-  margin: 0;                    /* no inset */
-  /* base gradient will come from the new emerald/teal palette below */
+  margin: 0;                
+  /* base gradient will come from the new emerald/teal palette */
   background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
 }
+
+
 
 /* Layer 1: mesh blobs (multiple radial-gradients) */
 .hero::before {
@@ -195,8 +197,8 @@
   background:
     radial-gradient(900px 600px at 18% 22%, color-mix(in oklab, var(--blob-b), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 60%),
     radial-gradient(720px 520px at 78% 28%, color-mix(in oklab, var(--blob-c), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%),
-    radial-gradient(640px 520px at 28% 78%, color-mix(in oklab, var(--blob-a), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%),
-    radial-gradient(780px 540px at 82% 78%, color-mix(in oklab, var(--blob-d), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 62%);
+    radial-gradient(640px 520px at 28% 78%, color-mix(in oklab, var(--blob-a), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 80%),
+    radial-gradient(780px 540px at 82% 78%, color-mix(in oklab, var(--blob-d), transparent calc(100% - var(--mesh-o)*100%)) 0%, transparent 70%);
   mix-blend-mode: screen; /* keeps it airy over the base gradient */
   pointer-events: none;
 }
@@ -214,17 +216,48 @@
       rgba(0,0,0, var(--vignette-o)) 100%);
 }
 
-/* Layer 3: subtle noise  */
-.hero .noise {
-  position: absolute;      
-  inset: 0;                
+.hero__halo {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
   pointer-events: none;
-  opacity: var(--noise-o);
-  mix-blend-mode: overlay;
-  background-image: url('/images/noise.png'); 
-  background-size: 500px;   
-  z-index: 1;               /* sit under content */
 }
+
+.hero__halo::before {
+  content: "";
+  width: clamp(500px, 70vw, 900px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center,
+      color-mix(in oklab, var(--blob-a), white 10%) 0%,
+      color-mix(in oklab, var(--blob-b), transparent 70%) 45%,
+      transparent 70%);
+  opacity: 0.65;
+  filter: blur(80px) saturate(120%);
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+/* noise texture inside the halo */
+.hero__halo .noise {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  width: clamp(500px, 70vw, 900px);
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  background-image: url('/images/noise.png');
+  background-size: 500px;
+  background-repeat: repeat;
+  opacity: var(--noise-o);
+  mix-blend-mode: soft-light;
+  filter: blur(0.5px);
+  z-index: 2;
+}
+
 /* ensure content sits above noise */
 .hero__content { position: relative; z-index: 2; }
 
