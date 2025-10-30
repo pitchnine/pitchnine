@@ -3,7 +3,7 @@
 
   /* ---- Foreground content ---- */
   export let headline = "Discovery meets delivery.";
-  export let subhead = "Pitch Nine helps product teams create or regain rhythm, clarity, and evidence-driven momentum by implementing disciplined learning alongside delivery.”";
+  export let subhead = "Pitch Nine helps product teams create rhythm, clarity, and evidence-driven momentum by implementing disciplined discovery work alongside delivery teams.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

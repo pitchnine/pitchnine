@@ -29,7 +29,7 @@
 <!--Overview + Logo Credentials -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
 	<h2 class="h2 max-w-6xl mx-auto text-left px-4 text-center md:px-0 md:text-left">
-		Pitch Nine is the alternative to trend-driven product consultancies, helping established product teams innovate with discipline in compliance-driven industries.
+		Pitch Nine is the alternative to trend-driven product consultants, helping established product teams innovate safely as a fractional discovery team.
 	</h2>
 	<div class="mt-24 grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
 		<!-- Logos - Row 1 -->
@@ -123,7 +123,7 @@
 <!-- Opportunity Audit -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
-   Every engagement begins with an <i>Opportunity Audit</i> that turns overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
+   Every engagement begins with an <i>Opportunity Audit</i> that turns an overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
 </h2>
 	<Diagnostics />
 </section>
@@ -158,7 +158,7 @@ Case studies or proof in the work
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
 	<h2 class="h2 text-center mb-8">Veteran judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
-		At Pitch Nine, our cofounders spent their careers inside critical organizations, not on the sidelines. We’ve built and piloted innovation, proven them in the field, and integrated the winners into mainline products — all within HIPAA-regulated, SOC 1, and ISO 27001 environments. We know how to advance what matters without the theater of experimentation.
+		At Pitch Nine, our cofounders spent their careers inside critical organizations, not on the sidelines. We’ve built and piloted innovative products, proven them in the field, and integrated the winners into mainline products all within HIPAA-regulated, SOC 1, and ISO 27001 environments. 
 	</p>
 
 	<div class="flex justify-center">
