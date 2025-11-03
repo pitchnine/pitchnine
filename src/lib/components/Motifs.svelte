@@ -3,12 +3,12 @@
   const {
     count = 6,                 // # of motifs rendered
     durationMs = 16000,        // full fade-in/hold/fade-out cycle
-    baseSize="12vw" // motif width
+baseSize="clamp(140px, 28vw, 280px)"
   } = $props();
 
   // keep anchors near the hero headline area (center-ish)
   const anchors = [
-    { x: 20, y: 70 }, { x: 75, y: 67}, { x: 10, y: 16}, { x: 80, y: 18}
+    { x: 20, y: 70 }, { x: 75, y: 67}, { x: 10, y: 16}, { x: 80, y: 15}
   ];
 
   // import your white, stroke-only svgs as raw
@@ -54,22 +54,23 @@
 
   /* keep strokes elegant even when we scale containers */
   .motif :where(svg) {
-    display: block;
-    width: 25vw;
-    height: auto;
-    vector-effect: non-scaling-stroke;
-    stroke: rgba(255,255,255,0.85);
-    stroke-width: 1.5;
-    fill: none;
++   display: block;
++   width: 100%; 
++   height: auto;
++   vector-effect: non-scaling-stroke;
++   stroke: rgba(255,255,255,0.85);
++   stroke-width: 1.5;
++   fill: none;
   }
 
   /* long, quiet cycle: slow fade in, long hold, gentle exit */
-  @keyframes fadeFloat {
-    0%   { opacity: 0;   transform: translateY(2px)  scale(var(--scale)); }
-    18%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
-    82%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
-    100% { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
-  }
+@keyframes fadeFloat {
+  0%   { opacity: 0;   transform: translateY(2px)  scale(var(--scale)); }
+  4%   { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
+  10%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
+  14%  { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
+  100% { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
+}
 
   @media (prefers-reduced-motion: reduce) {
     .motif { animation: none !important; opacity: .35 !important; }

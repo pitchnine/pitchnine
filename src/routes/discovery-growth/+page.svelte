@@ -11,9 +11,9 @@
     <div class="noise"></div>
   </div>
  <Motifs maxVisible={2} cycleMs={1000} spawnMs={1000} />
-  <div class="hero__content px-2 max-w-4xl mx-auto">
-    <h1 class="h1 mb-9">Find your phase to find your way.</h1>
-    <p class="body mb-8">Plot your product and receive custom strategic analysis for your best next step.</p>
+  <div class="hero__content px-6 max-w-7xl mx-auto">
+    <h1 class="h1 mb-9 max-w-6xl">Find your phase.</h1>
+    <p class="body mb-8 max-w-4xl">Take a short, free assessment to see where your product falls on the lifecycle curve with custom AI analysis.</p>
     <a class="primary-cta" href="/contact">Begin assessment</a>
   </div>
 </section>
