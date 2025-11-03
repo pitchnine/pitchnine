@@ -3,7 +3,7 @@
   const {
     count = 6,                 // # of motifs rendered
     durationMs = 16000,        // full fade-in/hold/fade-out cycle
-baseSize="clamp(140px, 28vw, 280px)"
+baseSize="clamp(160px, 32vw, 332px)"
   } = $props();
 
   // keep anchors near the hero headline area (center-ish)
@@ -65,11 +65,17 @@ baseSize="clamp(140px, 28vw, 280px)"
 
   /* long, quiet cycle: slow fade in, long hold, gentle exit */
 @keyframes fadeFloat {
-  0%   { opacity: 0;   transform: translateY(2px)  scale(var(--scale)); }
-  4%   { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
-  10%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
-  14%  { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
-  100% { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
+  /* fade in (longer, gentle) */
+  0%   { opacity: 0;   transform: translateY(6px)  scale(var(--scale)); }
+
+  /* brief hold at peak */
+  12%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
+
+  /* fade out (longer, gentle) */
+  22%  { opacity: .40;   transform: translateY(0)    scale(var(--scale)); }
+
+  /* stay hidden the rest of the cycle */
+  100% { opacity: 0;   transform: translateY(0)    scale(var(--scale)); }
 }
 
   @media (prefers-reduced-motion: reduce) {
