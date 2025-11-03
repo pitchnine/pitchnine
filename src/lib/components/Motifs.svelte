@@ -8,9 +8,8 @@
 
   // keep anchors near the hero headline area (center-ish)
   const anchors = [
-    { x: 38, y: 34 }, { x: 46, y: 26 }, { x: 58, y: 30 },
-    { x: 64, y: 40 }, { x: 54, y: 52 }, { x: 42, y: 48 },
-    { x: 32, y: 42 }, { x: 68, y: 46 }
+    { x: 30, y: 25 }, { x: 70, y: 28 }, { x: 25, y: 50 },
+    { x: 75, y: 52 }, { x: 40, y: 70 }, { x: 60, y: 68 }
   ];
 
   // import your white, stroke-only svgs as raw

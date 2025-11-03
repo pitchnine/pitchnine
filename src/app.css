@@ -154,7 +154,7 @@
   .stack-lg { --stack-gap: 3rem; }
 }
 
-/* --- Landing Page Gradient Noise --- */
+/* --- Landing Page Gradient and Noise --- */
 :root {
   /* Base gradient stops (emerald→sky) */
   --hero-from: #030712; /* gray-950 */
@@ -178,12 +178,9 @@
 /* --- Hero container --- */
 .hero {
   position: relative;
-  min-height: min(100vh, 900px); /* up to you */
   border-radius: 0;             /* remove rounding */
   overflow: hidden;
-  isolation: isolate;
-  margin: 0;                
-  /* base gradient will come from the new emerald/teal palette */
+  isolation: isolate;              
   background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
 }
 
