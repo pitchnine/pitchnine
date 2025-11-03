@@ -3,7 +3,7 @@
   const {
     count = 6,                 // # of motifs rendered
     durationMs = 16000,        // full fade-in/hold/fade-out cycle
-    baseSize="25vw" // motif width
+    baseSize="18vw" // motif width
   } = $props();
 
   // keep anchors near the hero headline area (center-ish)
@@ -22,15 +22,14 @@
   const library: string[] = [orbit, scatter, star, whiteboard];
 
   // build a stable set of items (no timers)
-  type Item = { svg: string; x: number; y: number; delay: number; rot: number; scale: number };
+  type Item = { svg: string; x: number; y: number; delay: number; scale: number };
   const items: Item[] = Array.from({ length: count }, (_, i) => {
     const a = anchors[i % anchors.length];
     // gentle randomization, but stable for initial render
-    const rot   = (Math.random() * 3) - 1.5;     // -1.5..+1.5deg
     const scale = 1 + (Math.random() * 0.04 - 0.02); // -2%..+2%
     const delay = i * (durationMs / count) + Math.random() * 600; // phased offsets
     const svg   = library[i % library.length];
-    return { svg, x: a.x, y: a.y, delay, rot, scale };
+    return { svg, x: a.x, y: a.y, delay, scale };
   });
 </script>
 
@@ -52,7 +51,7 @@
     will-change: opacity, transform;
     animation: fadeFloat var(--dur) cubic-bezier(.22,1,.36,1) infinite; /* easeOutBack-ish */
     animation-delay: var(--delay);
-    transform: translateZ(0) rotate(var(--rot)) scale(var(--scale));
+    transform: translateZ(0) scale(var(--scale));
   }
 
   /* keep strokes elegant even when we scale containers */
@@ -68,10 +67,10 @@
 
   /* long, quiet cycle: slow fade in, long hold, gentle exit */
   @keyframes fadeFloat {
-    0%   { opacity: 0;   transform: translateY(2px)  rotate(var(--rot)) scale(var(--scale)); }
-    18%  { opacity: .85; transform: translateY(-1px) rotate(var(--rot)) scale(calc(var(--scale) * 1.005)); }
-    82%  { opacity: .85; transform: translateY(-1px) rotate(var(--rot)) scale(calc(var(--scale) * 1.005)); }
-    100% { opacity: 0;   transform: translateY(0px)  rotate(var(--rot)) scale(var(--scale)); }
+    0%   { opacity: 0;   transform: translateY(2px)  scale(var(--scale)); }
+    18%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
+    82%  { opacity: .85; transform: translateY(-1px) scale(calc(var(--scale) * 1.005)); }
+    100% { opacity: 0;   transform: translateY(0px)  scale(var(--scale)); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -87,7 +86,6 @@
         --dur:${durationMs}ms;
         --delay:${it.delay}ms;
         --size:${baseSize};
-        --rot:${it.rot}deg;
         --scale:${it.scale};
         left:${it.x}%;
         top:${it.y}%;
