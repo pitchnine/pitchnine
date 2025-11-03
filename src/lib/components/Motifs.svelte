@@ -3,13 +3,12 @@
   const {
     count = 6,                 // # of motifs rendered
     durationMs = 16000,        // full fade-in/hold/fade-out cycle
-    baseSize="18vw" // motif width
+    baseSize="12vw" // motif width
   } = $props();
 
   // keep anchors near the hero headline area (center-ish)
   const anchors = [
-    { x: 30, y: 25 }, { x: 70, y: 28 }, { x: 25, y: 50 },
-    { x: 75, y: 52 }, { x: 40, y: 70 }, { x: 60, y: 68 }
+    { x: 20, y: 70 }, { x: 75, y: 67}, { x: 10, y: 16}, { x: 80, y: 18}
   ];
 
   // import your white, stroke-only svgs as raw
@@ -34,7 +33,7 @@
 
 <style>
   .motifs {
-    position: relative;
+    position: absolute;
     inset: 0;
     pointer-events: none;
     z-index: 2;             
