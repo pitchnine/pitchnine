@@ -1,15 +1,28 @@
 <script lang="ts">
-  // Svelte 5 runes
+  
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   const {
     count = 6,                 // # of motifs rendered
     durationMs = 16000,        // full fade-in/hold/fade-out cycle
 baseSize="clamp(160px, 32vw, 332px)"
   } = $props();
 
-  // keep anchors near the hero headline area (center-ish)
-  const anchors = [
-    { x: 20, y: 70 }, { x: 75, y: 67}, { x: 10, y: 16}, { x: 80, y: 15}
-  ];
+// keep anchors near the hero headline area (center-ish)
+// shift them outward on mobile for more breathing room
+const anchors = isMobile
+  ? [
+      { x: 3, y: 74 },
+      { x: 60, y: 80 },
+      { x: 1, y: 3 },
+      { x: 70, y: 7 }
+    ]
+  : [
+      { x: 20, y: 70 },
+      { x: 75, y: 67 },
+      { x: 10, y: 16 },
+      { x: 70, y: 10 }
+    ];
 
   // import your white, stroke-only svgs as raw
   import orbit      from '$lib/motifs/orbit.svg?raw';
