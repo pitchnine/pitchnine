@@ -58,17 +58,16 @@
   }
 </script>
 
-<section class="mb-48 w-full">
+<section class="w-full">
   <header class="mx-auto max-w-7xl px-3">
     <h2 class="h2 mb-6">{title}</h2>
-    <p class="body mb-3">
+    <p class="body mb-1">
       Complete the form below or
       <a href="https://cal.com/joellstocchero/30min" class="text-emerald-500 hover:underline hover:underline-offset-4">
         schedule an introduction
       </a>
       at your convenience.
     </p>
-    <p class="body">Replies received within one business day.</p>
   </header>
 
   <form
@@ -77,7 +76,7 @@
     action={action ?? undefined}
     on:submit|preventDefault={onSubmit}  
     novalidate
-    class={`mx-auto mt-16 w-full max-w-7xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
+    class={`mx-auto mt-12 w-full max-w-7xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
             ${density === 'compact' ? 'space-y-6' : 'space-y-12'}
             sm:p-10`}
     aria-describedby="contact-subtitle"

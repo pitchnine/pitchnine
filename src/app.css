@@ -178,7 +178,7 @@
 /* --- Hero container --- */
 .hero {
   position: relative;
-  border-radius: 0;             /* remove rounding */
+  border-radius: 0;            
   overflow: hidden;
   isolation: isolate;              
   background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
