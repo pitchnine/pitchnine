@@ -54,7 +54,7 @@
         <li class="relative isolate w-full">
           <!-- Row container (no more hover overlay / row click) -->
           <div
-            class="grid w-full grid-cols-1 items-start gap-x-28 gap-y-12 rounded-xl px-9 py-16
+            class="grid w-full grid-cols-1 items-start gap-x-28 gap-y-12 rounded-xl px-6 py-16
                    text-left lg:grid-cols-2"
           >
             <!-- Left: headshot -->
@@ -72,7 +72,7 @@
             </div>
 
             <!-- Right: profile + stats + CTAs -->
-            <div class="mt-1 flex max-w-6xl flex-col gap-4 self-start">
+            <div class="mt-1 flex max-w-7xl flex-col gap-4 self-start">
 				<div>
                   <h4 class="h3">
                     {s.title}
@@ -87,9 +87,9 @@
 
               <ul class="mt-1 space-y-2">
                 {#each s.stats as item}
-                  <li class="flex items-start gap-2">
-                    <span class="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400/90"></span>
-                    <span class="body">{item}</span>
+                  <li class="flex items-start sm:gap-4 gap-2">
+                    
+                    <span class="body">• {item}</span>
                   </li>
                 {/each}
               </ul>

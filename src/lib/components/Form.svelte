@@ -77,7 +77,6 @@
       </a>
       at your convenience.
     </p>
-    <p class="body">Replies received within one business day.</p>
   </header>
 
   <form
@@ -86,7 +85,7 @@
     action={action ?? undefined}
     on:submit|preventDefault={onSubmit}  
     novalidate
-    class={`mx-auto mt-16 w-full max-w-7xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
+    class={`mx-auto mt-12 w-full max-w-7xl rounded-2xl border border-emerald-50/10 p-8 backdrop-blur
             ${density === 'compact' ? 'space-y-6' : 'space-y-12'}
             sm:p-10`}
     aria-describedby="contact-subtitle"

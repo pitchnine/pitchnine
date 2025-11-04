@@ -121,8 +121,8 @@
 </section>
 
 <!-- Opportunity Audit -->
-<section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
-	<h2 class="h2 md:max-w-6xl w-full px-3">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+	<h2 class="h2 md:max-w-7xl w-full">
    Every engagement begins with an <i>Opportunity Audit</i> that turns an overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
 </h2>
 	<Diagnostics />
@@ -130,13 +130,13 @@
 
 <!--Product Lifecycle Lead Gen--> 
 
-<div>
+<div class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<ProductLifecycleForm />
 </div>
 
 <!-- Phases -->
-<section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
-	<h2 class="h2 mb-6 text-center">De-risk your next chapter.</h2>
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12" id="services">
+	<h2 class="h2 text-center">De-risk your next chapter.</h2>
 	<ServicesGrid />
 </section>
 
@@ -155,7 +155,7 @@ Case studies or proof in the work
 -->
 
 <!--About us -->
-<section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<h2 class="h2 text-center mb-8">Veteran judgement.</h2>
 	<p class="body text-center max-w-4xl mb-12">
 		At Pitch Nine, our cofounders spent their careers inside critical organizations, not on the sidelines. We’ve built and piloted innovative products, proven them in the field, and integrated the winners into mainline products all within HIPAA-regulated, SOC 1, and ISO 27001 environments. 
@@ -170,7 +170,7 @@ Case studies or proof in the work
 
 
 <!--CTA-->
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<Form />
 </section>
 

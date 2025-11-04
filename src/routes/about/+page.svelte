@@ -74,10 +74,10 @@ export const load = async () => {
 <Nav />
 <AboutHero />
 
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
   <!-- Hero / Philosophy -->
-  <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-8 pt-20 pb-16">
-    <h2 class="h2 mb-6">
+  <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-9 pt-12 pb-9">
+    <h2 class="h2 mb-3">
       Pitch Nine is an embedded product agency with a focus on establishing a dual-track product rhythm, preparing organizations for AI adoption, and delivering innovation without compliance risk.
     </h2>
   </header>
@@ -102,7 +102,7 @@ export const load = async () => {
 
 
   <!-- Principles grid -->
-<section aria-label="principles" class="mx-auto max-w-7xl my-56 md:my-80">
+<section aria-label="principles" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
   <h2 class="text-sm font-semibold tracking-wider opacity-30 uppercase">
   Principles
 </h2>
@@ -110,14 +110,14 @@ export const load = async () => {
 </section>
 
   <!-- Founders -->
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
   <Team />
 </section>
 
 
 
   <!-- CTA / Contact -->
-  <section aria-label="cta" class="mx-auto max-w-7xl my-56 md:my-80">
+  <section aria-label="cta" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
     <Form />
   </section>
 

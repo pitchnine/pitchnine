@@ -54,7 +54,7 @@
 						aria-label={`Open ${s.title}`}
 						on:click={() => go(s.title)}
 						on:keydown={(e) => onRowKey(e, s.title)}
-						class="grid w-full cursor-pointer grid-cols-1 items-start gap-x-10 gap-y-6 rounded-xl px-12 py-16
+						class="grid w-full cursor-pointer grid-cols-1 items-start gap-x-10 gap-y-6 rounded-xl px-3 md:px-9 py-12 md:py-20
                    text-left focus:outline-none focus:ring-2 focus:ring-emerald-500/30 lg:grid-cols-2"
 					>
 						<!-- Left: title -->
