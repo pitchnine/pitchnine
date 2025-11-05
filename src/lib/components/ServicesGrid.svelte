@@ -2,21 +2,21 @@
 	const services = [
   {
     title: "Opportunity Audit",
-    time: "3–4 weeks",
-    desc: "A rapid evaluation of your product lines, backlog, and goals to expose risks, align leadership, and surface AI-ready opportunities. The result is a clear, investable plan tied to measurable outcomes.",
-    inc: "Backlog rescue • Design artifacts • Executive roadmap with success metrics"
+    time: "3 meetings",
+    desc: "A rapid assessment of your product vision, backlog, and data landscape to identify where AI can create leverage fast. You’ll leave with a clear, prioritized roadmap that aligns leadership and converts ambition into an investable, measurable plan.",
+    inc: "Board brief • Design artifacts • Executive roadmap with success metrics"
   },
   {
-    title: "Innovation Pilot(s)",
-    time: "12–16 weeks",
-    desc: "The most promising opportunities are advanced into production-ready pilots, run safely outside the mainline so core team delivery is never slowed. Each pilot is created in tight collaboration with existing processess, governed, validated with customers, and built to prove value or risk before major investment.",
-    inc: "KPI tracking • Design and UI components • Requirements documentation • QA and compliance reviews"
+    title: "Product Acceleration",
+    time: "Scope-based",
+    desc: "We transform high-potential ideas into launch-ready product extensions that prove value and technical feasibility without derailing your core team. Every build blends modern AI tooling, strong architecture, and scaleable experiences in tight collaboration with your existing workflows to reach validation, fast.",
+    inc: "AI-assisted prototypes • Full-stack delivery • KPI dashboards • QA and compliance reviews"
   },
   {
-    title: "Signal-Driven Iteration",
+    title: "Signal-Driven Growth",
     time: "Monthly",
-    desc: "Winning pilots are folded back into the product with collaborative iteration, and priorities are recalibrated to keep execution aligned with strategy and market signals.",
-    inc: "Feature validation • Experience refinements • Outcome tracking • Iteration reviews"
+    desc: "Once live, we refine what’s working and expand what’s resonating. Using real usage data and AI-driven insights, we iterate features, validate customer impact, and tune priorities to maintain momentum and market fit.",
+    inc: "Feature optimization • Outcome tracking • Customer validation loops • Iteration reviews"
   }
 ];
 
@@ -34,7 +34,7 @@
 	}
 </script>
 
-<section class="py-16">
+<section class="mt-14 md:mt-24">
 	<div class="mx-auto max-w-7xl">
 		<ul class="divide-y divide-white/5">
 			{#each services as s}
@@ -54,7 +54,7 @@
 						aria-label={`Open ${s.title}`}
 						on:click={() => go(s.title)}
 						on:keydown={(e) => onRowKey(e, s.title)}
-						class="grid w-full cursor-pointer grid-cols-1 items-start gap-x-10 gap-y-6 rounded-xl px-12 py-16
+						class="grid w-full cursor-pointer grid-cols-1 items-start gap-x-6 gap-y-6 rounded-xl px-6 py-16
                    text-left focus:outline-none focus:ring-2 focus:ring-emerald-500/30 lg:grid-cols-2"
 					>
 						<!-- Left: title -->
@@ -85,19 +85,7 @@
 									aria-label={`Request scope & pricing for ${s.title}`}
 									class="primary-cta mt-6"
 								>
-									<span>Request scope & pricing</span>
-									<svg
-										viewBox="0 0 24 24"
-										class="h-4 w-4 transform-gpu transition-transform duration-200 ease-out
-                           hover:translate-x-[4px] focus-visible:translate-x-[4px]
-                           group-hover:translate-x-[4px]
-                           motion-reduce:transition-none"
-										fill="none"
-										stroke="currentColor"
-										stroke-width="2"
-									>
-										<path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
-									</svg>
+									<span>Request information</span>
 								</a>
 							</div>
 						</div>

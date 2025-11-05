@@ -35,7 +35,7 @@
   <!-- Responsive, centered on mobile and left-aligned on desktop -->
   <ul
     aria-label="Client logos"
-    class="mt-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6
+    class="mt-14 md:mt-24 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6
            gap-x-8 gap-y-10 px-4 md:px-0 justify-items-center md:justify-items-start items-center"
   >
     <li><img src="/images/logo-origent.png" alt="Origent"
@@ -73,7 +73,7 @@
 
 
 <!-- Opportunity Audit -->
-<section class="mx-auto max-w-7xl my-56 md:my-80" id="diagnostic">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
 	<h2 class="h2 md:max-w-6xl w-full px-3">
    Every engagement begins with an <i>Opportunity Audit</i> that turns overloaded backlog into a disciplined plan leaders can trust and fund with confidence. 
 </h2>
@@ -86,9 +86,9 @@
 	<ProductLifecycleForm />
 </div>
 
-<!-- Phases -->
+<!-- Services and approach/process -->
 <section class="mx-auto max-w-7xl my-56 md:my-80" id="services">
-	<h2 class="h2 mb-6 text-center">De-risk your next chapter.</h2>
+	<h2 class="h2 mb-6 text-center">We leverage what you have to uncover openings, prove opportunity, and execute with precision.</h2>
 	<ServicesGrid />
 </section>
 
