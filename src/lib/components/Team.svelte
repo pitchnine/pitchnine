@@ -47,7 +47,7 @@
 	}
 </script>
 
-<div class="flex flex-col gap-32 md:flex-row md:justify-between p-3 md:p-0">
+<div class="flex flex-col gap-32 md:flex-row md:justify-between p-3 md:p-0 mt-14 md:mt-24">
 	{#each services as s}
 		<div class="md:max-w-xl">
 			<!-- Each person block -->
@@ -91,8 +91,8 @@
 
 			<!-- Bio-->
 
-			<div class="mt-12 text-center mx-auto">
-  <div class="h-1 w-12 mx-auto bg-amber-600/70 rounded-full mb-3"></div>
+			 <div class="h-1 w-12 mx-auto bg-amber-600/70 rounded-full mb-3 mt-9"></div>
+			<div class="mt-9 text-center mx-auto">
         <p class="body text-balance">
     {s.profile}
   </p>

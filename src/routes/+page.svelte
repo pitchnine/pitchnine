@@ -109,9 +109,9 @@ Case studies or proof in the work
 <!--About us -->
 <section class="mx-auto max-w-7xl my-56 md:my-80 flex justify-center items-center flex-col">
 	<h2 class="h2 text-center mb-8">Veteran judgement.</h2>
-	<p class="body text-center max-w-4xl mb-12">
-		At Pitch Nine, our cofounders spent their careers inside critical organizations, not on the sidelines. We’ve built and piloted innovation, proven them in the field, and integrated the winners into mainline products — all within HIPAA-regulated, SOC 1, and ISO 27001 environments. We know how to advance what matters without the theater of experimentation.
-	</p>
+	  <p class="body text-center max-w-4xl mb-9">
+    We built products inside hospitals, insurers, and global supply chains and have shipped award-winning products under HIPAA, SOC 1, and ISO 27001. We plug into your team, turn backlog into AI-enabled delivery, and produce outcomes that withstand audits, customers, and the board.
+  </p>
 
 	<div class="flex justify-center">
 		<a href="/about" data-cta="primary" class="primary-cta">
