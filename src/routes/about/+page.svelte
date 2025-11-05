@@ -103,7 +103,7 @@ export const load = async () => {
 
   <!-- Principles grid -->
 <section aria-label="principles" class="mx-auto max-w-7xl my-56 md:my-80">
-  <h2 class="h2 mb-6">
+  <h2 class="h2 mb-12">
       We operate as an embedded product team, not an agency side-show with a focus on outcomes, governance, and long-term capability.
     </h2>
   <Principles {principles} />
@@ -111,6 +111,9 @@ export const load = async () => {
 
   <!-- Founders -->
 <section class="mx-auto max-w-7xl my-56 md:my-80">
+  <h2 class="h2 mb-24 text-center">
+      Fast when it counts and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
+    </h2>
   <Team />
 </section>
 

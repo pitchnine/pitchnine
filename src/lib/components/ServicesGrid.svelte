@@ -71,7 +71,7 @@
 								{s.desc}
 							</p>
 							<p class="body">
-								<span class="kicker text-orange-400/60">Includes:<br></span>
+								<span class="kicker text-amber-500">Includes:<br></span>
 								{s.inc}
 							</p>
 
