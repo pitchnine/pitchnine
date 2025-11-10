@@ -200,15 +200,17 @@
 
 
 
-<section class="mx-auto max-w-7xl px-2 py-10">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
   {#if !showLeadForm && !showResult}
-    <h2 class="h2 mx-auto text-center" in:fade out:fade>
-      Inflection points require modernization.
+    <h2 class="h2 mx-auto text-center mb-9" in:fade out:fade>
+      Progress starts with perspective.
     </h2>
+    <p class='body mx-auto text-center'>Take our short, free diagnostic assessment and receive custom insights based on your position.</p>
+    <div class="h-1 w-12 md:w-40 mx-auto bg-amber-600/70 rounded-full mt-9"></div>
   {/if}
 
   {#if showLeadForm}
-    <div class="mt-24" in:fade>
+    <div class="mt-14 md:mt-24" in:fade>
    <LifecycleLeadGen
   title="Access analysis"
   answers={[q1, q2, q3]}
@@ -224,7 +226,7 @@
   </div>
 
   {:else if showResult}
-    <div class="mt-24" in:fade>
+    <div class="mt-14 md:mt-24" in:fade>
     <LifecycleResult 
     answers={[q1, q2, q3]}
     onRestart={restartAssessment} />
@@ -232,7 +234,7 @@
 
 {:else}
     <!-- Original quiz + chart layout -->
-      <div class="mt-24 flex flex-col items-center gap-12" in:fade>
+      <div class="mt-14 md:mt-24 flex flex-col items-center gap-12" in:fade>
       <!-- Form column (quiz questions + arrows + CTA) -->
       <div class="w-full md:flex-1 md:basis-0">
         <form class="space-y-6" on:submit={handleSubmit}>
@@ -243,12 +245,12 @@
             {...inertFor(currentStep !== 1)}
             hidden={currentStep !== 1}
           >
-            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block body">
               How would you describe your current sales trajectory?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q1Options as opt}
                   <div>
                     <input
@@ -285,12 +287,12 @@
             {...inertFor(currentStep !== 2)}
             hidden={currentStep !== 2}
           >
-            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block body">
               What is your product team's current focus and posture?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q2Options as opt}
                   <div>
                     <input
@@ -327,12 +329,12 @@
             {...inertFor(currentStep !== 3)}
             hidden={currentStep !== 3}
           >
-            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block text-sm text-gray-50 focus:outline-none">
+            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block body">
               How would you describe the current competative landscape?
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q3Options as opt}
                   <div>
                     <input

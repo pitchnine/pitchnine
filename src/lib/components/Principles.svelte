@@ -97,7 +97,7 @@
 <section
   bind:this={sectionEl}
   aria-label="principles"
-  class="mx-auto max-w-7xl px-6 sm:px-8 py-10"
+  class="mx-auto max-w-7xl mt-14 md:mt-24"
 >
   <div class="relative mt-3">
     <!-- Track -->
