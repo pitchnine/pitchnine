@@ -4,13 +4,13 @@
   <meta name="description" content="Uncover blind spots in your product strategy with Pitch Nine’s free 1-minute diagnostic. Get a custom report with risks, product signals, and recommendations tailored to your stage." />
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://pitchnine.com/phase" />
+  <link rel="canonical" href="https://pitchnine.com/diagnostic" />
 
   <!-- OpenGraph -->
   <meta property="og:title" content="Pitch Nine | Free Product Diagnostic" />
   <meta property="og:description" content="Get a custom AI analysis of your product strategy in under 1 minute. Designed for product teams at any stage in the journey." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pitchnine.com/phase" />
+  <meta property="og:url" content="https://pitchnine.com/diagnostic" />
   <meta property="og:image" content="https://pitchnine.com/images/social-card.png" />
 
   <!-- Twitter -->
@@ -65,7 +65,7 @@
     </svg>`;
 </script>
 
-<section class="hero full-bleed full-bleed-top flex flex-col min-h-dvh align-center text-center justify-center">
+<section aria-labelledby="introduction" class="hero full-bleed full-bleed-top flex flex-col min-h-dvh align-center text-center justify-center">
   <div class="hero__halo" aria-hidden="true">
     <div class="noise"></div>
   </div>
@@ -85,7 +85,7 @@
 
 
 <!-- what you'll get -->
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section aria-labelledby="diagnostic-results" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
   <h2 class="h2 text-center md:text-left">The Pitch Nine diagnostic report is free and takes less than 1 minute to complete.</h2>
   <div class="mt-16 md:mt-32 mb-16 md:mb-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
     {#each surveyArtifacts as a}
@@ -107,13 +107,13 @@
 
 <!--Product Lifecycle Lead Gen--> 
 
-<section id="diagnostic" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section id="diagnostic" aria-labelledby="diagnostic-quiz" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<ProductLifecycleForm />
 	<p class="fine text-center mt-3 text-gray-50/60">Privacy is our default. We don’t share your responses.</p>
 </section>
 
 <!--Overview + Logo Credentials -->
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section aria-labelledby="credentials" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<h2 class="h2 max-w-7xl text-left md:text-left">
 From Fortune 100s to NIH and Techstars, our products have scaled, been funded, and earned their place on the global stage.
 	</h2>
@@ -124,7 +124,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-origent.png"
-				alt="Logo 1"
+				loading="lazy"
+				alt="Origent Data Sciences corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -132,7 +133,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-aetna.png"
-				alt="Logo 2"
+				loading="lazy"
+				alt="Aetna corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -140,7 +142,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-aws.png"
-				alt="Logo 3"
+				loading="lazy"
+				alt="AWS corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -148,7 +151,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-who.png"
-				alt="Logo 4"
+				loading="lazy"
+				alt="World Health Organization corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -156,7 +160,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-techstars.png"
-				alt="Logo 5"
+				loading="lazy"
+				alt="Techstars corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -167,7 +172,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-cleveland.png"
-				alt="Logo 1"
+				loading="lazy"
+				alt="Cleveland Clinic corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -175,7 +181,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-cgi.png"
-				alt="Logo 2"
+				loading="lazy"
+				alt="CGI corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -183,7 +190,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-parsyl.png"
-				alt="Logo 3"
+				loading="lazy"
+				alt="Parsyl corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -191,7 +199,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-bluesight.png"
-				alt="Logo 4"
+				loading="lazy"
+				alt="Bluesight corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -199,7 +208,8 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 		<div class="flex h-20 items-center justify-center">
 			<img
 				src="/images/logo-nih.png"
-				alt="Logo 5"
+				loading="lazy"
+				alt="National Institute of Health corporate logo"
 				class="max-h-full max-w-full object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
 			/>
 		</div>
@@ -207,7 +217,7 @@ From Fortune 100s to NIH and Techstars, our products have scaled, been funded, a
 </section>
 
 <!-- Opportunity Audit -->
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section aria-labelledby="opportunity-audit" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<h2 class="h2 w-full">
    Every engagement begins with an <i>Opportunity Audit</i> that turns noise into signal and anecdotes into evidence.
 </h2>
@@ -231,6 +241,6 @@ Cal("init", "30min", {origin:"https://app.cal.com"});
 
 
 <!--CTA-->
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section aria-labelledby="contact-form" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<LandingFooter/>
 </section>
