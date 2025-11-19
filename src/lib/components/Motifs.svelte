@@ -3,8 +3,8 @@
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
   const {
-    count = 6,                 // # of motifs rendered
-    durationMs = 16000,        // full fade-in/hold/fade-out cycle
+    count = 4,                 // # of motifs rendered
+    durationMs = 7000,        // full fade-in/hold/fade-out cycle
 baseSize="clamp(160px, 32vw, 332px)"
   } = $props();
 
