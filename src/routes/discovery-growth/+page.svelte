@@ -37,7 +37,7 @@
     <h1 class="h1 mb-9 max-w-7xl px-12 md:px-4">Move faster, smarter.</h1>
     <p class="body mb-8 max-w-5xl px-12 md:px-4">Uncover blind spots in your product plan and accelerate your next move with Pitch Nine’s custom analysis.</p>
 	<div class="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-8">
-    <a class="primary-cta" href="#diagnostic">Start free diagnostic</a>
+    <a class="primary-cta" href="#diagnostic">Start free, 1-minute diagnostic</a>
 	<a class="secondary-cta" data-cal-link="joellstocchero/30min" data-cal-namespace="30min">
     Talk to a Partner
 	</a>
@@ -49,7 +49,7 @@
 
 <!-- what you'll get -->
 <section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
-  <h2 class="h2 text-center md:text-left">The Pitch Nine diagnostic is free and takes less than 2 minutes to complete. At the end we provide:</h2>
+  <h2 class="h2 text-center md:text-left">The Pitch Nine diagnostic report is free and takes less than 1 minute to complete.</h2>
   <div class="mt-16 md:mt-32 mb-16 md:mb-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-20">
     {#each surveyArtifacts as a}
       <div class="text-left">
@@ -64,6 +64,7 @@
         </div>
       </div>
     {/each}
+	<a class="primary-cta" href="#diagnostic">Start free, 1-minute diagnostic</a>
   </div>
 </section>
 
