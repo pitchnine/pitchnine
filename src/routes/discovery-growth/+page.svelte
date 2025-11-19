@@ -75,9 +75,9 @@
     <p class="body mb-8 max-w-5xl px-12 md:px-4">Uncover blind spots in your product plan and accelerate your next move with Pitch Nine’s custom analysis.</p>
 	<div class="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-8">
     <a class="primary-cta" href="#diagnostic">Start free, 1-minute diagnostic</a>
-	<a class="secondary-cta" data-cal-link="joellstocchero/30min" data-cal-namespace="30min">
+	<button class="secondary-cta" data-cal-link="joellstocchero/30min" data-cal-namespace="30min">
     Talk to a Partner
-	</a>
+	</button>
 	</div>
 	</div>
   
