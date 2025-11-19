@@ -1,3 +1,40 @@
+<svelte:head>
+  <title>Pitch Nine | Free Product Diagnostic</title>
+
+  <meta name="description" content="Uncover blind spots in your product strategy with Pitch Nine’s free 1-minute diagnostic. Get a custom report with risks, product signals, and recommendations tailored to your stage." />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://pitchnine.com/phase" />
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Pitch Nine | Free Product Diagnostic" />
+  <meta property="og:description" content="Get a custom AI analysis of your product strategy in under 1 minute. Designed for product teams at any stage in the journey." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pitchnine.com/phase" />
+  <meta property="og:image" content="https://pitchnine.com/images/social-card.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pitch Nine | Free Product Diagnostic" />
+  <meta name="twitter:description" content="Transform your roadmap into a plan fueled by signal. Free 1-minute diagnostic." />
+  <meta name="twitter:image" content="https://pitchnine.com/images/social-card.png" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Pitch Nine",
+      "url": "https://pitchnine.com",
+      "logo": "https://pitchnine.com/images/logo.png",
+      "description": "Product strategy, AI innovation, and fractional product design and development support for product teams.",
+      "sameAs": [
+        "https://www.linkedin.com/company/pitchnine/"
+      ]
+    }
+  </script>
+</svelte:head>
+
 <script>
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
