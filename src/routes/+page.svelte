@@ -82,7 +82,7 @@
 
 <!--Product Lifecycle Lead Gen--> 
 
-<div>
+<div class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<ProductLifecycleForm />
 </div>
 
@@ -122,7 +122,7 @@ Case studies or proof in the work
 
 
 <!--CTA-->
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
 	<Form />
 </section>
 

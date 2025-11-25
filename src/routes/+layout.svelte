@@ -55,7 +55,7 @@
   </script>
 </svelte:head>
 
-<main class="min-h-screen bg-gradient-to-b from-gray-950 to-gray-800 text-gray-200">
+<main class="min-h-screen bg-gradient-to-b from-gray-950 to-gray-800 pb-24 text-gray-200">
   <slot />
 </main>
 
@@ -73,10 +73,4 @@
   @media (min-width: 1280px) {
     :root { --page-x: 6rem; }
   }
-  main { padding: var(--page-y) var(--page-x); }
-  .full-bleed {
-    margin-left: calc(var(--page-x) * -1);
-    margin-right: calc(var(--page-x) * -1);
-  }
-  .narrow { max-width: 72ch; margin-inline: auto; }
 </style>

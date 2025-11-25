@@ -20,7 +20,7 @@
 
 <ContactHero />
 
-<div class="stack-lg" id="contact">
+<div class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12" id="contact">
     <Form />
 </div>
 

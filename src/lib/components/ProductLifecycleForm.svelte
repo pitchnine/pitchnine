@@ -200,10 +200,10 @@
 
 
 
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl px-2 py-9">
   {#if !showLeadForm && !showResult}
-    <h2 class="h2 mx-auto text-center mb-9" in:fade out:fade>
-      Progress starts with perspective.
+    <h2 class="h2 mx-auto text-center" in:fade out:fade>
+      Find your phase.
     </h2>
     <p class='body mx-auto text-center'>Take our short, free diagnostic assessment and receive custom insights based on your position.</p>
     <div class="h-1 w-12 md:w-40 mx-auto bg-amber-600/70 rounded-full mt-9"></div>
@@ -234,7 +234,7 @@
 
 {:else}
     <!-- Original quiz + chart layout -->
-      <div class="mt-14 md:mt-24 flex flex-col items-center gap-12" in:fade>
+      <div class="mt-12 md:mt-24 flex flex-col items-center gap-12" in:fade>
       <!-- Form column (quiz questions + arrows + CTA) -->
       <div class="w-full md:flex-1 md:basis-0">
         <form class="space-y-6" on:submit={handleSubmit}>
@@ -245,7 +245,7 @@
             {...inertFor(currentStep !== 1)}
             hidden={currentStep !== 1}
           >
-            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block body">
+            <legend bind:this={legend1} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               How would you describe your current sales trajectory?
             </legend>
 
@@ -287,7 +287,7 @@
             {...inertFor(currentStep !== 2)}
             hidden={currentStep !== 2}
           >
-            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block body">
+            <legend bind:this={legend2} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               What is your product team's current focus and posture?
             </legend>
 
@@ -329,7 +329,7 @@
             {...inertFor(currentStep !== 3)}
             hidden={currentStep !== 3}
           >
-            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block body">
+            <legend bind:this={legend3} tabindex="-1" class="inter mb-2 block body focus:outline-none">
               How would you describe the current competative landscape?
             </legend>
 
