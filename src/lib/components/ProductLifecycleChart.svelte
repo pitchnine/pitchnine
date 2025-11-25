@@ -271,7 +271,7 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
 									color: 'rgba(255,255,255,0.50)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -290,7 +290,7 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
 									color: 'rgba(255,255,255,0.50)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -309,7 +309,7 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
 									color: 'rgba(255,255,255,0.50)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}
@@ -328,7 +328,7 @@ let tooltipModel: { title: string; body: string; footer?: string } = {
 									position: { x: 'center', y: 'start' },
 									yAdjust: 16,
 									color: 'rgba(255,255,255,0.50)',
-									font: { family: 'Inter, system-ui, sans-serif', size: 12, weight: 500 },
+									font: { family: 'Inter, system-ui, sans-serif', size: 10, weight: 500 },
 									backgroundColor: 'transparent',
 									padding: 0
 								}

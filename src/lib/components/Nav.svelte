@@ -14,14 +14,14 @@
 		{#if currentPath === '/'}
 			<!-- SELECTED -->
 			
-				<span class="inter text-lg font-bold tracking-tight text-gray-50">PITCH</span><span
-					class="inter text-lg font-bold tracking-tight text-gray-50/60">NINE</span
+				<span class="inter text-xl font-bold tracking-tight text-gray-50">PITCH</span><span
+					class="inter text-xl font-bold tracking-tight text-gray-50/50">NINE</span
 				>
 	
 		{:else}
 			<!-- DEFAULT -->
-			<span class="inter text-lg font-bold tracking-tight text-gray-50/50">PITCH</span><span
-				class="inter text-lg font-bold tracking-tight text-gray-50/25">NINE</span
+			<span class="inter text-xl font-bold tracking-tight text-gray-50/50">PITCH</span><span
+				class="inter text-xl font-bold tracking-tight text-gray-50/25">NINE</span
 			>
 		{/if}
 	</a>
@@ -34,3 +34,4 @@
 		{/each}
 	</div>
 </div>
+</nav>

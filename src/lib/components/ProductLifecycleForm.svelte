@@ -205,10 +205,12 @@
     <h2 class="h2 mx-auto text-center" in:fade out:fade>
       Find your phase.
     </h2>
+    <p class='body mx-auto text-center'>Take our short, free diagnostic assessment and receive custom insights based on your position.</p>
+    <div class="h-1 w-12 md:w-40 mx-auto bg-amber-600/70 rounded-full mt-9"></div>
   {/if}
 
   {#if showLeadForm}
-    <div class="mt-24" in:fade>
+    <div class="mt-14 md:mt-24" in:fade>
    <LifecycleLeadGen
   title="Access analysis"
   answers={[q1, q2, q3]}
@@ -224,7 +226,7 @@
   </div>
 
   {:else if showResult}
-    <div class="mt-24" in:fade>
+    <div class="mt-14 md:mt-24" in:fade>
     <LifecycleResult 
     answers={[q1, q2, q3]}
     onRestart={restartAssessment} />
@@ -248,7 +250,7 @@
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q1Options as opt}
                   <div>
                     <input
@@ -290,7 +292,7 @@
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q2Options as opt}
                   <div>
                     <input
@@ -332,7 +334,7 @@
             </legend>
 
             <div in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-              <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+              <div class="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
                 {#each q3Options as opt}
                   <div>
                     <input

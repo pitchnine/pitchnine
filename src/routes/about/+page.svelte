@@ -34,29 +34,30 @@
 const principles = [
   { 
     title: 'Discipline', 
-    desc: 'Focus stays on what is material. Risk is framed in context, priorities are defined with precision, and only moves that matter are advanced.' 
+    desc: 'Focus stays on the material. Risk is framed in context, priorities are precise, and only moves that compound value advance.' 
   },
   { 
     title: 'Governance', 
-    desc: 'Innovation runs under control. Pilots stay off the main line, bounded by guardrails, audit trails, and explicit graduation criteria.' 
+    desc: 'Innovation runs under control. Initiatives stay off the mainline until proven—bound by guardrails, audit trails, explicit graduation criteria, and AI data/model governance.' 
   },
   { 
     title: 'Prioritization', 
-    desc: 'Noise is stripped away to reveal signal. Requests resolve into a sequenced plan that surfaces dependencies, constraints, and expected return.' 
+    desc: 'Noise is stripped to reveal signal. Requests resolve into a sequenced plan that surfaces dependencies, constraints, and expected return.' 
   },
   { 
     title: 'Evidence', 
-    desc: 'Decisions demand proof. Demonstrations are not enough; evaluation harnesses and measurable outcomes determine what advances.' 
+    desc: 'Decisions demand proof. Demos aren’t enough to prove value and instead we leverage evaluation harnesses, telemetry, and customer signals (including AI quality metrics) determine what advances.' 
   },
   { 
     title: 'Rigor', 
-    desc: 'Compliance and customer experience advance together. Solutions are built to withstand audit and deliver value without compromise.' 
+    desc: 'Compliance and experience advance together. Solutions are built to withstand audits with privacy-by-design, security reviews, and AI safety checks all without compromising value or speed.' 
   },
   { 
     title: 'Transferability', 
-    desc: 'Capability outlasts the engagement. Artifacts, enablement, and operating rituals remain in place to strengthen teams long after support concludes.' 
+    desc: 'Capability outlasts the engagement. Artifacts, enablement, and operating rituals remain so teams can run and continue scaling the product and work without us.' 
   }
 ];
+
 
 export const load = async () => {
   return {
@@ -76,14 +77,14 @@ export const load = async () => {
 
 <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
   <!-- Hero / Philosophy -->
-  <header class="mx-auto w-full md:max-w-7xl px-6 sm:px-9 pt-12 pb-9">
-    <h2 class="h2 mb-3">
-      Pitch Nine is an embedded product agency with a focus on establishing a dual-track product rhythm, preparing organizations for AI adoption, and delivering innovation without compliance risk.
+  <header class="mx-auto max-w-7xl">
+    <h2 class="h2 mb-6 text-center md:text-left">
+      Pitch Nine is an embedded product agency with a focus on establishing a dual-track product rhythm, preparing organizations for AI adoption, and serving as fractional builders to accelerate development.
     </h2>
   </header>
 
   <!-- Proof / Stats -->
-    <div class="mt-9 md:mt-12 mb-12 md:mb-32 grid grid-cols-1 sm:grid-cols-2 justify-between max-w-7xl mx-auto gap-12 md:gap-20">
+    <div class="mt-14 md:mt-24 mb-12 md:mb-32 grid grid-cols-1 sm:grid-cols-2 justify-between max-w-7xl mx-auto gap-12 md:gap-20">
     {#each stats as s}
       <div class="text-left">
         <div class="flex items-start gap-3">
@@ -102,15 +103,18 @@ export const load = async () => {
 
 
   <!-- Principles grid -->
-<section aria-label="principles" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
-  <h2 class="text-sm font-semibold tracking-wider opacity-30 uppercase">
-  Principles
-</h2>
+<section aria-label="principles" class="mx-auto max-w-7xl my-56 md:my-80">
+  <h2 class="h2 mb-12 text-center md:text-left">
+      We operate as an embedded product team, not an agency side-show with a focus on outcomes, governance, and long-term capability.
+    </h2>
   <Principles {principles} />
 </section>
 
   <!-- Founders -->
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
+<section class="mx-auto max-w-7xl my-56 md:my-80">
+  <h2 class="h2 mb-24 text-center">
+      Fast when it counts, and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
+    </h2>
   <Team />
 </section>
 

@@ -69,8 +69,8 @@
 
 <section class="mb-48 w-full">
   <header class="mx-auto max-w-7xl px-3">
-    <h2 class="h2 mb-6">{title}</h2>
-    <p class="body mb-3">
+    <h2 class="h2 mb-9">{title}</h2>
+    <p class="body">
       Complete the form below or
       <a href="https://cal.com/joellstocchero/30min" class="text-emerald-500 hover:underline hover:underline-offset-4">
         schedule an introduction

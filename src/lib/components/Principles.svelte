@@ -97,18 +97,18 @@
 <section
   bind:this={sectionEl}
   aria-label="principles"
-  class="mx-auto max-w-7xl px-6 sm:px-8 py-10"
+  class="mx-auto max-w-7xl mt-14 md:mt-24"
 >
   <div class="relative mt-3">
     <!-- Track -->
     <div class="block" aria-hidden="true">
       <div
-        class="absolute top-0 bottom-0 w-[2px] bg-gray-50/25 z-0 rounded-full left-[12px] sm:left-3"
+        class="absolute top-0 bottom-0 w-[4px] bg-gray-50/25 z-0 rounded-full left-[12px] sm:left-3"
       ></div>
 
       <!-- Filled portion (scaleY avoids % height quirks) -->
       <div
-        class="absolute top-0 bottom-0 w-[2px] bg-emerald-600 z-0 rounded-full left-[12px] sm:left-3 origin-top will-change-transform transition-transform duration-200"
+        class="absolute top-0 bottom-0 w-[4px] bg-emerald-600 z-0 rounded-full left-[12px] sm:left-3 origin-top will-change-transform transition-transform duration-200"
         style="transform: scaleY({Math.max(0.005, progress / 100)})"
       ></div>
     </div>

@@ -18,7 +18,7 @@
     </a>
 
     <!-- Links -->
-    <nav class="flex gap-6">
+    <nav class="flex flex-col md:flex-row items-center gap-4">
       {#each footerLinks as { href, label }}
         <a {href} class="text-sm text-gray-400 hover:text-gray-100 transition">
           {label}
