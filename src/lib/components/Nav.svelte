@@ -34,4 +34,3 @@
 		{/each}
 	</div>
 </div>
-</nav>
