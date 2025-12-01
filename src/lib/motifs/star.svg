@@ -1,0 +1,19 @@
+<svg style="left:0; top:0; width:100%; height:100%;" width="900" height="700" viewBox="0 0 900 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_321_21)">
+<path d="M466.742 292.404L725.805 358.969L526.111 533.476L392.982 411.141L248.104 358.969V48.5127L466.742 292.404Z" fill="#D9D9D9" fill-opacity="0.25"/>
+<path d="M526.137 531.461L393.997 410.036L393.774 409.832L393.49 409.729L249.604 357.915V52.4336L465.626 293.405L465.929 293.744L466.369 293.857L722.673 359.713L526.137 531.461Z" stroke="#D9D9D9" stroke-opacity="0.25" stroke-width="3"/>
+<path d="M478.095 453.623H366.832L298.636 351.556L366.84 246.732H478.086L553.156 351.556L478.095 453.623Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M456.263 410.344H391.535L351.872 350.981L391.543 290.01H456.256L499.92 350.981L456.263 410.344Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M498.517 491.272H345.887L252.324 351.242L345.895 207.432H498.51L601.499 351.242L498.517 491.272Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M521.681 531.125H324.301L203.301 350.028L324.309 164.049H521.673L654.863 350.028L521.681 531.125Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M547.319 590.859H288.499L129.824 353.377L288.507 109.496H547.312L721.97 353.377L547.319 590.859Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M580.861 657.354H250.543L48.0283 354.26L250.551 43H580.854L803.765 354.26L580.861 657.354Z" stroke="white" stroke-opacity="0.5" stroke-width="2"/>
+<path d="M459.546 288.806L504.522 353.935L531.508 528.079L248.104 657.62L349.804 353.935L248.104 53.1318L459.546 288.806Z" fill="#EBEBEB" fill-opacity="0.25"/>
+<path d="M250.625 654.817L351.227 354.412L351.387 353.933L351.226 353.455L251.865 59.5693L458.365 289.734L503.093 354.504L529.852 527.187L250.625 654.817Z" stroke="#EBEBEB" stroke-opacity="0.25" stroke-width="3"/>
+</g>
+<defs>
+<clipPath id="clip0_321_21">
+<rect width="700" height="900" fill="white" transform="matrix(0 -1 1 0 0 700)"/>
+</clipPath>
+</defs>
+</svg>

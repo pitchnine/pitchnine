@@ -75,7 +75,7 @@ export const load = async () => {
 <Nav />
 <AboutHero />
 
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
   <!-- Hero / Philosophy -->
   <header class="mx-auto max-w-7xl">
     <h2 class="h2 mb-6 text-center md:text-left">
@@ -121,7 +121,7 @@ export const load = async () => {
 
 
   <!-- CTA / Contact -->
-  <section aria-label="cta" class="mx-auto max-w-7xl my-56 md:my-80">
+  <section aria-label="cta" class="mx-auto max-w-7xl my-64 md:my-88 px-9 md:px-12">
     <Form />
   </section>
 

@@ -4,7 +4,7 @@
   /* ---- Foreground content ---- */
   export let headline = "Discovery meets delivery.";
   export let subhead = "Pitch Nine helps product teams create rhythm, clarity, and evidence-driven momentum by implementing disciplined discovery work alongside delivery teams.";
-  export let ctaText = "Start a conversation";
+  export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 
   /* ---- Background snippets ----
@@ -341,7 +341,7 @@
 
    <!-- Foreground content -->
   <div bind:this={contentEl} class="relative z-10 text-center px-6">
-    <h1 class="h1 max-w-7xl mb-9 animate-fadeUp">
+    <h1 class="h1 max-w-6xl mb-9 animate-fadeUp">
       {headline}
     </h1>
     <p class="lede max-w-4xl mx-auto mb-8 animate-fadeUp" style="animation-delay: 120ms;">
