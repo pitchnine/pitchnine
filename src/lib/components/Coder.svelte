@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
 
   /* ---- Foreground content ---- */
-  export let headline = "Discovery meets delivery.";
-  export let subhead = "Pitch Nine helps product teams create rhythm, clarity, and evidence-driven momentum by implementing disciplined discovery work alongside delivery teams.";
+  export let headline = "Healthcare innovation, validation and workflow design.";
+  export let subhead = "Pitch Nine accelerates health innovation and development through early validation, design, and FDA-aware product workflows built for hospitals and regulated environments.";
   export let ctaText = "Schedule a conversation";
   export let ctaHref = "/contact";
 

@@ -1,10 +1,10 @@
 <script>
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import AboutHero from '$lib/components/AboutHero.svelte';
   import Principles from '$lib/components/Principles.svelte';
   import Team from '$lib/components/Team.svelte';
   import Form from '$lib/components/Form.svelte';
+	import HeroBg from '../../lib/components/HeroBg.svelte';
 
   const Check = `
     <svg viewBox="0 0 24 24" class="w-8 h-8 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -71,9 +71,18 @@ export const load = async () => {
 
 </script>
 
+<div class="relative">
+<HeroBg
+  headline="Elastic and embedded health innovators."
+  bodyText="We specialize in early validation, clinical workflow design, and regulatory-safe product acceleration for health AI, AR/VR, and software medical devices."
+  primaryCtaHref="/contact"
+  primaryCtaLabel="Learn more"
 
+/>
+  <div class="absolute inset-x-0 top-0 z-20">
 <Nav />
-<AboutHero />
+</div>
+</div>
 
 <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
   <!-- Hero / Philosophy -->

@@ -55,7 +55,8 @@
   </script>
 </svelte:head>
 
-<main class="min-h-screen bg-gradient-to-b from-gray-950 to-gray-800 pb-24 text-gray-200">
+<main class="min-h-screen bg-[#04090f] text-gray-200">
+
   <slot />
 </main>
 

@@ -9,7 +9,7 @@
 	];
 </script>
 
-<div class="flex items-center justify-between gap-4 mx-auto max-w-7xl px-6 py-12">
+<nav class="flex items-center justify-between gap-4 mx-auto max-w-7xl px-6 py-12">
 	<a href="/" class="logo-link" aria-label="Pitch Nine home">
 		{#if currentPath === '/'}
 			<!-- SELECTED -->
@@ -33,4 +33,4 @@
 			</a>
 		{/each}
 	</div>
-</div>
+</nav>

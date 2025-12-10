@@ -106,7 +106,7 @@
   /* ----- Headings ----- */
   .h1 {
     @apply inter font-bold tracking-tight
-           text-4xl md:text-5xl lg:text-6xl;
+           text-3xl md:text-4xl lg:text-5xl;
   }
   .h2 {
     @apply inter font-semibold tracking-tight
