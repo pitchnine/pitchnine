@@ -26,10 +26,10 @@
   ></div>
 
   <!-- Content -->
-  <div class="relative mx-auto text-center max-w-6xl">
-    <div class="max-w-4xl space-y-6">
+  <div class="flex text-left mx-auto max-w-7xl">
+    <div class="space-y-6">
      <h1
-        class="h1 max-w-5xl opacity-0 animate-fade-in-up [animation-delay:120ms]"
+        class="h1 opacity-0 animate-fade-in-up [animation-delay:120ms]"
       >
         {headline}
       </h1>

@@ -26,8 +26,8 @@
 	<HeroBg
 		headline="Healthcare innovation, validation and workflow design."
 		bodyText="Pitch Nine accelerates health innovation and development through early validation, design, and FDA-aware product workflows built for hospitals and regulated environments."
-		primaryCtaHref="/contact"
-		primaryCtaLabel="Schedule a conversation"
+		primaryCtaHref="#services"
+		primaryCtaLabel="View process"
 	/>
 	<div class="absolute inset-x-0 top-0 z-20">
 		<Nav />
