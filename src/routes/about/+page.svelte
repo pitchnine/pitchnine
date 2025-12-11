@@ -71,7 +71,7 @@ export const load = async () => {
 
 </script>
 
-<div class="relative px-6 md:px-12">
+<div class="relative">
 <HeroBg
   headline="Elastic, embedded experts."
   bodyText="Our team has spent decades designing and launching healthcare products across clinical, payer, and research settings. We specialize in workflow-safe product acceleration for health AI, AR/VR, and software medical devices."

@@ -15,7 +15,7 @@
 	};
 </script>
 
-<div class="relative px-6 md:px-12">
+<div class="relative">
 	<HeroBg
 		headline="Contact Pitch Nine"
 		bodyText="Whether you're validating a new healthcare product, designing a clinical workflow, or accelerating development for an AI, AR/VR, or medical device solution, Pitch Nine can help."

@@ -21,13 +21,13 @@
 
   <!-- Dark wash to keep text readable -->
   <div
-    class="pointer-events-none absolute inset-0 bg-[#04090F]/70 mix-blend-multiply"
+    class="pointer-events-none absolute inset-0 bg-[#04090F]/65 mix-blend-multiply"
     aria-hidden="true"
   ></div>
 
   <!-- Content -->
-  <div class="flex mx-auto max-w-7xl">
-    <div class="space-y-9 text-left md:text-center max-w-4xl">
+  <div class="flex mx-auto max-w-7xl px-6 md:px-12">
+    <div class="space-y-9 text-center max-w-4xl">
      <h1
         class="h1 opacity-0 animate-fade-in-up [animation-delay:120ms]"
       >
@@ -57,27 +57,24 @@
   .bg-hero-gradient {
     background-image:
       radial-gradient(circle at 40% 60%, #0891b2 0%, #0891b2aa 0%, transparent 30%),
-      radial-gradient(circle at 60% 40%, #b45309 5%, #b45309aa 10%, transparent 40%),
+      radial-gradient(circle at 60% 40%, #b45309 5%, #b45309aa 10%, transparent 20%),
       radial-gradient(circle at 50% 50%, #005f5f 10%, #003535aa 25%, transparent 80%),
       linear-gradient(140deg, #04090f 0%, #04090f 45%, #003535 80%, #04090f 100%);
-    background-size: 100% 100%;
+    background-size: 180% 180%;
     background-position: 0% 0%;
   }
 
-  @keyframes hero-gradient {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 150% 150%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
+ @keyframes hero-gradient {
+  0% {
+    background-position: 0% 0%;
   }
+  100% {
+    background-position: 60% 40%;
+  }
+}
 
   .animate-hero-gradient {
-    animation: hero-gradient 28s ease-in-out;
+    animation:  hero-gradient 5s ease-out forwards;
   }
 
   @keyframes fade-in-up {

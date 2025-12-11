@@ -22,7 +22,7 @@
 
 <!--Hero and Nav-->
 
-<div class="relative px-6 md:px-12">
+<div class="relative">
 	<HeroBg
 		headline="Innovation meets momentum."
 		bodyText="Pitch Nine accelerates health innovation with AI, AR/VR and software medical device development through product validation, workflow design, and FDA-aware processes built for hospitals and regulated environments."
