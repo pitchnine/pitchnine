@@ -15,11 +15,11 @@
 	};
 </script>
 
-<div class="relative">
+<div class="relative px-6 md:px-12">
 	<HeroBg
-		headline="Accelerate your path."
-		bodyText="Start the conversation to learn more about accelerating healthcare innovation in your organization."
-		primaryCtaHref="/contact"
+		headline="Contact Pitch Nine"
+		bodyText="Whether you're validating a new healthcare product, designing a clinical workflow, or accelerating development for an AI, AR/VR, or medical device solution, Pitch Nine can help."
+		primaryCtaHref="#contact"
 		primaryCtaLabel="Contact us"
 	/>
 	<div class="absolute inset-x-0 top-0 z-20">
@@ -27,7 +27,11 @@
 	</div>
 </div>
 
-<section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12" id="contact">
+<section
+  id="contact"
+  class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12 scroll-mt-40 md:scroll-mt-56"
+>
+
 	<Form />
 </section>
 

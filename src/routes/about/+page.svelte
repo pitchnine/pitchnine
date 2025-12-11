@@ -71,11 +71,11 @@ export const load = async () => {
 
 </script>
 
-<div class="relative">
+<div class="relative px-6 md:px-12">
 <HeroBg
-  headline="Elastic and embedded health innovators."
-  bodyText="We specialize in early validation, clinical workflow design, and regulatory-safe product acceleration for health AI, AR/VR, and software medical devices."
-  primaryCtaHref="/contact"
+  headline="Elastic, embedded experts."
+  bodyText="Our team has spent decades designing and launching healthcare products across clinical, payer, and research settings. We specialize in workflow-safe product acceleration for health AI, AR/VR, and software medical devices."
+  primaryCtaHref="#about"
   primaryCtaLabel="Learn more"
 
 />
@@ -120,10 +120,13 @@ export const load = async () => {
 </section>
 
   <!-- Founders -->
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section
+  id="about"
+  class="mx-auto max-w-7xl my-56 md:my-80 scroll-mt-40 md:scroll-mt-56"
+>
   <h2 class="h2 mb-24 text-center">
-      Fast when it counts, and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
-    </h2>
+    Fast when it counts, and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
+  </h2>
   <Team />
 </section>
 

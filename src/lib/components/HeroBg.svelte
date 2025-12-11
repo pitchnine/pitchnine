@@ -11,7 +11,7 @@
 </script>
 
 <section
-  class="relative min-h-screen bg-[#04090F] text-slate-100 flex items-center"
+  class="relative min-h-screen bg-[#04090F] text-slate-100 flex items-center px-6 md:px-12"
 >
   <!-- Animated gradient background -->
   <div
@@ -26,8 +26,8 @@
   ></div>
 
   <!-- Content -->
-  <div class="flex text-left mx-auto max-w-7xl">
-    <div class="space-y-6">
+  <div class="flex mx-auto max-w-7xl">
+    <div class="space-y-9 text-left md:text-center max-w-4xl">
      <h1
         class="h1 opacity-0 animate-fade-in-up [animation-delay:120ms]"
       >

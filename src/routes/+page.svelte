@@ -22,10 +22,10 @@
 
 <!--Hero and Nav-->
 
-<div class="relative">
+<div class="relative px-6 md:px-12">
 	<HeroBg
-		headline="Healthcare innovation, validation and workflow design."
-		bodyText="Pitch Nine accelerates health innovation and development through early validation, design, and FDA-aware product workflows built for hospitals and regulated environments."
+		headline="Innovation meets momentum."
+		bodyText="Pitch Nine accelerates health innovation with AI, AR/VR and software medical device development through product validation, workflow design, and FDA-aware processes built for hospitals and regulated environments."
 		primaryCtaHref="#services"
 		primaryCtaLabel="View process"
 	/>
@@ -146,10 +146,10 @@
 
 <!-- Services and approach/process -->
 <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12" id="services">
-	<h2 class="h2 mb-6 text-center">
-		We leverage what you have to uncover openings, prove opportunity, and execute with precision.
-	</h2>
-	<ServicesGrid />
+  <h2 class="h2 mb-6 text-center">
+    We leverage what you have to uncover openings, prove opportunity, and execute with precision.
+  </h2>
+  <ServicesGrid />
 </section>
 
 <!-- 
