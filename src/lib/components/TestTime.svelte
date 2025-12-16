@@ -74,7 +74,7 @@
     <!-- Sticky stage: stays in view while user scrolls this window -->
     <div class="sticky top-0 h-screen flex items-center">
       <div class="max-w-7xl w-full px-6">
-         <h2 class="h2 px-4 mb-12 text-center md:px-0 md:text-left">
+    <h2 class="h2 mb-9 text-left">
       Healthcare products must work within complex, immoveable systems on irregular timelines.
     </h2>
         <div class="grid grid-cols-1 md:grid-cols-10 gap-10 items-left">
