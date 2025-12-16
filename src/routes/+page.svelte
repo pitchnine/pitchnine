@@ -5,6 +5,7 @@
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
+	import TestTime from '$lib/components/TestTime.svelte';
 	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import Form from '$lib/components/Form.svelte';
 
@@ -36,9 +37,7 @@
 
 <!-- Problem: what's broken -->
  <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
-	<h2 class="h2 px-4 text-center md:px-0 md:text-left">
-		Healthcare innovation must survive a complex, interconnected system of immoveble constraints on timelines that take months or years to complete.
-	</h2>
+	 <TestTime/>
 
  </section>
 
