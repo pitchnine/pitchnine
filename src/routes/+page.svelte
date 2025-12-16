@@ -5,7 +5,7 @@
 	import ServicesGrid from '$lib/components/ServicesGrid.svelte';
 	import Diagnostics from '$lib/components/Diagnostics.svelte';
 	import ProductLifecycleForm from '$lib/components/ProductLifecycleForm.svelte';
-	import TestTime from '$lib/components/TestTime.svelte';
+	import Timeline from '$lib/components/Timeline.svelte';
 	import ProductCurveSVG from '$lib/components/ProductCurveSVG.svelte';
 	import Form from '$lib/components/Form.svelte';
 
@@ -37,7 +37,7 @@
 
 <!-- Problem: what's broken -->
  <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
-	 <TestTime/>
+	 <Timeline/>
 
  </section>
 
