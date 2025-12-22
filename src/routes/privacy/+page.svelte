@@ -1,18 +1,25 @@
 <script>
     import Nav from '$lib/components/Nav.svelte';
     import Footer from '$lib/components/Footer.svelte';
-    import ContactHero from '$lib/components/ContactHero.svelte';
+	import HeroBg from '$lib/components/HeroBg.svelte';
 </script>
 
-<Nav />
 
-<section class="mx-auto max-w-7xl py-32 text-center">
-    <h1 class="h1">Privacy Policy & Terms of Use</h1>
-    </section>
+<div class="relative">
+	<HeroBg
+		headline="Privacy & Security"
+		bodyText="Pitch Nine's privacy policy and terms of use documentation"
+		primaryCtaHref="#contact"
+		primaryCtaLabel="Questions? Contact us"
+	/>
+	<div class="absolute inset-x-0 top-0 z-20">
+		<Nav />
+	</div>
+</div>
 
     <section class="mx-auto max-w-4xl py-16">
 <p class="body">Effective Date: September 1, 2025
-Last Updated: September 1, 2025
+Last Updated: December 22, 2025
 
 Pitch Nine LLC (“Pitch Nine,” “we,” “our,” or “us”) respects your privacy and is committed to protecting your personal information. These Terms and Privacy Policy describe how we collect, use, and protect information when you use our website (the “Site”) and related services. By accessing or using the Site, you agree to this Policy and to our Terms of Use.</p>
     </section>
