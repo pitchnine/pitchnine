@@ -8,8 +8,8 @@
   ];
 </script>
 
-<footer class="border-t border-gray-50/20 mt-24 md:mt-40">
-  <div class="mx-auto max-w-7xl px-9 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+<footer class="border-t border-gray-50/20 py-16">
+  <div class="mx-auto max-w-7xl p-9 flex flex-col md:flex-row items-center justify-between gap-6">
     
     <!-- Logo -->
     <a href="/" class="logo-link flex items-center space-x-1" aria-label="Pitch Nine home">

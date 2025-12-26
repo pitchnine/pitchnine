@@ -202,7 +202,7 @@
 
 <section class="mx-auto max-w-7xl px-2 py-9">
   {#if !showLeadForm && !showResult}
-    <h2 class="h2 mx-auto text-center" in:fade out:fade>
+    <h2 class="h2 mx-auto text-center mb-6" in:fade out:fade>
       Find your phase.
     </h2>
     <p class='body mx-auto text-center'>Take our short, free diagnostic assessment and receive custom insights based on your position.</p>
@@ -234,7 +234,7 @@
 
 {:else}
     <!-- Original quiz + chart layout -->
-      <div class="mt-12 md:mt-24 flex flex-col items-center gap-12" in:fade>
+      <div class="mt-12 md:mt-16 flex flex-col items-center gap-12" in:fade>
       <!-- Form column (quiz questions + arrows + CTA) -->
       <div class="w-full md:flex-1 md:basis-0">
         <form class="space-y-6" on:submit={handleSubmit}>

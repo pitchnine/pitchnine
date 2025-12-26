@@ -1,10 +1,10 @@
 <script>
   import Nav from '$lib/components/Nav.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  import AboutHero from '$lib/components/AboutHero.svelte';
   import Principles from '$lib/components/Principles.svelte';
   import Team from '$lib/components/Team.svelte';
   import Form from '$lib/components/Form.svelte';
+	import HeroBg from '../../lib/components/HeroBg.svelte';
 
   const Check = `
     <svg viewBox="0 0 24 24" class="w-8 h-8 mt-[2px]" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -71,9 +71,18 @@ export const load = async () => {
 
 </script>
 
+<div class="relative">
+<HeroBg
+  headline="Elastic, embedded experts."
+  bodyText="Our team has spent decades designing and launching healthcare products across clinical, payer, and research settings. We specialize in workflow-safe product acceleration for health AI, AR/VR, and software medical devices."
+  primaryCtaHref="#about"
+  primaryCtaLabel="Learn more"
 
+/>
+  <div class="absolute inset-x-0 top-0 z-20">
 <Nav />
-<AboutHero />
+</div>
+</div>
 
 <section class="mx-auto max-w-7xl my-64 md:my-88 px-6 md:px-12">
   <!-- Hero / Philosophy -->
@@ -111,10 +120,13 @@ export const load = async () => {
 </section>
 
   <!-- Founders -->
-<section class="mx-auto max-w-7xl my-56 md:my-80">
+<section
+  id="about"
+  class="mx-auto max-w-7xl my-56 md:my-80 scroll-mt-40 md:scroll-mt-56"
+>
   <h2 class="h2 mb-24 text-center">
-      Fast when it counts, and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
-    </h2>
+    Fast when it counts, and safe where it matters, we have decades of experience turning hypotheses into validated, viable products.
+  </h2>
   <Team />
 </section>
 
