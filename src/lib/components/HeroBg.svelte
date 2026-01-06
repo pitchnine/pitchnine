@@ -26,7 +26,7 @@
   ></div>
 
   <!-- Content -->
-  <div class="flex mx-auto max-w-7xl px-6 md:px-12">
+  <div class="flex mx-auto max-w-7xl px-6 md:px-12 mt-9 md:mt-16 mb-9 md:mb-16">
     <div class="space-y-9 text-center max-w-4xl">
      <h1
         class="h1 opacity-0 animate-fade-in-up [animation-delay:120ms]"
